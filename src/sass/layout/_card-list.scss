@@ -1,0 +1,79 @@
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+
+.card-image {
+    width: 280px;
+    height: 402px;
+    border-radius: 5px;
+}
+
+.card-title {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.16;
+}
+
+.card-description {
+    color: #FF6B08;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+}
+
+@media screen and (max-width: $mobile-max) {
+    .card-item:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: $tablet-min) {
+    .card-list {
+        padding-top: 60px;
+        padding-bottom: 50px;
+    }
+
+    .card-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: -30px;
+        margin-top: -30px;
+    }
+
+    .card-item {
+        flex-basis: calc(100% / 2 - 30px);
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+
+    .card-image {
+        width: 294px;
+        height: 398px;
+    }
+}
+
+@media screen and (min-width: $desktop-min) {
+    .card-item {
+        flex-basis: calc(100% / 3 - 30px);
+    }
+
+    .card-image {
+        width: 274px;
+        height: 398px;
+    }
+}
+
+
+// <li class="card-item">
+//     <a href=""></a>
+//         <img src="" alt="" class="card-image" />
+//         <h2 class="card-title"> </h2>
+//         <p class="card-description"> | </p>
+//     </a>
+// </li>
