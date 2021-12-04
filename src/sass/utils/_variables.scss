@@ -1,7 +1,9 @@
 // width
-$mobile: 320px;
-$tablet: 768px;
-$desktop: 1024px;
+$mobile-min: 320px;
+$mobile-max: 767px;
+$tablet-min: 768px;
+$tablet-max: 1023px;
+$desktop-min: 1024px;
 
 // colors
 $white-color: #ffffff;
@@ -21,3 +23,4 @@ $main-font: 'Roboto', sans-serif;
 
 // timing-function
 $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+$duration: 300ms;
