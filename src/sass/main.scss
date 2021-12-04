@@ -1,11 +1,16 @@
 @import './utils/variables';
 
 @import './base/common';
+@import './base/container';
+@import './base/fonts';
 @import './base/visually-hidden';
 
-@import './layout/header';
-@import './layout/gallery';
+@import './components/_button-back-to-top';
+
 @import './layout/footer';
+@import './layout/gallery';
+@import './layout/header';
+
 // ~~~
 // /*
 //  * Главный файл стилей.
