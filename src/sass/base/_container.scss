@@ -1,31 +1,21 @@
-/*-Контейнер для обмеження контенту по ширині-*/
 .container {
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-}
+  margin-left: auto;
+  margin-right: auto;
 
-/*-Контейнер для обмеження контенту mobile-версії-*/
-@media screen and (min-width: 320px) {
-  .container {
-    width: 320px;
-    margin: 0 auto;
+  @media screen and (max-width: $mobile-max) {
+    min-width: 240px;
+    max-width: $mobile-min;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-}
 
-/*-Контейнер для обмеження контенту tablet-версії-*/
-@media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
+  @media screen and (min-width: $tablet-min) {
+    width: $tablet-min;
     padding-left: 75px;
     padding-right: 75px;
   }
-}
-
-/*-Контейнер для обмеження контенту desktop-версії-*/
-@media screen and (min-width: 1024px) {
-  .container {
-    width: 1024px;
+  @media screen and (min-width: $desktop-min) {
+    width: $desktop-min;
     padding-left: 71px;
     padding-right: 71px;
   }

@@ -1,0 +1,34 @@
+$font-size__mobile: (
+  'nav-text': 12px,
+  'search': 14px,
+  'name-film': 12px,
+  'name-film-modal': 20px,
+  'text-modal': 12px,
+  'text-modal-secondary': 22px,
+  'text-footer': 14px,
+  'error-text': 20px,
+);
+
+$font-size__tablet: (
+  'logo-title': 30px,
+  'nav-text': 12px,
+  'search': 14px,
+  'name-film': 12px,
+  'text-modal': 12px,
+  'text-footer': 16px,
+  'team-heading': 22px,
+  'text-modal-secondary': 30px,
+);
+
+$font-size__desktop: (
+  'logo-title': 30px,
+  'nav-text': 12px,
+  'search': 14px,
+  'name-film': 12px,
+  'name-film-modal': 30px,
+  'text-modal': 12px,
+  'text-footer': 16px,
+  'team-heading': 22px,
+  'error-text': 30px,
+  'text-modal-secondary': 40px,
+);
