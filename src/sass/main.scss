@@ -1,3 +1,11 @@
+@import './utils/variables';
+
+@import './base/common';
+@import './base/visually-hidden';
+
+@import './layout/header';
+@import './layout/gallery';
+@import './layout/footer';
 // ~~~
 // /*
 //  * Главный файл стилей.
