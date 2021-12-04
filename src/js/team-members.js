@@ -8,7 +8,7 @@ export const instance = basicLightbox.create(`
             <li class="modal-team-list__item"><a href="https://github.com/maksymkushnirov" class="modal-team-list__link" target="blank" rel="noopener noreferrer">- Maksym Kushnirov</a></li>
             <li class="modal-team-list__item"><a href="https://github.com/valentynadymova" class="modal-team-list__link" target="blank" rel="noopener noreferrer">- Valentyna Dymova</a></li>
             <li class="modal-team-list__item"><a href="https://github.com/rita-bosak" class="modal-team-list__link" target="blank" rel="noopener noreferrer">- Marharyta Bosak</a></li>
-            <li class="modal-team-list__item"><a href="https://github.com/Broshnitskiy" class="modal-team-list__link" target="blank" rel="noopener noreferrer">- Alona Bulatkina</a></li>
+            <li class="modal-team-list__item"><a href="https://github.com/Alona-Bulatkina" class="modal-team-list__link" target="blank" rel="noopener noreferrer">- Alona Bulatkina</a></li>
             <li class="modal-team-list__item"><a href="https://github.com/AleksandrYakovenko1984" class="modal-team-list__link" target="blank" rel="noopener noreferrer">- Alexandr Jakovenko</a></li>
             <li class="modal-team-list__item"><a href="https://github.com/Wed88" class="modal-team-list__link" target="blank" rel="noopener noreferrer">- Dmitriy Dudnik</a></li>
             <li class="modal-team-list__item"><a href="https://github.com/YaroslavOnofriichuk" class="modal-team-list__link" target="blank" rel="noopener noreferrer">- Yaroslav Onofriichuk</a></li>
