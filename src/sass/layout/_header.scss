@@ -1,0 +1,224 @@
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .container {
+    padding: 0px 20px;
+  }
+  .header {
+    background: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/rectangle3.jpg), center, no-repeat;
+    background-size: cover;
+  }
+  .logo-link {
+    margin-right: 112px;
+  }
+  .logo-link__text {
+    display: none;
+  }
+  .search-form {
+    margin-bottom: 48px;
+  }
+  .search {
+    width: 280px;
+    margin-bottom: 22px;
+  }
+  .btn-search {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    background: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/rectangle2.jpg), center, no-repeat;
+    background-size: cover;
+  }
+  .cont-header {
+    padding-top: 46px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+
+  .logo-link {
+    margin-right: 303px;
+  }
+  .logo-link img {
+    margin-right: 10px;
+  }
+  .search-form {
+    margin-bottom: 59px;
+  }
+  .search {
+    width: 336px;
+    margin-bottom: 22px;
+  }
+  .btn-search {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    background: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/rectangle1.jpg), center, no-repeat;
+    background-size: cover;
+  }
+
+  .logo-link {
+    margin-right: 565px;
+  }
+
+  .logo-link img {
+    margin-right: 10px;
+  }
+  .search-form {
+    margin-bottom: 59px;
+  }
+  .search {
+    width: 336px;
+    margin-bottom: 22px;
+  }
+  .btn-search {
+    position: absolute;
+    top: 0;
+    right: 0px;
+  }
+}
+.header-change {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url(../images/rectangle4.jpg), center, no-repeat;
+  background-size: cover;
+}
+.cont-header {
+  padding-top: 46px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.logo-link {
+  display: flex;
+  margin-bottom: 38px;
+}
+
+.logo-link__text {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+
+  color: #ffffff;
+}
+.nav {
+  margin-bottom: 38px;
+}
+.nav-item {
+  display: flex;
+}
+.nav-item__list {
+  list-style: none;
+}
+.nav-item__list:not(:last-child) {
+  margin-right: 39px;
+}
+.nav-item__list-text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+.nav-item__list--activ {
+  position: relative;
+}
+.nav-item__list--activ::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #ff6b08;
+  border-radius: 2px;
+}
+.search-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search {
+  padding: 0;
+  align-items: center;
+
+  margin-bottom: 22px;
+
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.5px solid #ffffff;
+  padding-bottom: 4px;
+  color: #ffffff;
+  outline: none;
+}
+.search::placeholder {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.btn-search {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.header-error__text {
+  font-size: 14px;
+  line-height: 16px;
+  color: #ff001b;
+}
+.header-change__cont {
+  margin-bottom: 65px;
+}
+
+.header-change__cont-btn {
+  width: 128px;
+  height: 44px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  background-color: transparent;
+  //   padding: 14px 36px 12px 36px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+.header-change__cont-btn--activ {
+  background-color: #ff6b08;
+  border: none;
+}

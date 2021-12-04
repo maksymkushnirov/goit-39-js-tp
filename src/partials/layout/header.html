@@ -1,33 +1,39 @@
-<!-- <article class="example">
-  <h1>HTML-фрагменты</h1> -->
-
-<!-- Путь к изображениям из HTML-фрагмента такой, как из файла index.html -->
-<!-- <img src="images/demo.jpg" alt="" width="320" />
-  <p>
-    Плагин
-    <a
-      href="https://github.com/posthtml/posthtml-include"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      posthtml-include
+<header class="header">
+  <div class="container cont-header">
+    <a class="logo-link" href="./index.html">
+      <img src="./images/svg/film.svg" alt="logo" />
+      <p class="logo-link__text">Filmoteka</p>
     </a>
-    позволяет добавлять в HTML-файлы страниц код из других HTML-файлов (фрагментов). Фрагменты
-    хранятся в папке
-    <code>src/partials</code>. Добавление происходит при компиляции файлов страниц, например
-    <code>index.html</code>.
-  </p>
+    <nav class="nav">
+      <ul class="nav-item">
+        <li class="nav-item__list">
+          <p class="nav-item__list-text">home</p>
+        </li>
+        <li class="nav-item__list nav-item__list--activ">
+          <p class="nav-item__list-text">my library</p>
+        </li>
+      </ul>
+    </nav>
+    <div class="search-form visually-hidden">
+      <input class="search" placeholder="Поиск фильмов" type="text" />
+      <button class="btn-search" type="button">
+        <img class="btn-img" src="./images/svg/search2.svg" alt="" />
+      </button>
+      <p class="header-error__text visually-hidden">
+        Search result not successful. Enter the correct movie name and
+      </p>
+    </div>
+    <div class="header-change__cont">
+      <button class="header-change__cont-btn header-change__cont-btn--activ">
+        Watched
+      </button>
+      <button class="header-change__cont-btn">queue</button>
+    </div>
+  </div>
+</header>
 
-  <p>
-    Этот файл <code>example.html</code> &mdash; пример такого фрагмента, с разметкой определённой
-    части главной страницы. Это очень удобно при командной разработке на студенческих проектах,
-    когда в одном HTML-файле пишет несколько человек сразу.
-  </p>
-
-  <p>
-    Синтаксис добавление фрагмента в главный файл:
-    <code> &lt;include src="./partials/имя-файла.html"&gt;&lt;/include&gt; </code>
-  </p>
-
-  <div class="background"></div>
-</article> -->
+<!-- ===============================================================-->
+<!-- header-change__cont-btn--activ ---- активные кнопки (queue) и (Watched)
+nav-item__list--activ-------------- активные кнопки (my library)и(home )
+header-change --------------------- смена фона (header) -->
+<!-- =============================================================== -->
