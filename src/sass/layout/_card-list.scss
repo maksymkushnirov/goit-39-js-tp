@@ -1,86 +1,86 @@
-
 .card-list {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
 }
 
 .card-image {
-    width: 280px;
-    height: 402px;
-    border-radius: 5px;
+  width: 280px;
+  height: 402px;
+  border-radius: 5px;
 }
 
 .card-title {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.16;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.16;
 }
 
 .card-description-container {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .card-description {
-    color: #FF6B08;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
+  color: #ff6b08;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
 }
 
 .card-rating {
-    background: #FF6B01;
-    border-radius: 5px;
-    width: 36px;
-    height: 16px;
-    color: #FFFFFF;
-    font-size: 12px;
-    align-items: center;
-    text-align: center;
-    text-transform: uppercase;
-    margin-left: 10px;
+  background: #ff6b01;
+  border-radius: 5px;
+  width: 36px;
+  height: 16px;
+  color: #ffffff;
+  font-size: 12px;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  margin-left: 10px;
+  line-height: initial;
 }
 
 @media screen and (max-width: $mobile-max) {
-    .card-item:not(:last-child) {
-        margin-bottom: 20px;
-    }
+  .card-item:not(:last-child) {
+    margin-bottom: 20px;
+  }
 }
 
 @media screen and (min-width: $tablet-min) {
-    .card-list {
-        padding-bottom: 50px;
-    }
+  .card-list {
+    padding-bottom: 50px;
+  }
 
-    .card-list {
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-left: -30px;
-        margin-top: -30px;
-    }
+  .card-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
 
-    .card-item {
-        flex-basis: calc(100% / 2 - 30px);
-        margin-left: 30px;
-        margin-top: 30px;
-    }
+  .card-item {
+    flex-basis: calc(100% / 2 - 30px);
+    margin-left: 30px;
+    margin-top: 30px;
+  }
 
-    .card-image {
-        width: 294px;
-        height: 398px;
-    }
+  .card-image {
+    width: 294px;
+    height: 398px;
+  }
 }
 
 @media screen and (min-width: $desktop-min) {
-    .card-item {
-        flex-basis: calc(100% / 3 - 30px);
-    }
+  .card-item {
+    flex-basis: calc(100% / 3 - 30px);
+  }
 
-    .card-image {
-        width: 274px;
-        height: 398px;
-    }
+  .card-image {
+    width: 274px;
+    height: 398px;
+  }
 }
