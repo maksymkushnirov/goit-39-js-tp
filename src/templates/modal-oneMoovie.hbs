@@ -6,32 +6,32 @@
 
         <table class="modal-movie-table">
 
-            <tr>
-                <td class="movie-table-key">Vote / Votes</td>
-                <td>{{vote_average}} / {{vote_count}}</td>
+            <tr class="movie-table-row">
+                <td class="movie-table-data key">Vote / Votes</td>
+                <td class="movie-table-data value">{{vote_average}} / {{vote_count}}</td>
             </tr>
 
-            <tr>
-                <td class="movie-table-key">Popularity</td>
-                <td>{{popularity}}</td>
+            <tr class="movie-table-row">
+                <td class="movie-table-data key">Popularity</td>
+                <td class="movie-table-data value">{{popularity}}</td>
             </tr>
 
-            <tr>
-                <td class="movie-table-key">Original Title</td>
-                <td>{{original Title}}</td>
+            <tr class="movie-table-row">
+                <td class="movie-table-data key">Original Title</td>
+                <td class="movie-table-data value">{{original Title}}</td>
             </tr>
 
-            <tr>
-                <td class="movie-table-key">Genre</td>
-                <td>{{genre_ids}}</td>
+            <tr class="movie-table-row">
+                <td class="movie-table-data key">Genre</td>
+                <td class="movie-table-data value">{{genre_ids}}</td>
             </tr>
         </table>
 
-        <h3 class="movie-overview-title">ABOUT</h3>
+       <h3 class="movie-overview-title">ABOUT</h3>
        <p class="modal-movie-overview">{{overview}}</p>
        <div class="modal-buttons">
-            <button type="button">add to watched</button>
-            <button type="button">add to queue</button>
+            <button type="button" class="modal-button watched">ADD TO WATCHED</button>
+            <button type="button" class="modal-button queue">ADD TO QUEUE</button>
        </div>
     </div>
     </div>
