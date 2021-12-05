@@ -27,8 +27,6 @@
   left: 50%;
   opacity: 1;
 
-  transform: translate(-50%, -50%);
-
   width: 450px;
   height: 609px;
   overflow: scroll;
@@ -51,29 +49,7 @@
   align-items: center;
   width: 14px;
   height: 14px;
-  //   border: transparent;
+  border: transparent;
   background-color: transparent;
   cursor: pointer;
 }
-
-// .modal-close-icon {
-//   width: 14px;
-//   height: 14px;
-//   fill: #000000;
-
-//   transition: fill $duration $timing-function;
-
-//   .modal-close-btn:hover &,
-//   .modal-close-btn:focus & {
-//     fill: $accent-color;
-//   }
-// }
-
-// .modal-text {
-//   display: block;
-//   margin-bottom: 12px;
-
-//   font-size: 20px;
-//   line-height: 1.15;
-//   text-align: center;
-// }
