@@ -13,9 +13,9 @@ const refs = {
     
 //Функція виконується при нажиманні на кнопку My Library
 export function onBtnLibrary() {
-    refs.btnHome.classList.remove('nav-item__list--activ');
+   /*  refs.btnHome.classList.remove('nav-item__list--activ');
     refs.btnLibrary.classList.add('nav-item__list--activ');
     refs.searchForm.classList.add('visually-hidden');
     refs.openNextBtn.classList.remove('visually-hidden');
-    refs.changeHeader.classList.add('header-change');
+    refs.changeHeader.classList.add('header-change'); */
 }
