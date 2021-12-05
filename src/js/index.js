@@ -3,6 +3,7 @@ import { instance } from "./team-members";
 import { getPopularFilms } from "./services/fetch-backend";
 import { getGenres } from "./services/fetch-backend";
 
+let page = 1;
 const refs = {
   developer: document.querySelector(".footer-link"),
   gallery: document.querySelector(".card-list")
@@ -21,7 +22,7 @@ getGenres()
   })
   .catch(error => console.log(error))
 
-getPopularFilms(1)
+getPopularFilms(page)
   .then(films => {
     console.log(films.results)
     localStorage.setItem("films_from_beckend", JSON.stringify(films.results));
