@@ -1,38 +1,32 @@
-<div class="img-container">
-    <div> <img src="{{poster_path}}" alt="{{}}"></div>
 
-    <div class="moovie-info">
-        <p class="title">{{title}}</p>
+    <div class="modal-img-container"> <img src="{{poster_path}}" alt="{{}}"></div>
 
-        <table class="table">
+    <div class="modal-movie-info">
+        <h2 class="modal-movie-title">{{title}}</h2>
+
+        <table class="modal-movie-table">
 
             <tr>
-                <td>Vote / Votes</td>
+                <td class="movie-table-key">Vote / Votes</td>
                 <td>{{vote_average}} / {{vote_count}}</td>
             </tr>
 
             <tr>
-                <td>Popularity</td>
+                <td class="movie-table-key">Popularity</td>
                 <td>{{popularity}}</td>
             </tr>
 
             <tr>
-                <td>Original Title</td>
+                <td class="movie-table-key">Original Title</td>
                 <td>{{original Title}}</td>
             </tr>
 
             <tr>
-                <td>Genre</td>
+                <td class="movie-table-key">Genre</td>
                 <td>{{genre_ids}}</td>
             </tr>
         </table>
 
-        <p class="reviews"> about{{overview}}</p>
-
-        <div class="buttons">
-            <button>add to Watched</button>
-            <button>add to queue</button>
-        </div>
+        <p class="modal-movie-reviews"> about{{overview}}</p>
 
     </div>
-</div>
