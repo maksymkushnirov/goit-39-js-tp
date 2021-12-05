@@ -1,7 +1,6 @@
-import '../sass/main.scss';
 
 const refs = {
-    logo: document.querySelector('.logo-link'),//Пошук Логотипа в Header
+    /* logo: document.querySelector('.logo-link'),//Пошук Логотипа в Header */
     btnHome: document.querySelector('[data-home]'), //Пошук кнопки HOME в Header
     btnLibrary: document.querySelector('[data-library]'),//Пошук кнопки LIBRARY в Header
     changeHeader: document.querySelector('.header'), //Пошук класу Header
@@ -11,11 +10,10 @@ const refs = {
     btnQueue: document.querySelector('[data-queue]'),//Пошук кнопки Queve в Header 
     };
 
-refs.btnLibrary.addEventListener('click', onBtnLibrary)//Виклик слухача на кнопку LIBRARY в Header 
-
-
+    refs.btnLibrary.addEventListener('click', onBtnLibrary)//Виклик слухача на кнопку LIBRARY в Header 
+    
 //Функція виконується при нажиманні на кнопку My Library
-function onBtnLibrary() {
+export function onBtnLibrary() {
     refs.btnHome.classList.remove('nav-item__list--activ');
     refs.btnLibrary.classList.add('nav-item__list--activ');
     refs.searchForm.classList.add('visually-hidden');
