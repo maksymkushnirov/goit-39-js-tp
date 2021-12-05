@@ -27,17 +27,17 @@
   left: 50%;
   opacity: 1;
 
-  width: 90%;
-  max-width: 450px;
-  height: 95%;
-  max-height: 609px;
+  transform: translate(-50%, -50%);
+
+  width: 450px;
+  height: 609px;
   overflow: scroll;
-  padding: 40px;
+  padding: 50px 30px;
   background-color: #ffffff;
 
   @media screen and (min-width: $desktop-min) {
-    max-width: 528px;
-    max-height: 580px;
+    width: 882px;
+    height: 568px;
     overflow: visible;
   }
 }
@@ -51,7 +51,7 @@
   align-items: center;
   width: 14px;
   height: 14px;
-  border: transparent;
+  //   border: transparent;
   background-color: transparent;
   cursor: pointer;
 }
