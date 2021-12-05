@@ -5,7 +5,7 @@ import { getGenres } from "./services/fetch-backend";
 
 const refs = {
   developer: document.querySelector(".footer-link"),
-  gallery: document.querySelector(".gallery")
+  gallery: document.querySelector(".card-list")
 };
 
 refs.developer.addEventListener("click", (e) => {
@@ -42,18 +42,19 @@ function markUpFilmCards(films) {
     // console.log(genre_ids)
     // let genresById = parsedGenres.filter(({ id }) =>  id>25 );
     // console.log(genresById)
-    // if (genresById.length > 3) {
-    //   genresById.splice(2, 2, "other")
-    // }
+    if (genre_ids.length > 3) {
+      genre_ids.splice(2, 10, "other...")
+    }
     // console.log(genresById)
-    return `<div class="">
-    <div class=""><img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="poster-film"></div>
-      <h2 class="">${title.toUpperCase() || name.toUpperCase()}</h2>
-      <div class="">
-        <p class="">${5} | ${release_date.slice(0, 4) || first_air_date.slice(0, 4)}</p>
-        <p class="">${vote_average}</p>
-      </div>
-      </div>`;
+    return `<li class="card-item">
+        <a class="link" href="#">
+        <div class=""><img class="card-image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="poster-film"></div>
+        <h2 class="card-title">${title.toUpperCase() || name.toUpperCase()}</h2>
+          <div class="card-description-container">
+            <p class="card-description">${genre_ids.join(", ")} | ${release_date.slice(0, 4) || first_air_date.slice(0, 4)}</p>
+          </div>
+      </a>
+    </li>`;
   }).join("");
 
   refs.gallery.insertAdjacentHTML("beforeend", markUp)
