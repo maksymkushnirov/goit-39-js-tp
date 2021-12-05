@@ -7,10 +7,12 @@
     <nav class="nav">
       <ul class="nav-item">
         <li class="nav-item__list">
-          <p class="nav-item__list-text">home</p>
+          <button class="nav-item__list-btn nav-item__list--activ" data-home>
+            home
+          </button>
         </li>
-        <li class="nav-item__list nav-item__list--activ">
-          <p class="nav-item__list-text">my library</p>
+        <li class="nav-item__list">
+          <button class="nav-item__list-btn" data-library>my library</button>
         </li>
       </ul>
     </nav>
@@ -24,10 +26,13 @@
       </p>
     </div>
     <div class="header-change__cont visually-hidden">
-      <button class="header-change__cont-btn header-change__cont-btn--activ">
+      <button
+        class="header-change__cont-btn header-change__cont-btn--activ"
+        data-watched
+      >
         Watched
       </button>
-      <button class="header-change__cont-btn">queue</button>
+      <button class="header-change__cont-btn" data-queue>queue</button>
     </div>
   </div>
 </header>
