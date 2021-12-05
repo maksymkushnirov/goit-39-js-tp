@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 40px;
-    padding-top: 20px;
 }
 
 .card-image {
@@ -20,11 +19,29 @@
     line-height: 1.16;
 }
 
+.card-description-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .card-description {
     color: #FF6B08;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;
+}
+
+.card-rating {
+    background: #FF6B01;
+    border-radius: 5px;
+    width: 36px;
+    height: 16px;
+    color: #FFFFFF;
+    font-size: 12px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: 10px;
 }
 
 @media screen and (max-width: $mobile-max) {
@@ -35,7 +52,6 @@
 
 @media screen and (min-width: $tablet-min) {
     .card-list {
-        padding-top: 60px;
         padding-bottom: 50px;
     }
 
@@ -68,12 +84,3 @@
         height: 398px;
     }
 }
-
-
-// <li class="card-item">
-//     <a href=""></a>
-//         <img src="" alt="" class="card-image" />
-//         <h2 class="card-title"> </h2>
-//         <p class="card-description"> | </p>
-//     </a>
-// </li>
