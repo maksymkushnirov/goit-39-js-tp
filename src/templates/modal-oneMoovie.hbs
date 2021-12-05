@@ -1,38 +1,37 @@
-<div class="img-container">
-    <div> <img src="{{poster_path}}" alt="{{}}"></div>
 
-    <div class="moovie-info">
-        <p class="title">{{title}}</p>
+    <div class="modal-img-container"> <img src="{{poster_path}}" alt="{{}}"></div>
 
-        <table class="table">
+    <div class="modal-movie-info">
+        <h2 class="modal-movie-title">{{title}}</h2>
 
-            <tr>
-                <td>Vote / Votes</td>
-                <td>{{vote_average}} / {{vote_count}}</td>
+        <table class="modal-movie-table">
+
+            <tr class="movie-table-row">
+                <td class="movie-table-data key">Vote / Votes</td>
+                <td class="movie-table-data value">{{vote_average}} / {{vote_count}}</td>
             </tr>
 
-            <tr>
-                <td>Popularity</td>
-                <td>{{popularity}}</td>
+            <tr class="movie-table-row">
+                <td class="movie-table-data key">Popularity</td>
+                <td class="movie-table-data value">{{popularity}}</td>
             </tr>
 
-            <tr>
-                <td>Original Title</td>
-                <td>{{original Title}}</td>
+            <tr class="movie-table-row">
+                <td class="movie-table-data key">Original Title</td>
+                <td class="movie-table-data value">{{original Title}}</td>
             </tr>
 
-            <tr>
-                <td>Genre</td>
-                <td>{{genre_ids}}</td>
+            <tr class="movie-table-row">
+                <td class="movie-table-data key">Genre</td>
+                <td class="movie-table-data value">{{genre_ids}}</td>
             </tr>
         </table>
 
-        <p class="reviews"> about{{overview}}</p>
-
-        <div class="buttons">
-            <button>add to Watched</button>
-            <button>add to queue</button>
-        </div>
-
+       <h3 class="movie-overview-title">ABOUT</h3>
+       <p class="modal-movie-overview">{{overview}}</p>
+       <div class="modal-buttons">
+            <button type="button" class="modal-button watched">ADD TO WATCHED</button>
+            <button type="button" class="modal-button queue">ADD TO QUEUE</button>
+       </div>
     </div>
-</div>
+    </div>
