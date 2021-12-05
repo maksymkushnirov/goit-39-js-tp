@@ -124,8 +124,6 @@ p {
 
 .footer-text {
   margin-bottom: 10px;
-  font-size: 14px;
-  line-height: 16px;
 }
 
 @media screen and (min-width: 768px) {
