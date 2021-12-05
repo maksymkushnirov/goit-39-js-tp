@@ -2,6 +2,7 @@ import '../sass/main.scss';
 import { instance } from "./team-members";
 import { getPopularFilms } from "./services/fetch-backend";
 import { getGenres } from "./services/fetch-backend";
+import onClickBtnLibrary from './onclick-my_library';
 
 let page = 1;
 const refs = {
@@ -15,6 +16,7 @@ refs.developer.addEventListener("click", (e) => {
 
 })
 
+onClickBtnLibrary()//Функція виконується при нажиманні на кнопку My Library
 
 getGenres()
   .then(value => {
