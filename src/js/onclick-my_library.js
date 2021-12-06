@@ -40,7 +40,9 @@ export function onBtnLibrary() {
 
 refs.logo.addEventListener('click', onLogo);
 refs.btnHome.addEventListener('click', onBtnHome);
-refs.btnLibrary.addEventListener('click', onBtnLibrary); //Виклик слухача на кнопку LIBRARY в Header
+refs.btnLibrary.addEventListener('click', onBtnLibrary); //Виклик слухача на кнопку LIBRARY 
+refs.btnWatched.addEventListener('click', onBtnWatchedInMyLibrary);//Виклик слухача на кнопку Watched
+refs.btnQueue.addEventListener('click', onBtnQueueInMyLibrary);//Виклик слухача на кнопку Queve
 
 refs.btnLibrary.classList.remove('nav-item__list--activ');
 
@@ -65,13 +67,13 @@ export function onBtnLibrary() {
   refs.searchForm.classList.add('visually-hidden');
   refs.openNextBtn.classList.remove('visually-hidden');
   refs.changeHeader.classList.add('header-change');
-  onBtnInMyLibrary();
+  onBtnWatchedInMyLibrary()
 /* >>>>>>> main */
 }
 
 // Функція - переключатель на кнопки Watchd і Queve в My LIBRARY
-function onBtnInMyLibrary() {
-/* <<<<<<< HEAD */
+/* function onBtnInMyLibrary() {
+
     refs.btnWatched.addEventListener('click', onBtnInMyLibrary);
     refs.btnQueue.addEventListener('click', onBtnInMyLibrary);
     if (!refs.btnWatched.classList.contains('header-change__cont-btn--activ')) {
@@ -85,7 +87,7 @@ function onBtnInMyLibrary() {
        
     };
     
-}
+} */
 
 
 
@@ -128,10 +130,8 @@ function markUpLibraryScreen() {
     }
   
 }
+//markUpLibraryScreen()
 
 
 
-/* ======= */
-  /* refs.btnWatched.classList.remove('header-change__cont-btn--activ');
-  refs.btnQueue.classList.add('header-change__cont-btn--activ'); */
 
