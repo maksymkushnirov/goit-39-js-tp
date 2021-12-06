@@ -16,7 +16,7 @@ refs.developer.addEventListener("click", (e) => {
 
 })
 
-onBtnLibrary()//Функція виконується при нажиманні на кнопку My Library
+// onBtnLibrary()//Функція виконується при нажиманні на кнопку My Library
 
 getGenres()
   .then(value => {
@@ -61,4 +61,7 @@ function markUpFilmCards(films) {
   }).join("");
 
   refs.gallery.insertAdjacentHTML("beforeend", markUp)
+};
+function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`
 };

@@ -1,4 +1,5 @@
 const refs = {
+    logo: document.querySelector('.logo-link'),
     btnHome: document.querySelector('[data-home]'), //Пошук кнопки HOME в Header
     btnLibrary: document.querySelector('[data-library]'),//Пошук кнопки LIBRARY в Header
     changeHeader: document.querySelector('.header'), //Пошук класу Header
@@ -6,23 +7,40 @@ const refs = {
     openNextBtn: document.querySelector('.header-change__cont'),//Пошук контейнера з кнопками Watchd і Queve в Header 
     btnWatched: document.querySelector('[data-watched]'),//Пошук кнопки Watched в Header 
     btnQueue: document.querySelector('[data-queue]'),//Пошук кнопки Queve в Header 
-    };
-
-    refs.btnLibrary.addEventListener('click', onBtnLibrary)//Виклик слухача на кнопку LIBRARY в Header 
+};
+    
+refs.logo.addEventListener('click', onLogo)
+refs.btnHome.addEventListener('click', onBtnHome)
+refs.btnLibrary.addEventListener('click', onBtnLibrary)//Виклик слухача на кнопку LIBRARY в Header 
+refs.btnLibrary.classList.remove('nav-item__list--activ');
    
-   
-   
+function onLogo(event) {
+    console.log(event)
+    // event.preventDefault()
+    refs.btnLibrary.classList.remove('nav-item__list--activ');
+    onBtnHome()
+}
+//Функція виконується при нажиманні на кнопку Home
+function onBtnHome() {
+    refs.btnHome.classList.add('nav-item__list--activ');
+    refs.btnLibrary.classList.remove('nav-item__list--activ');
+    refs.changeHeader.classList.remove('header-change');
+    refs.searchForm.classList.remove('visually-hidden');
+    refs.openNextBtn.classList.add('visually-hidden');
+    
+    
+}
      //Функція виконується при нажиманні на кнопку My Library
 export function onBtnLibrary() {
-    /* refs.btnHome.classList.remove('nav-item__list--activ');
+    refs.btnHome.classList.remove('nav-item__list--activ');
     refs.btnLibrary.classList.add('nav-item__list--activ');
     refs.searchForm.classList.add('visually-hidden');
     refs.openNextBtn.classList.remove('visually-hidden');
     refs.changeHeader.classList.add('header-change');
-    onBtnInMyLibrary(); */
+    onBtnInMyLibrary(); 
 }
 
-//Функція - переключатель на кнопки Watchd і Queve в My LIBRARY 
+// Функція - переключатель на кнопки Watchd і Queve в My LIBRARY 
 function onBtnInMyLibrary() {
     refs.btnWatched.addEventListener('click', onBtnInMyLibrary);
     refs.btnQueue.addEventListener('click', onBtnInMyLibrary);
