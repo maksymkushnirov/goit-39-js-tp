@@ -16,7 +16,7 @@ refs.developer.addEventListener("click", (e) => {
 
 })
 
-onBtnLibrary()//Функція виконується при нажиманні на кнопку My Library
+// onBtnLibrary()//Функція виконується при нажиманні на кнопку My Library
 
 getGenres()
   .then(value => {
