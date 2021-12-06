@@ -2,6 +2,7 @@ import '../sass/main.scss';
 import { instance } from "./team-members";
 import { getPopularFilms } from "./services/fetch-backend";
 import { getGenres } from "./services/fetch-backend";
+import { replaceGenresById } from "./services/replace_genres_by_id";
 import { onBtnLibrary } from './onclick-my_library';
 import { markUpPopularFilmGallery } from "./mark_up_popular_film_gallery";
 
@@ -26,17 +27,8 @@ getGenres() //Функція приймає жанри з бекенду і за
 
 getPopularFilms(page) //Функція приймає популярні фільми з бекенду(перші 20), рендерить їх в html і записує в локальне сховище
   .then(films => {
-    films.results.map(film => {
-      const genres = localStorage.getItem("genres");
-      const parsedGenres = JSON.parse(genres);
-      const genresById = parsedGenres.genres.filter(({ id }) => film.genre_ids.includes(id));
-      const arrayGenres = genresById.map(genre => {
-        return  genre.name
-      })
-        if (arrayGenres.length > 3) {
-          arrayGenres.splice(2, 10, "other...")
-        }
-      film.genre_ids = arrayGenres;
+    films.results.map(filmData => {
+      replaceGenresById(filmData); //Функція добавляє назви жанрів по id
     })
   
     localStorage.setItem("films_from_beckend", JSON.stringify(films.results));
