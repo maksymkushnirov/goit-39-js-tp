@@ -1,52 +1,52 @@
 .modal--design {
-	background-color: rgba(247, 241, 241, 0.89);
-	padding: 5px 0 5px 0;
-	width: 320px;
+  background-color: rgba(247, 241, 241, 0.89);
+  padding: 5px 0 5px 0;
+  width: 320px;
 }
 
 .modal__close {
-	display: block;
-	text-align: center;
-	padding: 0 5px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 100px;
-	font-size: 20px;
-	font-weight: 500;
-	text-align: center;
-	color: $dark-grey-color-text;
-	cursor: pointer;
-	border: 1px solid $dark-grey-color-text;
-	border-radius: 10px;
+  display: block;
+  text-align: center;
+  padding: 0 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: $dark-grey-color-text;
+  cursor: pointer;
+  border: 1px solid $dark-grey-color-text;
+  border-radius: 10px;
 
-	&:hover {
-		background-color: $accent-color;
-		transition: background-color 350ms cubic-bezier(0.4, 0, 0.2, 1);
-	}
+  &:hover {
+    background-color: $accent-color;
+    transition: background-color 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 .modal__team-head {
-	text-align: center;
-	font-family: $main-font;
+  text-align: center;
+  font-family: $main-font;
 }
 
 .modal-team-list {
-	margin: 20px 0 35px 0;
-	padding-left: 10px;
+  margin: 20px 0 35px 0;
+  padding-left: 10px;
 }
 
 .modal-team-list__item {
-	&:not(:last-child) {
-		margin-bottom: 10px;
-	}
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
 .modal-team-list__link {
-	font-size: 22px;
-	font-weight: 400;
-	font-family: $main-font;
-	&:hover {
-		color: green;
-		transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	}
+  font-size: 22px;
+  font-weight: 400;
+  font-family: $main-font;
+  &:hover {
+    color: green;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }

@@ -14,7 +14,7 @@ body {
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
@@ -100,8 +100,10 @@ p {
     padding: 0px 20px;
   }
   .header {
-    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/rectangle3.jpg), center, no-repeat;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle3.jpg), center, no-repeat;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))),
+      url(../images/rectangle3.jpg), center, no-repeat;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle3.jpg),
+      center, no-repeat;
     background-size: cover;
   }
   .logo-link {
@@ -126,8 +128,10 @@ p {
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .header {
-    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/rectangle2.jpg), center, no-repeat;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle2.jpg), center, no-repeat;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))),
+      url(../images/rectangle2.jpg), center, no-repeat;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle2.jpg),
+      center, no-repeat;
     background-size: cover;
   }
   .cont-header {
@@ -136,12 +140,12 @@ p {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
   }
   .logo-link {
     margin-right: 303px;
@@ -165,8 +169,10 @@ p {
 
 @media screen and (min-width: 1024px) {
   .header {
-    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/rectangle1.jpg), center, no-repeat;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle1.jpg), center, no-repeat;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))),
+      url(../images/rectangle1.jpg), center, no-repeat;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle1.jpg),
+      center, no-repeat;
     background-size: cover;
   }
   .logo-link {
@@ -190,8 +196,10 @@ p {
 }
 
 .header-change {
-  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/rectangle4.jpg), center, no-repeat;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle4.jpg), center, no-repeat;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))),
+    url(../images/rectangle4.jpg), center, no-repeat;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle4.jpg), center,
+    no-repeat;
   background-size: cover;
 }
 
@@ -201,12 +209,12 @@ p {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
 
 .logo-link {
@@ -272,18 +280,18 @@ p {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .search {
   padding: 0;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-bottom: 22px;
   background-color: transparent;
   border: none;
@@ -367,8 +375,8 @@ p {
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   justify-items: center;
 }
 
@@ -380,11 +388,11 @@ p {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 }
 
@@ -438,7 +446,7 @@ p {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     margin-left: -30px;
     margin-bottom: -30px;
   }
@@ -486,7 +494,7 @@ p {
 
 .modal__team-head {
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .modal-team-list {
@@ -502,7 +510,7 @@ p {
   color: inherit;
   font-size: 22px;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .modal-team-list__link:hover {
@@ -517,8 +525,8 @@ p {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding-bottom: 40px;
   padding-top: 20px;
 }
@@ -538,7 +546,7 @@ p {
 }
 
 .card-description {
-  color: #FF6B08;
+  color: #ff6b08;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
@@ -558,16 +566,16 @@ p {
   .card-list {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     margin-left: -30px;
     margin-top: -30px;
   }
   .card-item {
     -ms-flex-preferred-size: calc(100% / 2 - 30px);
-        flex-basis: calc(100% / 2 - 30px);
+    flex-basis: calc(100% / 2 - 30px);
     margin-left: 30px;
     margin-top: 30px;
   }
@@ -580,7 +588,7 @@ p {
 @media screen and (min-width: 1024px) {
   .card-item {
     -ms-flex-preferred-size: calc(100% / 3 - 30px);
-        flex-basis: calc(100% / 3 - 30px);
+    flex-basis: calc(100% / 3 - 30px);
   }
   .card-image {
     width: 274px;
@@ -596,7 +604,7 @@ p {
 
 .backdrop.is-hidden .modal {
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   opacity: 0;
 }
 
@@ -640,8 +648,8 @@ p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 14px;
   height: 14px;
   border: transparent;
@@ -654,11 +662,11 @@ p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .modal-movie-info {

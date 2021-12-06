@@ -3,12 +3,8 @@
     padding: 0px 20px;
   }
   .header {
-    background: linear-gradient(
-        to left,
-        rgba(0, 0, 0, 0.56),
-        rgba(0, 0, 0, 0.56)
-      ),
-      url(../images/rectangle3.jpg), center, no-repeat;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle3.jpg),
+      center, no-repeat;
     background-size: cover;
   }
   .logo-link {
@@ -33,12 +29,8 @@
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .header {
-    background: linear-gradient(
-        to left,
-        rgba(0, 0, 0, 0.56),
-        rgba(0, 0, 0, 0.56)
-      ),
-      url(../images/rectangle2.jpg), center, no-repeat;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle2.jpg),
+      center, no-repeat;
     background-size: cover;
   }
   .cont-header {
@@ -70,12 +62,8 @@
 }
 @media screen and (min-width: 1024px) {
   .header {
-    background: linear-gradient(
-        to left,
-        rgba(0, 0, 0, 0.56),
-        rgba(0, 0, 0, 0.56)
-      ),
-      url(../images/rectangle1.jpg), center, no-repeat;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle1.jpg),
+      center, no-repeat;
     background-size: cover;
   }
 
@@ -100,8 +88,8 @@
   }
 }
 .header-change {
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(../images/rectangle4.jpg), center, no-repeat;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle4.jpg), center,
+    no-repeat;
   background-size: cover;
 }
 .cont-header {
@@ -150,8 +138,7 @@
 
   &:hover {
     color: $accent-color;
-    box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 1px 2px rgb(0 0 0 / 8%),
-      0px 2px 2px rgb(0 0 0 / 12%);
+    box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 1px 2px rgb(0 0 0 / 8%), 0px 2px 2px rgb(0 0 0 / 12%);
   }
 }
 
