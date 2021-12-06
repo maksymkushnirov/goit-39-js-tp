@@ -61,7 +61,7 @@ function markUpLibraryScreen() {
     if (localStorage.getItem("key") === null || localStorage.getItem("key") === null ) {//Потрібно поєднати ключ localStorage з Дмитром
         refs.gallery.innerHTML =
         `<p class="library-screen__text">The library is currently empty!</p>
-        <img src="./images/svg/film.svg" alt="logo" />`
+        <img src="https://assets.materialup.com/uploads/b17ea0c7-df76-4ce1-bf82-4a2cf6ae866d/preview.jpg" alt="logo" />`
     } else {
         //додається функція Дмитра//
     }
