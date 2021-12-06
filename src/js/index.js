@@ -3,7 +3,7 @@ import { instance } from "./team-members";
 import { getPopularFilms } from "./services/fetch-backend";
 import { getGenres } from "./services/fetch-backend";
 import { onBtnLibrary } from './onclick-my_library';
-
+import './modal.js';
 let page = 1;
 const refs = {
   developer: document.querySelector(".footer-link"),
@@ -49,12 +49,12 @@ function markUpFilmCards(films) {
       genre_ids.splice(2, 10, "other...")
     }
     // console.log(genresById)
-    return `<li class="card-item">
-        <a class="link" href="#">
-        <div class=""><img class="card-image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="poster-film"></div>
-        <h2 class="card-title">${title.toUpperCase() || name.toUpperCase()}</h2>
-          <div class="card-description-container">
-            <p class="card-description">${genre_ids.join(", ")} | ${release_date.slice(0, 4) || first_air_date.slice(0, 4)}</p>
+    return `<li class="card-item modalBtn" data-id="${film.id}" >
+        <a class="link modalBtn" href="#" data-id="${film.id}" >
+        <div class=""><img class="card-image modalBtn" data-id="${film.id}" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="poster-film"></div>
+        <h2 class="card-title modalBtn" data-id="${film.id}">${title.toUpperCase() || name.toUpperCase()}</h2>
+          <div class="card-description-container modalBtn" data-id="${film.id}">
+            <p class="card-description modalBtn" data-id="${film.id}">>${genre_ids.join(", ")} | ${release_date.slice(0, 4) || first_air_date.slice(0, 4)}</p>
           </div>
       </a>
     </li>`;
