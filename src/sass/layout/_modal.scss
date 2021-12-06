@@ -31,7 +31,7 @@
   height: 609px;
   overflow: scroll;
   padding: 50px 30px;
-  background-color: #ffffff;
+  background-color: $white-color;
 
   @media screen and (min-width: $desktop-min) {
     width: 882px;

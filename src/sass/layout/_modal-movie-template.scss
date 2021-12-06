@@ -9,36 +9,44 @@
 }
 
 .modal-movie-title {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-weight: 500;
   font-size: 30px;
   line-height: 1.16;
 }
 
 .modal-movie-table {
-  margin-bottom: 15px;
+  width: 100%;
+  margin-bottom: 20px;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
 }
 
+.movie-table-row {
+  display: block;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
 .movie-table-data {
-  padding: 5px 0px;
-  height: 100%;
+  display: inline-block;
 
   &.key {
+    width: 40%;
     color: $light-grey-color-text;
-    width: 55%;
   }
 
-  &.value__accent {
+  &.value .value__accent {
     padding: 1px 9px;
     background-color: $accent-color;
     color: $white-color;
     border-radius: 5px;
   }
 
-  &.value__grey {
+  &.value .value__grey {
     padding: 1px 4px;
     background-color: $grey-color-background;
     border-radius: 5px;
@@ -50,6 +58,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
+  text-transform: uppercase;
 }
 
 .modal-movie-overview {
@@ -58,29 +67,4 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.67;
-}
-
-.modal-button {
-  padding: 14px 10px;
-  min-width: 136px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:not(:last-child) {
-    margin-right: 15px;
-  }
-
-  &.watched {
-    color: $white-color;
-    background-color: $accent-color;
-    border: transparent;
-  }
-
-  &.queue {
-    background-color: $white-color;
-    border: 1px solid black;
-  }
 }
