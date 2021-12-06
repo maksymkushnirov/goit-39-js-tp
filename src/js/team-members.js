@@ -1,7 +1,8 @@
-import * as basicLightbox from 'basiclightbox'
-import "basiclightbox/dist/basicLightbox.min.css"
+import * as basicLightbox from 'basiclightbox';
+import 'basiclightbox/dist/basicLightbox.min.css';
 
-export const instance = basicLightbox.create(`
+export const instance = basicLightbox.create(
+  `
     <div class="modal modal--design">
         <h1 class="modal__team-head">Developed by:</h1>
         <ul class="modal-team-list">
@@ -17,21 +18,23 @@ export const instance = basicLightbox.create(`
             <li class="modal-team-list__item"><a href="https://github.com/oleg634996" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">- Oleg Kolodiy</a></li>
         </ul>
         <a class="modal__close">Close</a>
-    </div>`, {
-    onShow: (instance) => {
-        instance.element().querySelector('.modal__close').onclick = instance.close;
-            window.addEventListener("keydown", onEscKeydown);
-            document.body.style.overflow = "hidden";
+    </div>`,
+  {
+    onShow: instance => {
+      instance.element().querySelector('.modal__close').onclick =
+        instance.close;
+      window.addEventListener('keydown', onEscKeydown);
+      document.body.style.overflow = 'hidden';
     },
     onClose: () => {
-        window.removeEventListener("keydown", onEscKeydown)
-        document.body.style.overflow = "initial";
-    }
-});
-
+      window.removeEventListener('keydown', onEscKeydown);
+      document.body.style.overflow = 'initial';
+    },
+  },
+);
 
 function onEscKeydown(event) {
-    if (event.code === "Escape") {
-        instance.close();
-    }
+  if (event.code === 'Escape') {
+    instance.close();
+  }
 }
