@@ -9,21 +9,16 @@ const refs = {
   developer: document.querySelector(".footer-link"),
   gallery: document.querySelector(".card-list")
 };
-
 refs.developer.addEventListener("click", (e) => {
   e.preventDefault();
   instance.show();
-
 })
-
 // onBtnLibrary()//Функція виконується при нажиманні на кнопку My Library
-
 getGenres()
   .then(value => {
     localStorage.setItem("genres", JSON.stringify(value));
   })
   .catch(error => console.log(error))
-
 getPopularFilms(page)
   .then(films => {
     console.log(films.results)
@@ -31,9 +26,7 @@ getPopularFilms(page)
     markUpFilmCards(films.results);
   })
   .catch(error => console.log(error))
-
  
-
 function markUpFilmCards(films) {
   const genres = localStorage.getItem("genres");
   const parsedGenres = JSON.parse(genres);
@@ -59,6 +52,5 @@ function markUpFilmCards(films) {
       </a>
     </li>`;
   }).join("");
-
   refs.gallery.insertAdjacentHTML("beforeend", markUp)
 };
