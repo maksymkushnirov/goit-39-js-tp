@@ -1,7 +1,8 @@
-import '../sass/main.scss';
+import "../sass/main.scss";
 import { instance } from "./team-members";
 import { getPopularFilms } from "./services/fetch-backend";
 import { getGenres } from "./services/fetch-backend";
+
 import { replaceGenresById } from "./services/replace_genres_by_id";
 import { onBtnLibrary } from './onclick-my_library';
 import { markUpPopularFilmGallery } from "./mark_up_popular_film_gallery";
@@ -17,7 +18,7 @@ refs.developer.addEventListener("click", (e) => {
   instance.show();
 })
 
-onBtnLibrary()//Функція виконується при нажиманні на кнопку My Library
+// onBtnLibrary()//Функція виконується при нажиманні на кнопку My Library
 
 getGenres() //Функція приймає жанри з бекенду і записує в локальне сховище
   .then(value => {
@@ -37,5 +38,7 @@ getPopularFilms(page) //Функція приймає популярні філ�
   .catch(error => console.log(error))
 
  
+
+
 
 
