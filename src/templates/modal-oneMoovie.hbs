@@ -8,7 +8,7 @@
 
             <tr class="movie-table-row">
                 <td class="movie-table-data key">Vote / Votes</td>
-                <td class="movie-table-data value">{{vote_average}} / {{vote_count}}</td>
+                <td class="movie-table-data value"><span class="value__accent">{{vote_average}}</span> / <span class="value__grey">{{vote_count}}</span> </td>
             </tr>
 
             <tr class="movie-table-row">
@@ -27,11 +27,11 @@
             </tr>
         </table>
 
-       <h3 class="movie-overview-title">ABOUT</h3>
+       <h3 class="movie-overview-title">About</h3>
        <p class="modal-movie-overview">{{overview}}</p>
        <div class="modal-buttons">
-            <button type="button" class="modal-button watched">ADD TO WATCHED</button>
-            <button type="button" class="modal-button queue">ADD TO QUEUE</button>
+            <button type="button" class="modal-button watched" data-action="add-to-watched">Add to watched</button>
+            <button type="button" class="modal-button queue" data-action="add-to-queue">Add to queue</button>
        </div>
     </div>
     </div>
