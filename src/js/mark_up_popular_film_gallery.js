@@ -23,4 +23,3 @@ export function markUpPopularFilmGallery(films) {
 
   gallery.insertAdjacentHTML('beforeend', markUp);
 }
-

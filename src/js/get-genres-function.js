@@ -4,4 +4,4 @@ getGenres()
   .then((value) => {
     localStorage.setItem('genres', JSON.stringify(value));
   })
-  .catch(error => console.log(error))
+  .catch((error) => console.log(error));

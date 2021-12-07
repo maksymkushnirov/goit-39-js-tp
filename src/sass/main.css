@@ -825,4 +825,144 @@ img {
   background-color: #ffffff;
   border: 1px solid black;
 }
+
+.loader-center {
+  background-color: transparent;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.loader-list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -90px 0 0 -80px;
+}
+
+.loader {
+  position: absolute;
+  top: 80px;
+  left: 65px;
+  color: white;
+  border-radius: 50%;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+}
+
+.loader-top {
+  position: absolute;
+  border: 5px solid transparent;
+  border-top-color: #ddc913;
+  border-radius: 50%;
+  -webkit-animation: loading linear infinite;
+  animation: loading linear infinite;
+}
+
+.loader-bottom {
+  position: absolute;
+  border: 5px solid transparent;
+  border-bottom-color: #ff5e00;
+  border-radius: 50%;
+  -webkit-animation: loading linear infinite;
+  animation: loading linear infinite;
+}
+
+.loader-top.one {
+  top: 24px;
+  left: 15px;
+  width: 120px;
+  height: 120px;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.loader-top.two {
+  top: 37px;
+  left: 30px;
+  width: 90px;
+  height: 90px;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+}
+
+.loader-top.three {
+  top: 50px;
+  left: 40px;
+  width: 70px;
+  height: 70px;
+  -webkit-animation-duration: 1.4s;
+          animation-duration: 1.4s;
+}
+
+.loader-top.four {
+  top: 64px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  -webkit-animation-duration: 1.6s;
+          animation-duration: 1.6s;
+}
+
+.loader-bottom.one {
+  top: 23px;
+  left: 15px;
+  width: 120px;
+  height: 120px;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.loader-bottom.two {
+  top: 42px;
+  left: 30px;
+  width: 90px;
+  height: 90px;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+}
+
+.loader-bottom.three {
+  top: 51px;
+  left: 40px;
+  width: 70px;
+  height: 70px;
+  -webkit-animation-duration: 1.4s;
+          animation-duration: 1.4s;
+}
+
+.loader-bottom.four {
+  top: 59px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  -webkit-animation-duration: 1.6s;
+          animation-duration: 1.6s;
+}
+
+@-webkit-keyframes loading {
+  from {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+  to {
+    -webkit-transform: rotateZ(0);
+    transform: rotateZ(0);
+  }
+}
+
+@keyframes loading {
+  from {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+  to {
+    -webkit-transform: rotateZ(0);
+    transform: rotateZ(0);
+  }
+}
 /*# sourceMappingURL=main.css.map */

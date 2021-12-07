@@ -1,9 +1,9 @@
 import axios from 'axios';
 const API_KEY = 'b62c635c7989a5db57e410f2e5aadf4e';
-const spinner = document.getElementById("loading");
+const spinner = document.getElementById('loading');
 
 export async function getPopularFilms(page) {
-  spinner.classList.remove("visually-hidden")
+  spinner.classList.remove('visually-hidden');
   const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&page=${page}`);
   return response.data;
 }

@@ -2,7 +2,7 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
 const refs = {
-  developer: document.querySelector('.footer-link'),
+  developer: document.querySelector('.footer-link')
 };
 
 const instance = basicLightbox.create(
@@ -41,7 +41,6 @@ function onEscKeydown(event) {
     instance.close();
   }
 }
-
 
 refs.developer.addEventListener('click', (e) => {
   e.preventDefault();
