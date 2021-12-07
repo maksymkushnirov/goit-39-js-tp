@@ -1,5 +1,5 @@
 <div class='modal-img-container'>
-  <img src='https://image.tmdb.org/t/p/w500{{poster_path}}' alt='{{title}}' />
+  <img class='modal-img' src='https://image.tmdb.org/t/p/w500{{poster_path}}' alt='{{title}}' />
 </div>
 
 <div class='modal-movie-info'>
@@ -16,7 +16,9 @@
         <span class='value__accent'>
           {{vote_average}}
         </span>
-        /
+        <span class='value__slash'>
+          /
+        </span>
         <span class='value__grey'>
           {{vote_count}}
         </span>
@@ -36,7 +38,7 @@
       <td class='movie-table-data key'>
         Original Title
       </td>
-      <td class='movie-table-data value'>
+      <td class='movie-table-data value value__title'>
         {{original_title}}
       </td>
     </tr>

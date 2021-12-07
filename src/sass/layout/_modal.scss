@@ -30,7 +30,10 @@
   width: 450px;
   height: 609px;
   overflow: scroll;
-  padding: 50px 30px;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 40px;
+  padding-left: 30px;
   background-color: $white-color;
 
   @media screen and (min-width: $desktop-min) {
@@ -42,13 +45,14 @@
 
 .modal-close-btn {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 10px;
+  right: 10px;
 
   display: flex;
   align-items: center;
-  width: 14px;
-  height: 14px;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
   border: transparent;
   background-color: transparent;
   cursor: pointer;
