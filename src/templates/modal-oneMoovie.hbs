@@ -1,38 +1,40 @@
+<div class="modal-img-container"> <img class="img-mdl" src="https://image.tmdb.org/t/p/w500{{poster_path}}"
+        alt="{{title}}">
+</div>
 
-    <div class="modal-img-container"> <img class="img-mdl" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}"></div>
+<div class="modal-movie-info">
+    <h2 class="modal-movie-title">{{title}}</h2>
 
-    <div class="modal-movie-info">
-        <h2 class="modal-movie-title">{{title}}</h2>
+    <table class="modal-movie-table">
 
-        <table class="modal-movie-table">
+        <tr class="movie-table-row">
+            <td class="movie-table-data key">Vote / Votes</td>
+            <td class="movie-table-data value"><span class="value__accent">{{vote_average}}</span> / <span
+                    class="value__grey">{{vote_count}}</span> </td>
+        </tr>
 
-            <tr class="movie-table-row">
-                <td class="movie-table-data key">Vote / Votes</td>
-                <td class="movie-table-data value"><span class="value__accent">{{vote_average}}</span> / <span class="value__grey">{{vote_count}}</span> </td>
-            </tr>
+        <tr class="movie-table-row">
+            <td class="movie-table-data key">Popularity</td>
+            <td class="movie-table-data value">{{popularity}}</td>
+        </tr>
 
-            <tr class="movie-table-row">
-                <td class="movie-table-data key">Popularity</td>
-                <td class="movie-table-data value">{{popularity}}</td>
-            </tr>
+        <tr class="movie-table-row">
+            <td class="movie-table-data key">Original Title</td>
+            <td class="movie-table-data value">{{original_title}}</td>
+        </tr>
 
-            <tr class="movie-table-row">
-                <td class="movie-table-data key">Original Title</td>
-                <td class="movie-table-data value">{{original_title}}</td>
-            </tr>
+        <tr class="movie-table-row">
+            <td class="movie-table-data key">Genre</td>
+            <td class="movie-table-data value">{{genre_ids}}</td>
+        </tr>
+    </table>
 
-            <tr class="movie-table-row">
-                <td class="movie-table-data key">Genre</td>
-                <td class="movie-table-data value">{{genre_ids}}</td>
-            </tr>
-        </table>
-
-       <h3 class="movie-overview-title">About</h3>
-       <p class="modal-movie-overview">{{overview}}</p>
-       <div class="modal-buttons">
-            <button type="button" class="modal-button watched" data-action="add-to-watched">Add to watched</button>
-            <button type="button" class="modal-button queue" data-action="add-to-queue">Add to queue</button>
-       </div>
-       
+    <h3 class="movie-overview-title">About</h3>
+    <p class="modal-movie-overview">{{overview}}</p>
+    <div class="modal-buttons">
+        <button type="button" class="modal-button watched" data-action="add-to-watched">Add to watched</button>
+        <button type="button" class="modal-button queue" data-action="add-to-queue">Add to queue</button>
     </div>
-    </div>
+
+</div>
+</div>

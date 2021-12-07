@@ -1,46 +1,53 @@
+
 import modalMovieCard from "../templates/modal-oneMoovie.hbs"
 const close = document.querySelector('.modal-close-icon')
 const modalWindow = document.querySelector('.modal-movie-template')
 const galery = document.querySelector('.gallery')
 const modalBackdrop = document.querySelector('.backdrop')
-const modalImg = document.querySelector('img-mdl')
+const modalImg = document.querySelector('.img-mdl')
 const BASE_URL = 'https://api.themoviedb.org/3/'
 const KEY = 'fe9ed89434aaae0a5431bf6fa09118e9'
+
+
 // ============================================================================
-close.addEventListener('click', closeModal)
+close.addEventListener('click', closeModal);
 galery.addEventListener('click', (e) => {
+
    const id = e.target.getAttribute('data-id');
    e.preventDefault()
    getIdMovie;
     openModal(id)
 })
+
+
+
 // close по escape==============================================================================
 window.addEventListener('keydown', (e) => {
-  const condition = e.code === 'Escape'
-    
+  const condition = e.code === 'Escape';
+
   if (condition) {
-    closeModal()
+    closeModal();
   }
-})
+});
 // close по бекдропу==========================================================================
 modalBackdrop.addEventListener('click', (e) => {
- 
-  const condition = e.target.classList.contains('backdrop')
+  const condition = e.target.classList.contains('backdrop');
   if (condition) {
-    closeModal()
+    closeModal();
   }
-})
+});
 // ============================================================================
 function getIdMovie() {
-   const condition = e.target.className === "modalBtn"
-     if (condition) {
-      const id = e.target.getAttribute('data-id')
-   }
+  const condition = e.target.className === 'modalBtn';
+  if (condition) {
+    const id = e.target.getAttribute('data-id');
+  }
 }
 // =====================================================================================================================================
 fetchMovieModal();
 
 async function fetchMovieModal() {
+
    
    const data = await fetch(`${BASE_URL}trending/movie/day?api_key=${KEY}&language=en-US`)
       .then(response => {
@@ -49,12 +56,11 @@ async function fetchMovieModal() {
          }
          return response.json()
        });
-   // const cardCreate = createCard(data)
+
 
 }
 // открытие модалки===отрисовка контента в модалку===апи запрос 1-го элемента по id
 async function openModal(id) {
-   console.log(id);
    
     modalBackdrop.classList.remove('is-hidden')
     const infoMovie = await fetch(`${BASE_URL}movie/${id}?api_key=${KEY}&language=en-US`)
@@ -74,3 +80,5 @@ function closeModal() {
    modalImg.setAttribute('src', "")  // зачистка src
     
 }
+
+
