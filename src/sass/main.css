@@ -14,7 +14,7 @@ body {
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
@@ -105,8 +105,10 @@ img {
     padding: 0px 20px;
   }
   .header {
-    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/rectangle3.jpg), center, no-repeat;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle3.jpg), center, no-repeat;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))),
+      url(../images/rectangle3.jpg), center, no-repeat;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle3.jpg),
+      center, no-repeat;
     background-size: cover;
   }
   .logo-link {
@@ -131,8 +133,10 @@ img {
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .header {
-    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/rectangle2.jpg), center, no-repeat;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle2.jpg), center, no-repeat;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))),
+      url(../images/rectangle2.jpg), center, no-repeat;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle2.jpg),
+      center, no-repeat;
     background-size: cover;
   }
   .cont-header {
@@ -141,12 +145,12 @@ img {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
   }
   .logo-link {
     margin-right: 303px;
@@ -170,8 +174,10 @@ img {
 
 @media screen and (min-width: 1024px) {
   .header {
-    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/rectangle1.jpg), center, no-repeat;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle1.jpg), center, no-repeat;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))),
+      url(../images/rectangle1.jpg), center, no-repeat;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle1.jpg),
+      center, no-repeat;
     background-size: cover;
   }
   .logo-link {
@@ -195,8 +201,10 @@ img {
 }
 
 .header-change {
-  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/rectangle4.jpg), center, no-repeat;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle4.jpg), center, no-repeat;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))),
+    url(../images/rectangle4.jpg), center, no-repeat;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/rectangle4.jpg), center,
+    no-repeat;
   background-size: cover;
 }
 
@@ -206,12 +214,12 @@ img {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
 
 .logo-link {
@@ -262,7 +270,7 @@ img {
 .nav-item__list-btn:hover {
   color: #ff6b01;
   -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-          box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .nav-item__list--activ {
@@ -287,18 +295,18 @@ img {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .search {
   padding: 0;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-bottom: 22px;
   background-color: transparent;
   border: none;
@@ -385,8 +393,8 @@ img {
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   justify-items: center;
 }
 
@@ -398,11 +406,11 @@ img {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 }
 
@@ -517,7 +525,7 @@ img {
 
 .modal__team-head {
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .modal-team-list {
@@ -532,7 +540,7 @@ img {
 .modal-team-list__link {
   font-size: 22px;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .modal-team-list__link:hover {
@@ -547,8 +555,8 @@ img {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding-bottom: 40px;
 }
 
@@ -572,8 +580,8 @@ img {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .card-description {
@@ -591,8 +599,8 @@ img {
   color: #ffffff;
   font-size: 12px;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: center;
   text-transform: uppercase;
   margin-left: 10px;
@@ -612,16 +620,16 @@ img {
   .card-list {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     margin-left: -30px;
     margin-top: -30px;
   }
   .card-item {
     -ms-flex-preferred-size: calc(100% / 2 - 30px);
-        flex-basis: calc(100% / 2 - 30px);
+    flex-basis: calc(100% / 2 - 30px);
     margin-left: 30px;
     margin-top: 30px;
   }
@@ -634,7 +642,7 @@ img {
 @media screen and (min-width: 1024px) {
   .card-item {
     -ms-flex-preferred-size: calc(100% / 3 - 30px);
-        flex-basis: calc(100% / 3 - 30px);
+    flex-basis: calc(100% / 3 - 30px);
   }
   .card-image {
     width: 274px;
@@ -670,7 +678,7 @@ img {
   left: 50%;
   opacity: 1;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 450px;
   height: 609px;
   overflow: scroll;
@@ -694,8 +702,8 @@ img {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 14px;
   height: 14px;
   border: transparent;
@@ -708,11 +716,11 @@ img {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .modal-movie-info {
