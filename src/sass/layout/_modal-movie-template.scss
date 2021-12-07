@@ -4,7 +4,14 @@
   justify-content: space-between;
 }
 
+.modal-img {
+  width: 395px;
+  height: 477px;
+  border-radius: 5px;
+}
+
 .modal-movie-info {
+  align-self: start;
   margin-left: 30px;
 }
 
@@ -13,6 +20,7 @@
   font-weight: 500;
   font-size: 30px;
   line-height: 1.16;
+  text-transform: uppercase;
 }
 
 .modal-movie-table {
@@ -39,17 +47,27 @@
     color: $light-grey-color-text;
   }
 
-  &.value .value__accent {
+  & .value__accent {
     padding: 1px 9px;
+    margin-right: 4px;
     background-color: $accent-color;
     color: $white-color;
     border-radius: 5px;
   }
 
-  &.value .value__grey {
+  & .value__slash {
+    color: $light-grey-color-text;
+  }
+
+  & .value__grey {
     padding: 1px 4px;
+    margin-left: 3px;
     background-color: $grey-color-background;
     border-radius: 5px;
+  }
+
+  &.value__title {
+    text-transform: uppercase;
   }
 }
 
