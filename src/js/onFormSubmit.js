@@ -1,42 +1,47 @@
+import * as apiServices from "./services/fetch-backend";
+import { markUpPopularFilmGallery } from './mark_up_popular_film_gallery';
+
 const refs = {
   searchForm: document.querySelector('.search-form'),
   headerErrorText: document.querySelector('.header-error__text'),
-  section: document.querySelector('.section')
+  gallery: document.querySelector('.gallery'),
+  btnspin: document.querySelector('btn-search'),
 };
 
-const onFormSubmit = () => {
-  refs.searchForm.addEventListener('submit', (event) => {
+let page = 1;
+let searchQuery = '';
+let totalHits;
+
+refs.searchForm.addEventListener('submit', onSubmitClick);
+refs.btnspin.addEventListener('click', onMoreLoadBtnClick);
+
+function onSubmitClick(event) {
     event.preventDefault();
+    searchQuery = event.currentTarget.elements.searchQuery.value;
+    refs.gallery.innerHTML = '';
+    page = 1;
+
     const form = event.currentTarget;
     const inputValue = form.elements.query.value;
-    if (!inputValue) {
-      refs.headerErrorText.textContent = 'Search result not successfull. Enter correct movie name and try again';
-      return;
-    }
-    console.log(inputValue);
-    if (inputValue) {
-      refs.headerErrorText.textContent = '';
-      refs.section.innerHTML = '';
-      startSpin();
-      apiServices
-        .fetchByQuery(inputValue, 1)
-        .then((data) => {
-          if (data.length === 0) {
-            refs.headerErrorText.textContent = 'Search result not successfull. Enter correct movie name and try again';
-            stopSpin();
-            throw new Error('Search result not successfull. Enter correct movie name and try again');
-          }
-          homePage(data, refs.section);
-        })
-        .then(() => stopSpin())
-        .then(() => clickListener())
-        .catch((error) => {
-          console.log(error);
-        });
-      Pagination.clear();
-      form.reset();
-    }
-  });
-};
 
-export default onFormSubmit;
+    if(searchQuery === '') {
+      return refs.headerErrorText.textContent = ''};
+    event.target.reset();
+    apiServices(searchQuery, page).then(res => {
+      const imgArray = res.data.hits;
+        totalHits = res.data.totalHits;
+
+        if (imgArray.length === 0) {
+          return refs.headerErrorText('Sorry, there are no images matching your search query. Please try again.');
+          }
+    })
+  };
+
+  function onMoreLoadBtnClick() {
+    apiServices(searchQuery, page).then(res => {
+      markUpPopularFilmGallery(res);
+        // isEndOfImg(page, totalHits);
+        page += 1;   
+    });  
+  }
+export default onSubmitClick;
