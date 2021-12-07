@@ -1,11 +1,70 @@
-.modal-movie-template { display: flex; align-items: center; justify-content: space-between; } .modal-img { width: 395px;
-height: 477px; border-radius: 5px; } .modal-movie-info { align-self: start; margin-left: 30px; } .modal-movie-title {
-margin-bottom: 20px; font-weight: 500; font-size: 30px; line-height: 1.16; text-transform: uppercase; }
-.modal-movie-table { width: 100%; margin-bottom: 20px; font-weight: 500; font-size: 12px; line-height: 1.33; }
-.movie-table-row { display: block; &:not(:last-child) { margin-bottom: 10px; } } .movie-table-data { display:
-inline-block; &.key { width: 40%; color: $light-grey-color-text; } & .value__accent { padding: 1px 9px; margin-right:
-4px; background-color: $accent-color; color: $white-color; border-radius: 5px; } & .value__slash { color:
-$light-grey-color-text; } & .value__grey { padding: 1px 4px; margin-left: 3px; background-color: $grey-color-background;
-border-radius: 5px; } &.value__title { text-transform: uppercase; } } .movie-overview-title { margin-bottom: 10px;
-font-weight: 500; font-size: 12px; line-height: 1.33; text-transform: uppercase; } .modal-movie-overview {
-margin-bottom: 20px; max-width: 396px; font-weight: 500; font-size: 12px; line-height: 1.67; }
+<div class='modal-img-container'>
+  <img class='modal-img' src='https://image.tmdb.org/t/p/w500{{poster_path}}' alt='{{title}}' />
+</div>
+
+<div class='modal-movie-info'>
+  <h2 class='modal-movie-title'>
+    {{title}}
+  </h2>
+
+  <table class='modal-movie-table'>
+    <tr class='movie-table-row'>
+      <td class='movie-table-data key'>
+        Vote / Votes
+      </td>
+      <td class='movie-table-data value'>
+        <span class='value__accent'>
+          {{vote_average}}
+        </span>
+        <span class='value__slash'>
+          /
+        </span>
+        <span class='value__grey'>
+          {{vote_count}}
+        </span>
+      </td>
+    </tr>
+
+    <tr class='movie-table-row'>
+      <td class='movie-table-data key'>
+        Popularity
+      </td>
+      <td class='movie-table-data value'>
+        {{popularity}}
+      </td>
+    </tr>
+
+    <tr class='movie-table-row'>
+      <td class='movie-table-data key'>
+        Original Title
+      </td>
+      <td class='movie-table-data value value__title'>
+        {{original_title}}
+      </td>
+    </tr>
+
+    <tr class='movie-table-row'>
+      <td class='movie-table-data key'>
+        Genre
+      </td>
+      <td class='movie-table-data value'>
+        {{genre_ids}}
+      </td>
+    </tr>
+  </table>
+
+  <h3 class='movie-overview-title'>
+    About
+  </h3>
+  <p class='modal-movie-overview'>
+    {{overview}}
+  </p>
+  <div class='modal-buttons'>
+    <button type='button' class='modal-button watched' data-action='add-to-watched'>
+      Add to watched
+    </button>
+    <button type='button' class='modal-button queue' data-action='add-to-queue'>
+      Add to queue
+    </button>
+  </div>
+</div>
