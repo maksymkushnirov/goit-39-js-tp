@@ -4,6 +4,7 @@ import './modal.js';
 import "./get-genres-function.js";
 import "./get-popular-film.js"
 import "./team-members.js"
+import "./spinner.js"
 
 
 
