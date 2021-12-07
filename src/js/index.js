@@ -1,62 +1,15 @@
 import '../sass/main.scss';
-import { instance } from './team-members';
-import { getPopularFilms } from './services/fetch-backend';
-import { getGenres } from './services/fetch-backend';
 import { onBtnLibrary } from './onclick-my_library';
 import './modal.js';
-let page = 1;
-const refs = {
-  developer: document.querySelector('.footer-link'),
-  gallery: document.querySelector('.card-list')
-};
-refs.developer.addEventListener('click', (e) => {
-  e.preventDefault();
-  instance.show();
-});
+import "./get-genres-function.js";
+import "./get-popular-film.js"
+import "./team-members.js"
+
+
+
 // onBtnLibrary()//Функція виконується при нажиманні на кнопку My Library
-getGenres()
-  .then((value) => {
-    localStorage.setItem('genres', JSON.stringify(value));
-  })
-  .catch((error) => console.log(error));
-getPopularFilms(page)
-  .then((films) => {
-    console.log(films.results);
-    localStorage.setItem('films_from_beckend', JSON.stringify(films.results));
-    markUpFilmCards(films.results);
-  })
-  .catch((error) => console.log(error));
 
-function markUpFilmCards(films) {
-  const genres = localStorage.getItem('genres');
-  const parsedGenres = JSON.parse(genres);
-  console.log(parsedGenres);
 
-  const markUp = films
-    .map((film) => {
-      const { title, name, genre_ids, vote_average, release_date, first_air_date, poster_path, backdrop_path } = film;
-      // console.log(parsedGenres)
-      // console.log(genre_ids)
-      // let genresById = parsedGenres.filter(({ id }) =>  id>25 );
-      // console.log(genresById)
-      if (genre_ids.length > 3) {
-        genre_ids.splice(2, 10, 'other...');
-      }
-      // console.log(genresById)
-      return `<li class="card-item modalBtn" data-id="${film.id}" >
-        <a class="link modalBtn" href="#" data-id="${film.id}" >
-        <div class=""><img class="card-image modalBtn" data-id="${
-          film.id
-        }" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="poster-film"></div>
-        <h2 class="card-title modalBtn" data-id="${film.id}">${title.toUpperCase() || name.toUpperCase()}</h2>
-          <div class="card-description-container modalBtn" data-id="${film.id}">
-            <p class="card-description modalBtn" data-id="${film.id}">>${genre_ids.join(', ')} | ${
-        release_date.slice(0, 4) || first_air_date.slice(0, 4)
-      }</p>
-          </div>
-      </a>
-    </li>`;
-    })
-    .join('');
-  refs.gallery.insertAdjacentHTML('beforeend', markUp);
-}
+
+
+
