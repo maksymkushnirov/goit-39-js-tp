@@ -72,6 +72,6 @@ function markUpLibraryScreen() {
 //Функція - рендер на кнопку Home
 function markUpHomeScreen() {
   if (localStorage.getItem('films_from_beckend')) {
-    location.href = 'index.js';
+    location.href = './index.html';
   }
 }
