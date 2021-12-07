@@ -1,8 +1,6 @@
 import img from '../images/screen-library.jpg';
 
-
 const refs = {
-  
   logo: document.querySelector('.logo-link'),
   btnHome: document.querySelector('[data-home]'), //Пошук кнопки HOME в Header
   btnLibrary: document.querySelector('[data-library]'), //Пошук кнопки LIBRARY в Header
@@ -35,7 +33,7 @@ function onBtnHome() {
   refs.changeHeader.classList.remove('header-change');
   refs.searchForm.classList.remove('visually-hidden');
   refs.openNextBtn.classList.add('visually-hidden');
-  markUpHomeScreen()
+  markUpHomeScreen();
 }
 //Функція виконується при нажиманні на кнопку My Library
 export function onBtnLibrary() {
@@ -46,10 +44,7 @@ export function onBtnLibrary() {
   refs.changeHeader.classList.add('header-change');
   onBtnWatchedInMyLibrary();
   markUpLibraryScreen();
-  
 }
-
-
 
 //Функція виконується при нажиманні на кнопку Watched
 function onBtnWatchedInMyLibrary() {
@@ -64,10 +59,10 @@ function onBtnQueueInMyLibrary() {
 }
 //Функція - рендер пустого екрана My Library
 function markUpLibraryScreen() {
-  if (localStorage.getItem('key') === null || localStorage.getItem('key') === null) {//Потрібно поєднати ключ localStorage з Дмитром
-    
-    refs.gallery.innerHTML =
-        `<p class="library-screen__text">The library is currently empty!</p>
+  if (localStorage.getItem('key') === null || localStorage.getItem('key') === null) {
+    //Потрібно поєднати ключ localStorage з Дмитром
+
+    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
         <img class="library-screen__image" src="${img}" alt="Bear" />`;
   } else {
     //додається функція Дмитра//
@@ -77,7 +72,6 @@ function markUpLibraryScreen() {
 //Функція - рендер на кнопку Home
 function markUpHomeScreen() {
   if (localStorage.getItem('films_from_beckend')) {
-    
-    location.href = 'index.js'
+    location.href = 'index.js';
   }
 }
