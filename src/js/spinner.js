@@ -18,4 +18,4 @@ export function loading() {
 
 loading();
 
-const myTime = setInterval(loading, 200);
+// const myTime = setInterval(loading, 200);

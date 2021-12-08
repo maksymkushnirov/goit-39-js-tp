@@ -12,3 +12,10 @@ export async function getGenres() {
   const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`);
   return response.data;
 }
+
+export async function getSearch(value) {
+  const response = await axios.get(
+    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${value}`
+  );
+  return response.data;
+}
