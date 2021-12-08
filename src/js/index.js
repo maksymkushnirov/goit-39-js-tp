@@ -6,3 +6,4 @@ import './get-popular-film.js';
 import './team-members.js';
 import './spinner.js';
 import './onFormSubmit.js';
+import './addFilmsToLocalStorage.js';
