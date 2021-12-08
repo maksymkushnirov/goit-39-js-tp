@@ -64,7 +64,6 @@ async function openModal(id) {
     }
     return response.json();
   });
-
   modalWindow.innerHTML = modalMovieCard(infoMovie);
 }
 
