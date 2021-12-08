@@ -4,6 +4,9 @@ import { getPopularFilms } from './services/fetch-backend';
 import { getGenres } from './services/fetch-backend';
 import { onBtnLibrary } from './onclick-my_library';
 import './modal.js';
+import './pagination.js';
+
+
 let page = 1;
 const refs = {
   developer: document.querySelector('.footer-link'),
@@ -60,3 +63,4 @@ function markUpFilmCards(films) {
     .join('');
   refs.gallery.insertAdjacentHTML('beforeend', markUp);
 }
+
