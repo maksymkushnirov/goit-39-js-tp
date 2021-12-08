@@ -8,7 +8,7 @@ const optionPagination = {
     itemsPerPage: 20,
     visiblePages: 5,
     page: 1,
-    centerAlign: false,
+    centerAlign: true,
     firstItemClassName: 'tui-first-child',
     lastItemClassName: 'tui-last-child',
     template: {
@@ -29,6 +29,6 @@ const optionPagination = {
     }
   };
   
-  const pagination = new Pagination(paginationContainer, optionPagination);
+  export const pagination = new Pagination(paginationContainer, optionPagination);
 
   
