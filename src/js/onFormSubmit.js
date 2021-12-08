@@ -1,47 +1,35 @@
-import * as apiServices from "./services/fetch-backend";
-import { markUpPopularFilmGallery } from './mark_up_popular_film_gallery';
+// import { refs } from './refs';
+// import { getSearch } from './services/fetch-backend';
+import axios from 'axios';
+
+ async function getSearch(value) {
+  const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${value}`);
+   return response.data
+   
+}
 
 const refs = {
   searchForm: document.querySelector('.search-form'),
-  headerErrorText: document.querySelector('.header-error__text'),
   gallery: document.querySelector('.gallery'),
-  btnspin: document.querySelector('btn-search'),
+  error: document.querySelector('.header-error__text'),
 };
 
-let page = 1;
-let searchQuery = '';
-let totalHits;
+refs.searchForm.addEventListener('submit', onSubmit);
 
-refs.searchForm.addEventListener('submit', onSubmitClick);
-refs.btnspin.addEventListener('click', onMoreLoadBtnClick);
 
-function onSubmitClick(event) {
-    event.preventDefault();
-    searchQuery = event.currentTarget.elements.searchQuery.value;
-    refs.gallery.innerHTML = '';
-    page = 1;
+async function onSubmit(event) {
+  event.preventDefault();
+  const inputValue = event.srcElement[0].value;
 
-    const form = event.currentTarget;
-    const inputValue = form.elements.query.value;
-
-    if(searchQuery === '') {
-      return refs.headerErrorText.textContent = ''};
-    event.target.reset();
-    apiServices(searchQuery, page).then(res => {
-      const imgArray = res.data.hits;
-        totalHits = res.data.totalHits;
-
-        if (imgArray.length === 0) {
-          return refs.headerErrorText('Sorry, there are no images matching your search query. Please try again.');
-          }
-    })
-  };
-
-  function onMoreLoadBtnClick() {
-    apiServices(searchQuery, page).then(res => {
-      markUpPopularFilmGallery(res);
-        // isEndOfImg(page, totalHits);
-        page += 1;   
-    });  
+  if (!inputValue) {
+    refs.error.classList.remove('visually-hidden')
+  } else {
+    refs.error.classList.add('visually-hidden')
   }
-export default onSubmitClick;
+  await getSearch(inputValue).then(data => {
+    if (data.results.length === 0) {
+      refs.error.classList.remove('visually-hidden')
+    }
+  })
+
+}

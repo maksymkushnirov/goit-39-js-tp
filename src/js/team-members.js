@@ -1,7 +1,11 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
-export const instance = basicLightbox.create(
+const refs = {
+  developer: document.querySelector('.footer-link')
+};
+
+const instance = basicLightbox.create(
   `
     <div class="modal modal--design">
         <h1 class="modal__team-head">Developed by:</h1>
@@ -37,3 +41,8 @@ function onEscKeydown(event) {
     instance.close();
   }
 }
+
+refs.developer.addEventListener('click', (e) => {
+  e.preventDefault();
+  instance.show();
+});
