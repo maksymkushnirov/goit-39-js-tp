@@ -3,6 +3,7 @@ const close = document.querySelector('.modal-close-icon');
 const modalWindow = document.querySelector('.modal-movie-template');
 const galery = document.querySelector('.gallery');
 const modalBackdrop = document.querySelector('.backdrop');
+const modalBtn = document.querySelector('.modalBtn')
 const modalImg = document.querySelector('.img-mdl');
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const KEY = 'fe9ed89434aaae0a5431bf6fa09118e9';
@@ -10,10 +11,10 @@ const KEY = 'fe9ed89434aaae0a5431bf6fa09118e9';
 // ============================================================================
 close.addEventListener('click', closeModal);
 galery.addEventListener('click', (e) => {
-  const id = e.target.getAttribute('data-id');
+  // const id = e.target.getAttribute('data-id');
   e.preventDefault();
-  getIdMovie;
-  openModal(id);
+  getIdMovie(e);
+  
 });
 
 // close по escape==============================================================================
@@ -32,10 +33,13 @@ modalBackdrop.addEventListener('click', (e) => {
   }
 });
 // ============================================================================
-function getIdMovie() {
-  const condition = e.target.className === 'modalBtn';
-  if (condition) {
+function getIdMovie(e) {
+  console.log(e.target.className);
+  const condition = e.target.className.includes('modalBtn')
+  console.log(condition);
+  if (condition ) {
     const id = e.target.getAttribute('data-id');
+    openModal(id);
   }
 }
 // =====================================================================================================================================
@@ -51,7 +55,9 @@ async function fetchMovieModal() {
 }
 // открытие модалки===отрисовка контента в модалку===апи запрос 1-го элемента по id
 async function openModal(id) {
-  modalBackdrop.classList.remove('is-hidden');
+  
+     modalBackdrop.classList.remove('is-hidden');
+  
   const infoMovie = await fetch(`${BASE_URL}movie/${id}?api_key=${KEY}&language=en-US`).then((response) => {
     if (!response.ok) {
       throw Error(response.statusText);
@@ -61,6 +67,9 @@ async function openModal(id) {
 
   modalWindow.innerHTML = modalMovieCard(infoMovie);
 }
+
+
+
 //  закрытие модалки=== зачистка src
 function closeModal() {
   modalBackdrop.classList.add('is-hidden');
