@@ -45,7 +45,7 @@ async function onSubmit(event) {
       markUpPopularFilmGallery(data.results); //Рендерить розмітку запиту із форми
       refs.spinner.classList.add('visually-hidden');
     })
-    .catch((error) => console.log(error.message));
+    .catch((error) => console.log(error));
 
   // refs.searchForm.reset();
 }
