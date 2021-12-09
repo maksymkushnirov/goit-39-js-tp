@@ -7,3 +7,4 @@ import './team-members.js';
 import './spinner.js';
 import './onFormSubmit.js';
 import './scrollToTop.js';
+import './addFilmsToLocalStorage.js';
