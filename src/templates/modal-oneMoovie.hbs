@@ -47,9 +47,11 @@
       <td class='movie-table-data key'>
         Genre
       </td>
+      {{#each genres}}
       <td class='movie-table-data value'>
-        {{genre_ids}}
+        {{this.name}}
       </td>
+      {{/each}}
     </tr>
   </table>
 
