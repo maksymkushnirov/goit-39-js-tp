@@ -4,7 +4,6 @@ import { replaceGenresById } from './services/replace_genres_by_id';
 import { markUpPopularFilmGallery } from './mark_up_popular_film_gallery';
 
 
-
 const refs = {
   searchForm: document.querySelector('.search-form'),
   gallery: document.querySelector('.card-list'),
@@ -12,7 +11,6 @@ const refs = {
 };
 
 refs.searchForm.addEventListener('submit', onSubmit);
-
 
 
 
@@ -52,21 +50,8 @@ async function onSubmit(event) {
   
  }
 
-
 //Очистка розмітки 
 
 function clearMarkup() {
     refs.gallery.innerHTML = '';
 }
-
-
-
-
-
-
-
-
-  
- 
-
-

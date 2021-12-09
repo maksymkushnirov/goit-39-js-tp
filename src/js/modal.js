@@ -89,7 +89,6 @@ async function openModal(id) {
   closeModalEsc();
   closeBackdropClick();
   galery.removeEventListener('click', (e) => {
-
     e.preventDefault();
     getIdMovie(e);
   });
@@ -100,5 +99,4 @@ async function openModal(id) {
 //  закрытие модалки=== зачистка src
 function closeModal() {
   modalBackdrop.classList.add('is-hidden');
-
 }
