@@ -6,7 +6,8 @@ import { markUpPopularFilmGallery } from './mark-up-main-film-gallery';
 const refs = {
   searchForm: document.querySelector('.search-form'),
   gallery: document.querySelector('.card-list'),
-  error: document.querySelector('.header-error__text')
+  error: document.querySelector('.header-error__text'),
+  spinner: document.getElementById('loading')
 };
 
 refs.searchForm.addEventListener('submit', onSubmit);
@@ -42,11 +43,11 @@ async function onSubmit(event) {
 
       localStorage.setItem('search_films_from_beckend', JSON.stringify(data.results));
       markUpPopularFilmGallery(data.results); //Рендерить розмітку запиту із форми
-      //spinner.classList.add('visually-hidden');Не працює!!!!!!!!!!!!!!!!
+      refs.spinner.classList.add('visually-hidden');
     })
     .catch((error) => console.log(error.message));
 
-  refs.searchForm.reset();
+  // refs.searchForm.reset();
 }
 
 //Очистка розмітки
