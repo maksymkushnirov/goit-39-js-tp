@@ -1,7 +1,7 @@
 // import { refs } from './refs';
 import { getSearch } from './services/fetch-backend';
 import { replaceGenresById } from './services/replace_genres_by_id';
-import { markUpPopularFilmGallery } from './mark_up_popular_film_gallery';
+import { markUpPopularFilmGallery } from './mark-up-main-film-gallery';
 
 
 const refs = {
