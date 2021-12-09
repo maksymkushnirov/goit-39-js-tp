@@ -14,7 +14,7 @@ export function markUpPopularFilmGallery(films) {
       release_date !== undefined ? filmYear = release_date : filmYear = first_air_date;
       title !== undefined ? filmName = title : filmName = name;
 
-      if (!release_date && !release_date) {
+      if (!release_date && !first_air_date) {
         filmYear = "";
       }
       return `<li class="card-item modalBtn" data-id="${film.id}" >
