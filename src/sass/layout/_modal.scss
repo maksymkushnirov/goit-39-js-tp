@@ -27,19 +27,33 @@
   opacity: 1;
   transform: translate(-50%, -50%);
 
-  width: 450px;
-  height: 609px;
+  width: 90%;
+  height: 90%;
+  max-width: 280px;
+  max-height: 958px;
   overflow: scroll;
-  padding-top: 50px;
-  padding-right: 30px;
+  padding-top: 48px;
+  padding-right: 20px;
   padding-bottom: 40px;
-  padding-left: 30px;
+  padding-left: 20px;
   background-color: $white-color;
 
+  @media screen and (min-width: $tablet-min) {
+    max-width: 618px;
+    max-height: 562px;
+    overflow: scroll;
+
+    padding-top: 40px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
   @media screen and (min-width: $desktop-min) {
-    width: 882px;
-    height: 568px;
-    overflow: visible;
+    max-width: 882px;
+    max-height: 568px;
+    overflow: scroll;
+
+    padding-top: 50px;
   }
 }
 
