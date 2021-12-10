@@ -1,5 +1,10 @@
 import modalMovieCard from '../templates/modal-oneMoovie.hbs';
-import { addFilmInLocalStorage, removeFilmFromLocalStorage, verifyFilmInLocalStorage } from "./addFilmsToLocalStorage.js";//Імпорт функцій для роботи з кнопками
+import {
+  addFilmInLocalStorage,
+  removeFilmFromLocalStorage,
+  verifyFilmInLocalStorage
+} from './addFilmsToLocalStorage.js'; //Імпорт функцій для роботи з кнопками
+
 const close = document.querySelector('.modal-close-icon');
 const modalWindow = document.querySelector('.modal-movie-template');
 const galery = document.querySelector('.gallery');
@@ -137,8 +142,9 @@ async function openModal(id) {
       addToQueueBtn.textContent = "remove from queue";
   }
 
-/////////////////////////////////////////
-/////////////////////////////////////////
+  /////////////////////////////////////////
+  /////////////////////////////////////////
+
 }
 
 // function genres(movie) {

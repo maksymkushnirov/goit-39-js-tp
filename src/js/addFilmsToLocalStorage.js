@@ -11,13 +11,12 @@ function addFilmInLocalStorage (film, key) {
       filmToLocalStorage = [...filmsFromLocalStorage, film];
       localStorage.setItem(key, JSON.stringify(filmToLocalStorage));
     }
-
   } catch {
+    localStorage.setItem(key, JSON.stringify(film));
     console.error();
   }
 }
   
-
 function removeFilmFromLocalStorage (filmId, key) {
   console.log("remove");
   try {
@@ -50,4 +49,6 @@ function verifyFilmInLocalStorage(filmId, key) {
   }
 }
 
+
 export { addFilmInLocalStorage, removeFilmFromLocalStorage, verifyFilmInLocalStorage };
+
