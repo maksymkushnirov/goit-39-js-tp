@@ -1,4 +1,4 @@
-import img from '../images/no-poster.png';
+import img from '../images/no-poster1.png';
 const gallery = document.querySelector('.card-list');
 
 export function markUpPopularFilmGallery(films) {
