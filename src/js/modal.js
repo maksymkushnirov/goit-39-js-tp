@@ -4,6 +4,7 @@ import {
   removeFilmFromLocalStorage,
   verifyFilmInLocalStorage
 } from './addFilmsToLocalStorage.js'; //Імпорт функцій для роботи з кнопками
+
 const close = document.querySelector('.modal-close-icon');
 const modalWindow = document.querySelector('.modal-movie-template');
 const galery = document.querySelector('.gallery');
@@ -102,44 +103,48 @@ async function openModal(id) {
   // ============================================
   modalWindow.innerHTML = modalMovieCard(infoMovie);
 
+
   /////////////////////////////////////
-  //////Робота з кнопками
+    //////Робота з кнопками
   /////////////////////////////////////
   // console.log("=====", infoMovie);
   // console.log("=====", id);
-  const addToWadchedBtn = document.querySelector('.watched');
-  const addToQueueBtn = document.querySelector('.queue');
+  const addToWatchedBtn = document.querySelector(".watched");
+  const addToQueueBtn = document.querySelector(".queue");
 
-  if (verifyFilmInLocalStorage(id, 'Watched') === true) {
-    addToWadchedBtn.textContent = 'remove from watched';
-  }
+  if (verifyFilmInLocalStorage(id, "Watched") === true) {
+    addToWatchedBtn.textContent = "remove from watched";
+  };
 
-  if (verifyFilmInLocalStorage(id, 'Queue') === true) {
-    addToQueueBtn.textContent = 'remove from queue';
-  }
+  if (verifyFilmInLocalStorage(id, "Queue") === true) {
+    addToQueueBtn.textContent = "remove from queue";
+  };
+  
+  addToWatchedBtn.addEventListener("click", onAddToWadchedBtnClick);
+  addToQueueBtn.addEventListener("click", onAddToQueueBtnClick);
 
-  addToWadchedBtn.addEventListener('click', onAddToWadchedBtnClick);
-  addToQueueBtn.addEventListener('click', onAddToQueueBtnClick);
-
-  function onAddToWadchedBtnClick(e) {
-    if (verifyFilmInLocalStorage(id, 'Watched') === true) {
-      removeFilmFromLocalStorage(id, 'Watched');
+  function onAddToWadchedBtnClick (e) {
+    if (verifyFilmInLocalStorage(id, "Watched") === true) {
+      removeFilmFromLocalStorage(id, "Watched");
+    } else {
+    addFilmInLocalStorage(infoMovie, "Watched");
+    addToWatchedBtn.textContent = "remove from watched";
     }
-    addFilmInLocalStorage(infoMovie, 'Watched');
-    addToWadchedBtn.textContent = 'remove from watched';
+      
   }
 
-  function onAddToQueueBtnClick(e) {
+  function onAddToQueueBtnClick (e) {
     // console.log("true or false", verifyFilmInLocalStorage(id, "Watched"));
-    if (verifyFilmInLocalStorage(id, 'Queue') === true) {
-      removeFilmFromLocalStorage(id, 'Queue');
+    if (verifyFilmInLocalStorage(id, "Queue") === true) {
+      removeFilmFromLocalStorage(id, "Queue");
     }
-    addFilmInLocalStorage(infoMovie, 'Queue');
-    addToQueueBtn.textContent = 'remove from queue';
+      addFilmInLocalStorage(infoMovie, "Queue");
+      addToQueueBtn.textContent = "remove from queue";
   }
 
   /////////////////////////////////////////
   /////////////////////////////////////////
+
 }
 
 // function genres(movie) {
