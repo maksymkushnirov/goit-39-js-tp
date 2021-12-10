@@ -1,7 +1,6 @@
-
-function addFilmInLocalStorage (film, key) {
+function addFilmInLocalStorage(film, key) {
   try {
-    let filmsFromLocalStorage = JSON.parse(localStorage.getItem(key));////Думаю проблема тут
+    let filmsFromLocalStorage = JSON.parse(localStorage.getItem(key)); ////Думаю проблема тут
     let filmToLocalStorage = filmsFromLocalStorage.push(film);
     localStorage.setItem(key, JSON.stringify(filmToLocalStorage));
   } catch {
@@ -10,7 +9,7 @@ function addFilmInLocalStorage (film, key) {
   }
 }
 
-function removeFilmFromLocalStorage (filmId, key) {
+function removeFilmFromLocalStorage(filmId, key) {
   try {
     let filmsFromLocalStorage = JSON.parse(localStorage.getItem(key));
     let filmToLocalStorage = [];
