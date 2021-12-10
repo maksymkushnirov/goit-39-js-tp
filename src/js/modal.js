@@ -78,15 +78,14 @@ async function fetchMovieModal() {
 // открытие модалки===отрисовка контента в модалку===апи запрос 1-го элемента по id
 async function openModal(id) {
   modalBackdrop.classList.remove('is-hidden');
-  
+
   const infoMovie = await fetch(`${BASE_URL}movie/${id}?api_key=${KEY}&language=en-US`).then((response) => {
-    
     if (!response.ok) {
       throw Error(response.statusText);
     }
     return response.json();
   });
-  
+
   closeBtn();
   closeModalEsc();
   closeBackdropClick();
@@ -95,10 +94,8 @@ async function openModal(id) {
     e.preventDefault();
     getIdMovie(e);
   });
-// ============================================
+  // ============================================
   modalWindow.innerHTML = modalMovieCard(infoMovie);
-  
-  
 }
 
 // function genres(movie) {
@@ -115,6 +112,3 @@ async function openModal(id) {
 function closeModal() {
   modalBackdrop.classList.add('is-hidden');
 }
-
-
-
