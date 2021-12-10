@@ -7,14 +7,13 @@
   "scripts": {
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-39-js-tp/",
-    "prettier": "prettier --write src/",
-    "precommit": "lint"
+    "prettier": "prettier --write src/"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier"},
-    "lint":{"*": ["prettier --write src/",
-      "git add"]},
+      "pre-commit": "npm run prettier"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/goitacademy/parcel-project-template.git"
@@ -27,7 +26,6 @@
   },
   "devDependencies": {
     "husky": "^7.0.4",
-    "lint": "^0.7.0",
     "lint-staged": "^12.1.2",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
@@ -42,5 +40,4 @@
     "basiclightbox": "^5.0.4",
     "tui-pagination": "^3.4.1"
   }
-}
 }
