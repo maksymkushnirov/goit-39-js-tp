@@ -18,7 +18,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": ["lint-staged", "prettier --write"]
+      "pre-commit": ["lint-staged", "prettier --write src/"]
     }
   },
   "repository": {
