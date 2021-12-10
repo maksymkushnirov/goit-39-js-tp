@@ -1,5 +1,7 @@
 <div class='modal-img-container'>
-  <img class='modal-img' src='https://image.tmdb.org/t/p/w500{{poster_path}}' alt='{{title}}' />
+  {{#if poster_path}}
+    <img class='modal-img' src='https://image.tmdb.org/t/p/w500{{poster_path}}' alt='{{title}}' />
+  {{/if}}
 </div>
 
 <div class='modal-movie-info'>
