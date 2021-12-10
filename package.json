@@ -8,7 +8,12 @@
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-39-js-tp/",
     "prettier": "prettier --write src/",
-    "pre-commit": "lint-staged"
+    "pre-commit": "prettier --write src/"
+  },
+  "lint": {
+    "*": [
+      "prettier --write"
+    ]
   },
   "lint-staged": {
     "*": [
@@ -20,6 +25,7 @@
     "hooks": {
       "prettier": "prettier --write src/",
       "pre-commit": [
+        "lint",
         "lint-staged",
         "prettier --write src/"
       ]

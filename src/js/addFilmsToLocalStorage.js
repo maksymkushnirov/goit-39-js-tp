@@ -1,5 +1,4 @@
-
-function addFilmInLocalStorage (film, key) {
+function addFilmInLocalStorage(film, key) {
   try {
     let filmsFromLocalStorage = JSON.parse(localStorage.getItem(key));
     let filmToLocalStorage = [];
@@ -15,11 +14,11 @@ function addFilmInLocalStorage (film, key) {
     console.error();
   }
 }
-  
-function removeFilmFromLocalStorage (filmId, key) {
+
+function removeFilmFromLocalStorage(filmId, key) {
   try {
     let filmsFromLocalStorage = JSON.parse(localStorage.getItem(key));
-    let filmToLocalStorage = filmsFromLocalStorage.filter(film => Number(film.id) !== Number(filmId));
+    let filmToLocalStorage = filmsFromLocalStorage.filter((film) => Number(film.id) !== Number(filmId));
     localStorage.setItem(key, JSON.stringify(filmToLocalStorage));
   } catch {
     console.error();
@@ -41,6 +40,4 @@ function verifyFilmInLocalStorage(filmId, key) {
   }
 }
 
-
 export { addFilmInLocalStorage, removeFilmFromLocalStorage, verifyFilmInLocalStorage };
-
