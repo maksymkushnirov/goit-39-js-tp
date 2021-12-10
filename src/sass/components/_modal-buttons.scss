@@ -1,10 +1,13 @@
 .modal-button {
-  padding: 14px 10px;
-  min-width: 136px;
+  padding: 8px 12px;
+
+  width: 112px;
+
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
   text-transform: uppercase;
+
   border-radius: 5px;
   cursor: pointer;
 
@@ -21,5 +24,13 @@
   &.queue {
     background-color: $white-color;
     border: 1px solid black;
+  }
+
+  @media screen and (min-width: $tablet-min) {
+    padding: 14px 10px;
+    min-width: 125px;
+  }
+  @media screen and (min-width: $desktop-min) {
+    min-width: 136px;
   }
 }
