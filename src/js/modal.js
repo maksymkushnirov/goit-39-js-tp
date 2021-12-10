@@ -104,26 +104,28 @@ async function openModal(id) {
   /////////////////////////////////////
   // console.log("=====", infoMovie);
   // console.log("=====", id);
-  const addToWadchedBtn = document.querySelector(".watched");
+  const addToWatchedBtn = document.querySelector(".watched");
   const addToQueueBtn = document.querySelector(".queue");
 
   if (verifyFilmInLocalStorage(id, "Watched") === true) {
-    addToWadchedBtn.textContent = "remove from watched";
+    addToWatchedBtn.textContent = "remove from watched";
   };
 
   if (verifyFilmInLocalStorage(id, "Queue") === true) {
     addToQueueBtn.textContent = "remove from queue";
   };
   
-  addToWadchedBtn.addEventListener("click", onAddToWadchedBtnClick);
+  addToWatchedBtn.addEventListener("click", onAddToWadchedBtnClick);
   addToQueueBtn.addEventListener("click", onAddToQueueBtnClick);
 
   function onAddToWadchedBtnClick (e) {
     if (verifyFilmInLocalStorage(id, "Watched") === true) {
       removeFilmFromLocalStorage(id, "Watched");
+    } else {
+    addFilmInLocalStorage(infoMovie, "Watched");
+    addToWatchedBtn.textContent = "remove from watched";
     }
-      addFilmInLocalStorage(infoMovie, "Watched");
-      addToWadchedBtn.textContent = "remove from watched";
+      
   }
 
   function onAddToQueueBtnClick (e) {
