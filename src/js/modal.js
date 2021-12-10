@@ -126,20 +126,22 @@ async function openModal(id) {
   function onAddToWadchedBtnClick (e) {
     if (verifyFilmInLocalStorage(id, "Watched") === true) {
       removeFilmFromLocalStorage(id, "Watched");
+      addToWatchedBtn.textContent = "add to watched";
     } else {
-    addFilmInLocalStorage(infoMovie, "Watched");
-    addToWatchedBtn.textContent = "remove from watched";
+      addFilmInLocalStorage(infoMovie, "Watched");
+      addToWatchedBtn.textContent = "remove from watched";
     }
       
   }
 
   function onAddToQueueBtnClick (e) {
-    // console.log("true or false", verifyFilmInLocalStorage(id, "Watched"));
     if (verifyFilmInLocalStorage(id, "Queue") === true) {
       removeFilmFromLocalStorage(id, "Queue");
-    }
+      addToQueueBtn.textContent = "add to queue";
+    } else {
       addFilmInLocalStorage(infoMovie, "Queue");
       addToQueueBtn.textContent = "remove from queue";
+    }
   }
 
   /////////////////////////////////////////

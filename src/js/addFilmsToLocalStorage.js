@@ -1,6 +1,5 @@
 
 function addFilmInLocalStorage (film, key) {
-  console.log("add");
   try {
     let filmsFromLocalStorage = JSON.parse(localStorage.getItem(key));
     let filmToLocalStorage = [];
@@ -18,16 +17,9 @@ function addFilmInLocalStorage (film, key) {
 }
   
 function removeFilmFromLocalStorage (filmId, key) {
-  console.log("remove");
   try {
     let filmsFromLocalStorage = JSON.parse(localStorage.getItem(key));
-    let filmToLocalStorage = [];
-
-    for (let i = 0; i < filmsFromLocalStorage.length; i += 1) {
-      if (Number(film.id) === Number(filmId)) {
-        filmToLocalStorage = filmsFromLocalStorage.splice(i, 1);
-      }
-    }
+    let filmToLocalStorage = filmsFromLocalStorage.filter(film => Number(film.id) !== Number(filmId));
     localStorage.setItem(key, JSON.stringify(filmToLocalStorage));
   } catch {
     console.error();
