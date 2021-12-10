@@ -9,6 +9,9 @@
     "build": "parcel build src/*.html --public-url /goit-39-js-tp/",
     "prettier": "prettier --write src/"
   },
+  "pre-commit": [
+    "prettier"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/goitacademy/parcel-project-template.git"
@@ -24,6 +27,7 @@
     "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1",
     "posthtml-include": "^1.6.2",
+    "pre-commit": "^1.2.2",
     "prettier": "^2.5.1",
     "sass": "^1.32.8"
   },

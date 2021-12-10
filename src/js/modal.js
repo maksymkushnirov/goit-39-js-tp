@@ -4,7 +4,7 @@ const modalWindow = document.querySelector('.modal-movie-template');
 const galery = document.querySelector('.gallery');
 const modalBackdrop = document.querySelector('.backdrop');
 // const modalBtn = document.querySelector('.modalBtn')
-const modalImg = document.querySelector('.modal-img-container');
+const modalImg = document.querySelector('.modal-img');
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const KEY = 'fe9ed89434aaae0a5431bf6fa09118e9';
 
@@ -78,6 +78,7 @@ async function fetchMovieModal() {
 // открытие модалки===отрисовка контента в модалку===апи запрос 1-го элемента по id
 async function openModal(id) {
   modalBackdrop.classList.remove('is-hidden');
+
   const infoMovie = await fetch(`${BASE_URL}movie/${id}?api_key=${KEY}&language=en-US`).then((response) => {
     if (!response.ok) {
       throw Error(response.statusText);
@@ -88,13 +89,24 @@ async function openModal(id) {
   closeBtn();
   closeModalEsc();
   closeBackdropClick();
+  // ========================================
   galery.removeEventListener('click', (e) => {
     e.preventDefault();
     getIdMovie(e);
   });
-
+  // ============================================
   modalWindow.innerHTML = modalMovieCard(infoMovie);
 }
+
+// function genres(movie) {
+//   const keys = [...movie.genres];
+//   let keysValues = ''
+//   keys.forEach(el => {
+//     const keyName = el['name']
+//     keysValues = keysValues  + keyName + ", "
+//   })
+// return keysValues
+// }
 
 //  закрытие модалки=== зачистка src
 function closeModal() {
