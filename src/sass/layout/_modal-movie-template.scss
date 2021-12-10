@@ -59,9 +59,13 @@
 .modal-movie-title {
   margin-bottom: 20px;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 1.16;
   text-transform: uppercase;
+
+  @media screen and (min-width: $desktop-min) {
+    font-size: 30px;
+  }
 }
 
 .modal-movie-table {

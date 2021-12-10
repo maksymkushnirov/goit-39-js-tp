@@ -41,7 +41,7 @@
   @media screen and (min-width: $tablet-min) {
     max-width: 618px;
     max-height: 562px;
-    overflow: scroll;
+    overflow: visible;
 
     padding-top: 40px;
     padding-right: 30px;
@@ -51,7 +51,6 @@
   @media screen and (min-width: $desktop-min) {
     max-width: 882px;
     max-height: 568px;
-    overflow: scroll;
 
     padding-top: 50px;
   }
