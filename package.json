@@ -7,7 +7,14 @@
   "scripts": {
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-39-js-tp/",
-    "prettier": "prettier --write src/"
+    "prettier": "prettier --write src/",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "husky": {
     "hooks": {
