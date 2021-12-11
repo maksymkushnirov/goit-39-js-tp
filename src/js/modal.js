@@ -9,8 +9,6 @@ const close = document.querySelector('.modal-close-icon');
 const modalWindow = document.querySelector('.modal-movie-template');
 const galery = document.querySelector('.gallery');
 const modalBackdrop = document.querySelector('.backdrop');
-// const modalBtn = document.querySelector('.modalBtn')
-const modalImg = document.getElementById('zzz')
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const KEY = 'fe9ed89434aaae0a5431bf6fa09118e9';
 
@@ -147,15 +145,6 @@ async function openModal(id) {
   /////////////////////////////////////////
 }
 
-// function genres(movie) {
-//   const keys = [...movie.genres];
-//   let keysValues = ''
-//   keys.forEach(el => {
-//     const keyName = el['name']
-//     keysValues = keysValues  + keyName + ", "
-//   })
-// return keysValues
-// }
 
 //  закрытие модалки=== зачистка src
 function closeModal() {
