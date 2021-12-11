@@ -14,6 +14,7 @@ export async function getGenres() {
 }
 
 export async function getSearch(value) {
+  spinner.classList.remove('visually-hidden');
   const response = await axios.get(
     `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${value}`
   );

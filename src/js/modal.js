@@ -1,4 +1,10 @@
 import modalMovieCard from '../templates/modal-oneMoovie.hbs';
+import {
+  addFilmInLocalStorage,
+  removeFilmFromLocalStorage,
+  verifyFilmInLocalStorage
+} from './addFilmsToLocalStorage.js'; //Імпорт функцій для роботи з кнопками
+
 const close = document.querySelector('.modal-close-icon');
 const modalWindow = document.querySelector('.modal-movie-template');
 const galery = document.querySelector('.gallery');
@@ -79,15 +85,14 @@ async function fetchMovieModal() {
 // открытие модалки===отрисовка контента в модалку===апи запрос 1-го элемента по id
 async function openModal(id) {
   modalBackdrop.classList.remove('is-hidden');
-  
+
   const infoMovie = await fetch(`${BASE_URL}movie/${id}?api_key=${KEY}&language=en-US`).then((response) => {
-    
     if (!response.ok) {
       throw Error(response.statusText);
     }
     return response.json();
   });
-  
+
   closeBtn();
   closeModalEsc();
   closeBackdropClick();
@@ -96,10 +101,50 @@ async function openModal(id) {
     e.preventDefault();
     getIdMovie(e);
   });
-// ============================================
+  // ============================================
   modalWindow.innerHTML = modalMovieCard(infoMovie);
-  
-  
+
+  /////////////////////////////////////
+  //////Робота з кнопками
+  /////////////////////////////////////
+  // console.log("=====", infoMovie);
+  // console.log("=====", id);
+  const addToWatchedBtn = document.querySelector('.watched');
+  const addToQueueBtn = document.querySelector('.queue');
+
+  if (verifyFilmInLocalStorage(id, 'Watched') === true) {
+    addToWatchedBtn.textContent = 'remove from watched';
+  }
+
+  if (verifyFilmInLocalStorage(id, 'Queue') === true) {
+    addToQueueBtn.textContent = 'remove from queue';
+  }
+
+  addToWatchedBtn.addEventListener('click', onAddToWadchedBtnClick);
+  addToQueueBtn.addEventListener('click', onAddToQueueBtnClick);
+
+  function onAddToWadchedBtnClick(e) {
+    if (verifyFilmInLocalStorage(id, 'Watched') === true) {
+      removeFilmFromLocalStorage(id, 'Watched');
+      addToWatchedBtn.textContent = 'add to watched';
+    } else {
+      addFilmInLocalStorage(infoMovie, 'Watched');
+      addToWatchedBtn.textContent = 'remove from watched';
+    }
+  }
+
+  function onAddToQueueBtnClick(e) {
+    if (verifyFilmInLocalStorage(id, 'Queue') === true) {
+      removeFilmFromLocalStorage(id, 'Queue');
+      addToQueueBtn.textContent = 'add to queue';
+    } else {
+      addFilmInLocalStorage(infoMovie, 'Queue');
+      addToQueueBtn.textContent = 'remove from queue';
+    }
+  }
+
+  /////////////////////////////////////////
+  /////////////////////////////////////////
 }
 
 // function genres(movie) {
@@ -118,6 +163,3 @@ function closeModal() {
   modalWindow.innerHTML = " "
    
 }
-
-
-

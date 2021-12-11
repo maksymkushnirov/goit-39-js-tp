@@ -19,6 +19,25 @@
   </head>
   <body>
     <include src="./partials/layout/header.html"></include>
+    <style>
+      body {
+       /* max-width: 1600px;
+       height: 480px;
+       margin-left: auto;
+       margin-right: auto; */
+       outline: 1px solid black;
+      background-image: linear-gradient(
+        to right, 
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("./images/fon/koster_ogon_plamia.jpg");
+       
+       background-repeat: no-repeat;
+       background-position: center;
+       background-size: cover;
+      }
+     </style>
     <main><include src="./partials/layout/gallery.html"></include></main>
     <include src="./partials/layout/pagination.html"></include>
     <include src="./partials/components/button-back-to-top.html"></include>
