@@ -1,6 +1,4 @@
 import img from '../images/screen-library.jpg';
-import { markUpWatched } from '../js/get-watched';
-import { markUpQueue } from '../js/get-queue';
 
 const refs = {
   logo: document.querySelector('.logo-link'),
@@ -50,14 +48,12 @@ export function onBtnLibrary() {
 
 //Функція виконується при нажиманні на кнопку Watched
 function onBtnWatchedInMyLibrary() {
-  refs.gallery.innerHTML = markUpWatched;
   refs.btnWatched.classList.add('header-change__cont-btn--activ');
   refs.btnQueue.classList.remove('header-change__cont-btn--activ');
 }
 
 //Функція виконується при нажиманні на кнопку Queue
 function onBtnQueueInMyLibrary() {
-  refs.gallery.innerHTML = markUpQueue;
   refs.btnWatched.classList.remove('header-change__cont-btn--activ');
   refs.btnQueue.classList.add('header-change__cont-btn--activ');
 }
