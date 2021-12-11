@@ -7,5 +7,3 @@ import './team-members.js';
 import './onFormSubmit.js';
 import './scrollToTop.js';
 import './addFilmsToLocalStorage.js';
-import './get-watched.js';
-import './get-queue.js';
