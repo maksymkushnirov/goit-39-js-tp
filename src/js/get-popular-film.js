@@ -7,7 +7,8 @@ let page = 1;
 const spinner = document.getElementById('loading');
 const gallery = document.querySelector('.card-list');
 
-getPopularFilms(page) //Функція приймає популярні фільми з бекенду(перші 20), рендерить їх в html і записує в локальне сховище
+function GetPopularFilms() {
+   getPopularFilms(page) //Функція приймає популярні фільми з бекенду(перші 20), рендерить їх в html і записує в локальне сховище
   .then((films) => {
     films.results.map((filmData) => {
       replaceGenresById(filmData); //Функція добавляє назви жанрів по id
@@ -18,6 +19,10 @@ getPopularFilms(page) //Функція приймає популярні філ�
     spinner.classList.add('visually-hidden');
   })
   .catch((error) => console.log(error));
+}
+GetPopularFilms();
+
+export { GetPopularFilms };
 
 // Підключаємо пагінацію
 pagination.on('beforeMove', (event) => {
