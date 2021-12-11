@@ -4,7 +4,7 @@ const modalWindow = document.querySelector('.modal-movie-template');
 const galery = document.querySelector('.gallery');
 const modalBackdrop = document.querySelector('.backdrop');
 // const modalBtn = document.querySelector('.modalBtn')
-const modalImg = document.querySelector('.modal-img');
+const modalImg = document.getElementById('zzz')
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const KEY = 'fe9ed89434aaae0a5431bf6fa09118e9';
 
@@ -23,6 +23,7 @@ const options = {
 };
 function closeBtn() {
   close.addEventListener('click', closeModal, options);
+  
 }
 // ==========================================================================
 // доббавление слушателя по открытию модалки,
@@ -114,6 +115,8 @@ async function openModal(id) {
 //  закрытие модалки=== зачистка src
 function closeModal() {
   modalBackdrop.classList.add('is-hidden');
+  modalWindow.innerHTML = " "
+   
 }
 
 
