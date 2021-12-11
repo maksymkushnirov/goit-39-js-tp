@@ -50,27 +50,43 @@ export function onBtnLibrary() {
 
 //Функція виконується при нажиманні на кнопку Watched
 function onBtnWatchedInMyLibrary() {
-  refs.gallery.innerHTML = markUpWatched;
+  if (markUpWatched) {
+    refs.gallery.innerHTML = markUpWatched;
+    refs.btnWatched.classList.add('header-change__cont-btn--activ');
+    refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+
+    return;
+  }
+  refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
+        <img class="library-screen__image" src="${img}" alt="Bear" />`;
   refs.btnWatched.classList.add('header-change__cont-btn--activ');
   refs.btnQueue.classList.remove('header-change__cont-btn--activ');
 }
 
 //Функція виконується при нажиманні на кнопку Queue
 function onBtnQueueInMyLibrary() {
-  refs.gallery.innerHTML = markUpQueue;
+  if (markUpQueue) {
+    refs.gallery.innerHTML = markUpQueue;
+    refs.btnWatched.classList.remove('header-change__cont-btn--activ');
+    refs.btnQueue.classList.add('header-change__cont-btn--activ');
+    return;
+  }
+  refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
+        <img class="library-screen__image" src="${img}" alt="Bear" />`;
   refs.btnWatched.classList.remove('header-change__cont-btn--activ');
   refs.btnQueue.classList.add('header-change__cont-btn--activ');
 }
 //Функція - рендер пустого екрана My Library
 function markUpLibraryScreen() {
-  if (localStorage.getItem('key') === null || localStorage.getItem('key') === null) {
-    //Потрібно поєднати ключ localStorage з Дмитром
-
-    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
-        <img class="library-screen__image" src="${img}" alt="Bear" />`;
-  } else {
-    //додається функція Дмитра//
+  if (markUpWatched) {
+    return (refs.gallery.innerHTML = markUpWatched);
   }
+  //Потрібно поєднати ключ localStorage з Дмитром
+
+  refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
+        <img class="library-screen__image" src="${img}" alt="Bear" />`;
+
+  //додається функція Дмитра//
 }
 
 //Функція - рендер на кнопку Home
