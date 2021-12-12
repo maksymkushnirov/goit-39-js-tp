@@ -101,3 +101,13 @@
     height: 398px;
   }
 }
+.card-vote_average {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  padding: 1px 9px;
+  margin-right: 4px;
+  background-color: $accent-color;
+  color: $white-color;
+  border-radius: 5px;
+}
