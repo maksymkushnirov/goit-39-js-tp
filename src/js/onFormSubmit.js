@@ -1,4 +1,3 @@
-
 import { getSearch } from './services/fetch-backend';
 import { replaceGenresById } from './services/replace_genres_by_id';
 import { markUpPopularFilmGallery } from './mark-up-main-film-gallery';
@@ -11,7 +10,7 @@ import { scrollToTop } from './scrollToTop';
 const refs = {
   searchForm: document.querySelector('.search-form'),
   gallery: document.querySelector('.card-list'),
-  error: document.querySelector('.header-error__text'),
+  error: document.querySelector('.header-error__text')
 };
 
 refs.searchForm.addEventListener('submit', onSubmit);
@@ -39,10 +38,10 @@ function onSubmit(event) {
         GetPopularFilms();
         pagination.on('afterMove', handlerPopFilm);
         pagination._offByHandler(handlerSearchFilm);
-        return
+        return;
       } else {
         pagination.reset(data.total_pages);
-        
+
         data.results.map((filmData) => {
           replaceGenresById(filmData); //Функція добавляє назви жанрів по id
         });
@@ -50,36 +49,34 @@ function onSubmit(event) {
         localStorage.setItem('search_films_from_beckend', JSON.stringify(data.results));
         markUpPopularFilmGallery(data.results); //Рендерить розмітку запиту із форми
         pagination.on('beforeMove', handlerSearchFilm);
-      }   
+      }
     })
     .catch((error) => console.log(error));
 
   setTimeout(() => {
-    refs.searchForm.reset();;
+    refs.searchForm.reset();
   }, 2500);
-
 }
 
 async function handlerSearchFilm(event) {
   scrollToTop();
   const currentPage = event.page;
   if (inputValue) {
-     try {
-       const data = await getSearch(inputValue, currentPage);
-        
+    try {
+      const data = await getSearch(inputValue, currentPage);
+
       if (data.results.length === 0) {
         Notify.failure('Search result not successful. Enter the correct movie name and', { timeout: 3000 });
-        return
-        }
-      else {
-      data.results.map((filmData) => {
-      replaceGenresById(filmData); //Функція добавляє назви жанрів по id
-      });
-      localStorage.setItem('search_films_from_beckend', JSON.stringify(data.results));
-      markUpPopularFilmGallery(data.results); //Рендерить розмітку запиту із форми
+        return;
+      } else {
+        data.results.map((filmData) => {
+          replaceGenresById(filmData); //Функція добавляє назви жанрів по id
+        });
+        localStorage.setItem('search_films_from_beckend', JSON.stringify(data.results));
+        markUpPopularFilmGallery(data.results); //Рендерить розмітку запиту із форми
       }
+    } catch (error) {
+      console.log(error);
     }
-   catch(error) {console.log(error)} 
-   }
-  
   }
+}

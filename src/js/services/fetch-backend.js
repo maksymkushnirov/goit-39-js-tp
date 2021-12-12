@@ -19,7 +19,7 @@ export async function getSearch(value, page) {
   const response = await axios.get(
     `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&page=${page}&language=en-US&include_adult=false&query=${value}`
   );
-  
-   spinner.classList.add('visually-hidden');
+
+  spinner.classList.add('visually-hidden');
   return response.data;
 }
