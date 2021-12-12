@@ -1,6 +1,7 @@
 import img from '../images/screen-library.jpg';
 import { markUpWatched } from '../js/get-watched';
 import { markUpQueue } from '../js/get-queue';
+import liberyCardTpl from '../templates/libery-card.hbs';
 
 const refs = {
   logo: document.querySelector('.logo-link'),
@@ -44,25 +45,38 @@ export function onBtnLibrary() {
   refs.searchForm.classList.add('visually-hidden');
   refs.openNextBtn.classList.remove('visually-hidden');
   refs.changeHeader.classList.add('header-change');
+  
+  //markUpLibraryScreen();
   onBtnWatchedInMyLibrary();
-  markUpLibraryScreen();
 }
 
 //Функція виконується при нажиманні на кнопку Watched
 function onBtnWatchedInMyLibrary() {
-  if (markUpWatched) {
-    refs.gallery.innerHTML = markUpWatched;
+  
+  const getWatched = localStorage.getItem('Watched');
+  const parsedWatchedFilms = JSON.parse(getWatched);
+  console.log(parsedWatchedFilms.length)
+  if (parsedWatchedFilms.length > 0) {
+    refs.gallery.innerHTML = creatWatchedCard(parsedWatchedFilms);
     refs.btnWatched.classList.add('header-change__cont-btn--activ');
     refs.btnQueue.classList.remove('header-change__cont-btn--activ');
-
+    console.log("Yesss")
     return;
   }
-  refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
+  if (parsedWatchedFilms.length === 0 || localStorage.getItem('Watched') === null) {
+    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
         <img class="library-screen__image" src="${img}" alt="Bear" />`;
-  refs.btnWatched.classList.add('header-change__cont-btn--activ');
-  refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+    refs.btnWatched.classList.add('header-change__cont-btn--activ');
+    refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+    console.log("Nooooo")
+    
+  }
 }
-
+function creatWatchedCard(parsedWatchedFilms) {
+  if (parsedWatchedFilms) {
+    return parsedWatchedFilms.map(liberyCardTpl).join('');
+  }
+}
 //Функція виконується при нажиманні на кнопку Queue
 function onBtnQueueInMyLibrary() {
   if (markUpQueue) {
@@ -77,7 +91,7 @@ function onBtnQueueInMyLibrary() {
   refs.btnQueue.classList.add('header-change__cont-btn--activ');
 }
 //Функція - рендер пустого екрана My Library
-function markUpLibraryScreen() {
+/* function markUpLibraryScreen() {
   if (markUpWatched) {
     return (refs.gallery.innerHTML = markUpWatched);
   }
@@ -87,7 +101,7 @@ function markUpLibraryScreen() {
         <img class="library-screen__image" src="${img}" alt="Bear" />`;
 
   //додається функція Дмитра//
-}
+} */
 
 //Функція - рендер на кнопку Home
 function markUpHomeScreen() {
