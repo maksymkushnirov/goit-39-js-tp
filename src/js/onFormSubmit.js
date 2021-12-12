@@ -3,7 +3,7 @@ import { getSearch } from './services/fetch-backend';
 import { replaceGenresById } from './services/replace_genres_by_id';
 import { markUpPopularFilmGallery } from './mark-up-main-film-gallery';
 import { GetPopularFilms } from './get-popular-film';
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { pagination } from './pagination.js';
 import { handlerPopFilm } from './get-popular-film';
 import { scrollToTop } from './scrollToTop';
@@ -19,18 +19,17 @@ let inputValue = '';
 const page = pagination.getCurrentPage();
 
 //Функція виконується при вводі в інпуті
-async function onSubmit(event) {
+function onSubmit(event) {
   event.preventDefault();
 
   if (event.currentTarget.query.value.trim() === '') {
     //Щоб не вводити пробіли в інпуті
     Notify.failure('Please enter the title of the movie.');
-    // GetPopularFilms();
     return;
   }
 
   pagination.off('afterMove', handlerPopFilm);
-  const inputValue = event.currentTarget.query.value;
+  inputValue = event.currentTarget.query.value;
 
   getSearch(inputValue, page)
     .then((data) => {
@@ -53,7 +52,10 @@ async function onSubmit(event) {
     })
     .catch((error) => console.log(error));
 
-  //refs.searchForm.reset();
+  setTimeout(() => {
+    refs.searchForm.reset();;
+  }, 2500);
+
 }
 
 //Очистка розмітки
@@ -64,7 +66,6 @@ async function onSubmit(event) {
 
 pagination.on('beforeMove', handlerSearchFilm);
 
-  
 async function handlerSearchFilm(event) {
  scrollToTop();
   const currentPage = event.page;
