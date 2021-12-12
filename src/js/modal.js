@@ -27,7 +27,6 @@ const options = {
 };
 function closeBtn() {
   close.addEventListener('click', closeModal, options);
-  
 }
 // ==========================================================================
 // доббавление слушателя по открытию модалки,
@@ -145,10 +144,8 @@ async function openModal(id) {
   /////////////////////////////////////////
 }
 
-
 //  закрытие модалки=== зачистка src
 function closeModal() {
   modalBackdrop.classList.add('is-hidden');
-  modalWindow.innerHTML = " "
-   
+  modalWindow.innerHTML = ' ';
 }

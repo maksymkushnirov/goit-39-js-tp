@@ -5,11 +5,12 @@
   -ms-user-select: none;
   user-select: none;
 }
-
+  
 .tui-pagination {
   line-height: normal;
   text-align: center;
   font-size: 0;
+  padding-bottom: 20px;
 
   & .tui-page-btn {
     display: inline-flex;
