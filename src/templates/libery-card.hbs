@@ -13,12 +13,7 @@
     </h2>
     <div class='card-description-container modalBtn' data-id='{{film.id}}'>
       <p class='card-description modalBtn' data-id='{{film.id}}'>
-        {{#each genres}}
-          <span class='card-description modalBtn'>
-            {{this.name}},
-          </span>
-        {{/each}}
-        | {{release_date}} | {{vote_average}}
+        {{vote_average}}
       </p>
     </div>
   </a>
