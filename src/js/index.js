@@ -1,5 +1,5 @@
 import '../sass/main.scss';
-import { onBtnLibrary } from './onclick-my_library';
+import './onclick-my_library';
 import './modal.js';
 import './get-genres-function.js';
 import './get-popular-film.js';
