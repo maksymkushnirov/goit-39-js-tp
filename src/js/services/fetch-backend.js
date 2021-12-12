@@ -13,10 +13,12 @@ export async function getGenres() {
   return response.data;
 }
 
-export async function getSearch(value) {
+export async function getSearch(value, page) {
   spinner.classList.remove('visually-hidden');
   const response = await axios.get(
-    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${value}`
+    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&page=${page}&language=en-US&include_adult=false&query=${value}`
   );
+  
+   spinner.classList.add('visually-hidden');
   return response.data;
 }
