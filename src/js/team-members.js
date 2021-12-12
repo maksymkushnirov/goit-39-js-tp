@@ -25,7 +25,8 @@ const instance = basicLightbox.create(
     </div>`,
   {
     onShow: (instance) => {
-      instance.element().querySelector('.modal__close').onclick = instance.close;
+      instance.element().querySelector('.modal__close').onclick =
+        instance.close;
       window.addEventListener('keydown', onEscKeydown);
       document.body.style.overflow = 'hidden';
     },

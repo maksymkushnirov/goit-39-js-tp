@@ -11,7 +11,8 @@ const refs = {
   openNextBtn: document.querySelector('.header-change__cont'), //Пошук контейнера з кнопками Watchd і Queve в Header
   btnWatched: document.querySelector('[data-watched]'), //Пошук кнопки Watched в Header
   btnQueue: document.querySelector('[data-queue]'), //Пошук кнопки Queve в Header
-  gallery: document.querySelector('.card-list') //Пошук контейнера gallery в main
+  gallery: document.querySelector('.card-list'), //Пошук контейнера gallery в main
+  paginationConteiner: document.getElementById('tui-pagination-container')
 };
 
 refs.logo.addEventListener('click', onLogo);
@@ -44,6 +45,7 @@ export function onBtnLibrary() {
   refs.searchForm.classList.add('visually-hidden');
   refs.openNextBtn.classList.remove('visually-hidden');
   refs.changeHeader.classList.add('header-change');
+  refs.paginationConteiner.classList.add('visually-hidden');
   onBtnWatchedInMyLibrary();
   markUpLibraryScreen();
 }

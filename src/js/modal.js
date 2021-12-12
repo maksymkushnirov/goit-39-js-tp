@@ -72,7 +72,9 @@ function getIdMovie(e) {
 fetchMovieModal();
 
 async function fetchMovieModal() {
-  const data = await fetch(`${BASE_URL}trending/movie/day?api_key=${KEY}&language=en-US`).then((response) => {
+  const data = await fetch(
+    `${BASE_URL}trending/movie/day?api_key=${KEY}&language=en-US`
+  ).then((response) => {
     if (!response.ok) {
       throw Error(response.statusText);
     }
@@ -83,7 +85,9 @@ async function fetchMovieModal() {
 async function openModal(id) {
   modalBackdrop.classList.remove('is-hidden');
 
-  const infoMovie = await fetch(`${BASE_URL}movie/${id}?api_key=${KEY}&language=en-US`).then((response) => {
+  const infoMovie = await fetch(
+    `${BASE_URL}movie/${id}?api_key=${KEY}&language=en-US`
+  ).then((response) => {
     if (!response.ok) {
       throw Error(response.statusText);
     }
@@ -148,4 +152,5 @@ async function openModal(id) {
 function closeModal() {
   modalBackdrop.classList.add('is-hidden');
   modalWindow.innerHTML = ' ';
+  location.href = './index.html';
 }
