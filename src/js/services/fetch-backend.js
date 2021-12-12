@@ -4,13 +4,17 @@ const spinner = document.getElementById('loading');
 
 export async function getPopularFilms(page) {
   spinner.classList.remove('visually-hidden');
-  const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&page=${page}`);
+  const response = await axios.get(
+    `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&page=${page}`
+  );
   spinner.classList.add('visually-hidden');
   return response.data;
 }
 
 export async function getGenres() {
-  const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`);
+  const response = await axios.get(
+    `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`
+  );
   return response.data;
 }
 
