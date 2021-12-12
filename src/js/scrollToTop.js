@@ -1,7 +1,7 @@
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 const rootElement = document.documentElement;
 
-function scrollToTop() {
+export function scrollToTop() {
   // Scroll to top logic
   rootElement.scrollTo({
     top: 0,
