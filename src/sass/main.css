@@ -580,8 +580,9 @@ img {
 }
 
 .card-title {
-  margin-top: 10px;
+  padding-top: 10px;
   margin-bottom: 5px;
+  margin-left: 5px;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.16;
@@ -596,6 +597,8 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin-left: 5px;
+  padding-bottom: 10px;
 }
 
 .card-description {
@@ -647,12 +650,13 @@ img {
     margin-left: 30px;
     margin-top: 30px;
     position: relative;
-    -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     -webkit-transition: -webkit-transform var(--animation-duration) var(--timing-function);
     transition: -webkit-transform var(--animation-duration) var(--timing-function);
     transition: transform var(--animation-duration) var(--timing-function);
     transition: transform var(--animation-duration) var(--timing-function), -webkit-transform var(--animation-duration) var(--timing-function);
+    border-radius: 0px 0px 4px 4px;
   }
 }
 
@@ -664,7 +668,7 @@ img {
 .card-image {
   width: 280px;
   height: 402px;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .card-image {
@@ -1002,6 +1006,7 @@ img {
   line-height: normal;
   text-align: center;
   font-size: 0;
+  padding-bottom: 20px;
 }
 
 .tui-pagination .tui-page-btn {

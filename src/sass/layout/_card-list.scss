@@ -70,25 +70,24 @@
     margin-left: 30px;
     margin-top: 30px;
     position: relative;
-    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     transition: transform var(--animation-duration) var(--timing-function);
     border-radius: 0px 0px 4px 4px;
   }
-  }
+}
 
-  .card-item:hover {
-    transform: scale(1.03);
-  }
-  .card-image {
-    width: 280px;
-    height: 402px;
-    border-radius: 4px;
-  }
-  .card-image {
-    width: 294px;
-    height: 398px;
-    object-fit: cover;
-  
+.card-item:hover {
+  transform: scale(1.03);
+}
+.card-image {
+  width: 280px;
+  height: 402px;
+  border-radius: 4px;
+}
+.card-image {
+  width: 294px;
+  height: 398px;
+  object-fit: cover;
 }
 
 @media screen and (min-width: $desktop-min) {
