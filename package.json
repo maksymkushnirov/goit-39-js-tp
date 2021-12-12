@@ -7,13 +7,7 @@
   "scripts": {
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-39-js-tp/",
-    "prettier": "prettier --write src/",
-    "lint": "prettier --write src/"
-  },
-  "husky": {
-    "hooks": {
-     "pre-commit": "prettier --write . && git add -A ."
-    }
+    "prettier": "prettier --write src/"
   },
   "repository": {
     "type": "git",
@@ -36,7 +30,6 @@
   "dependencies": {
     "axios": "^0.24.0",
     "basiclightbox": "^5.0.4",
-    "husky": "^7.0.4",
     "notiflix": "^3.2.2",
     "tui-pagination": "^3.4.1"
   }
