@@ -38,9 +38,10 @@ export function markUpPopularFilmGallery(films) {
           film.id
         }">${filmName.toUpperCase()}</h2>
           <div class="card-description-container modalBtn" data-id="${film.id}">
-            <p class="card-description modalBtn" data-id="${
-              film.id
-            }">${genre_ids.join(', ')} | ${filmYear.slice(0, 4)}</p>
+            <p class="card-description modalBtn" data-id="${film.id}">${genre_ids.join(', ')} | ${filmYear.slice(
+        0,
+        4
+      )}</p>
           </div>
       </a>
     </li>`;

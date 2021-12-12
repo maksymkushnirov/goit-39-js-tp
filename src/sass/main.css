@@ -689,17 +689,6 @@ img {
   }
 }
 
-.card-vote_average {
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
-  padding: 1px 9px;
-  margin-right: 4px;
-  background-color: #ff6b01;
-  color: #ffffff;
-  border-radius: 5px;
-}
-
 .backdrop.is-hidden {
   visibility: hidden;
   opacity: 0;
