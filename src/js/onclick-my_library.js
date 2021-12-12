@@ -1,6 +1,6 @@
 import img from '../images/screen-library.jpg';
-import { markUpWatched } from './get-watched';
-import { markUpQueue } from './get-queue';
+import { markUpWatched } from '../js/get-watched';
+import { markUpQueue } from '../js/get-queue';
 
 const refs = {
   logo: document.querySelector('.logo-link'),
