@@ -28,7 +28,7 @@ function onSubmit(event) {
     return;
   }
 
-  pagination.off('afterMove', handlerPopFilm);
+  pagination._offByHandler(handlerPopFilm);
   inputValue = event.currentTarget.query.value;
 
   getSearch(inputValue, page)
@@ -38,16 +38,18 @@ function onSubmit(event) {
         Notify.failure('Search result not successful. Enter the correct movie name and', { timeout: 3000 });
         GetPopularFilms();
         pagination.on('afterMove', handlerPopFilm);
+        pagination._offByHandler(handlerSearchFilm);
         return
       } else {
         pagination.reset(data.total_pages);
-        pagination.movePageTo(1)
+        
         data.results.map((filmData) => {
           replaceGenresById(filmData); //Функція добавляє назви жанрів по id
         });
 
         localStorage.setItem('search_films_from_beckend', JSON.stringify(data.results));
         markUpPopularFilmGallery(data.results); //Рендерить розмітку запиту із форми
+        pagination.on('beforeMove', handlerSearchFilm);
       }   
     })
     .catch((error) => console.log(error));
@@ -58,20 +60,13 @@ function onSubmit(event) {
 
 }
 
-//Очистка розмітки
-
-// function clearMarkup() {
-//   refs.gallery.innerHTML = '';
-// }
-
-pagination.on('beforeMove', handlerSearchFilm);
-
 async function handlerSearchFilm(event) {
- scrollToTop();
+  scrollToTop();
   const currentPage = event.page;
   if (inputValue) {
      try {
        const data = await getSearch(inputValue, currentPage);
+        
       if (data.results.length === 0) {
         Notify.failure('Search result not successful. Enter the correct movie name and', { timeout: 3000 });
         return

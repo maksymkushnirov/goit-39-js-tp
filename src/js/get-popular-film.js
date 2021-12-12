@@ -5,7 +5,7 @@ import { pagination } from './pagination.js';
 import { scrollToTop } from './scrollToTop'
 
 const page = pagination.getCurrentPage();
-const spinner = document.getElementById('loading');
+
 
 
 export function GetPopularFilms() {
@@ -18,7 +18,6 @@ export function GetPopularFilms() {
       pagination.reset(films.total_pages);
       localStorage.setItem('films_from_beckend', JSON.stringify(films.results));
       markUpPopularFilmGallery(films.results);
-      spinner.classList.add('visually-hidden');
     })
     .catch((error) => console.log(error));
 }
@@ -38,7 +37,6 @@ export function handlerPopFilm(event){
       });
       localStorage.setItem('films_from_beckend', JSON.stringify(films.results));
       markUpPopularFilmGallery(films.results);
-      spinner.classList.add('visually-hidden');
     })
     .catch((error) => console.log(error));
 }

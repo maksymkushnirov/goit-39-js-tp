@@ -5,6 +5,7 @@ const spinner = document.getElementById('loading');
 export async function getPopularFilms(page) {
   spinner.classList.remove('visually-hidden');
   const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&page=${page}`);
+  spinner.classList.add('visually-hidden');
   return response.data;
 }
 
