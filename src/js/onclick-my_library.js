@@ -1,5 +1,5 @@
 import img from '../images/screen-library.jpg';
-
+import { pagination_2 } from './pagination.js';
 import { markUpWatchedFilmGallery } from './get-watched';
 //import { markUpQueue } from '../js/get-queue';///////Непотрібний файл
 
@@ -13,7 +13,8 @@ const refs = {
   btnWatched: document.querySelector('[data-watched]'), //Пошук кнопки Watched в Header
   btnQueue: document.querySelector('[data-queue]'), //Пошук кнопки Queve в Header
   gallery: document.querySelector('.card-list'), //Пошук контейнера gallery в main
-  paginationConteiner: document.getElementById('tui-pagination-container')
+  paginationContainer: document.getElementById('tui-pagination-container'),
+  paginationContainer_2: document.getElementById('tui-pagination-container-2'),
 };
 
 refs.logo.addEventListener('click', onLogo);
@@ -46,7 +47,8 @@ export function onBtnLibrary() {
   refs.searchForm.classList.add('visually-hidden');
   refs.openNextBtn.classList.remove('visually-hidden');
   refs.changeHeader.classList.add('header-change');
-  refs.paginationConteiner.classList.add('visually-hidden');
+  refs.paginationContainer.classList.add('visually-hidden');
+  refs.paginationContainer_2.classList.remove('visually-hidden');
   markUpLibraryScreen();
   onBtnQueueInMyLibrary();
   onBtnWatchedInMyLibrary();
@@ -123,4 +125,11 @@ function markUpHomeScreen() {
   if (localStorage.getItem('films_from_beckend')) {
     location.href = './index.html';
   }
+}
+
+
+pagination_2.on('afterMove', handlerLibraryLilmsPag);
+
+function handlerLibraryLilmsPag() {
+  console.log("header-change__cont-btn--activ")
 }
