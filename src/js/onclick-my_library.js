@@ -1,6 +1,8 @@
 import img from '../images/screen-library.jpg';
-import { markUpWatched } from '../js/get-watched';
-import { markUpQueue } from '../js/get-queue';
+
+import { markUpWatchedFilmGallery } from './get-watched';
+//import { markUpQueue } from '../js/get-queue';///////Непотрібний файл
+
 
 const refs = {
   logo: document.querySelector('.logo-link'),
@@ -47,49 +49,55 @@ export function onBtnLibrary() {
   refs.changeHeader.classList.add('header-change');
   refs.paginationConteiner.classList.add('visually-hidden');
   onBtnWatchedInMyLibrary();
-  markUpLibraryScreen();
+  //markUpLibraryScreen();
 }
 
 //Функція виконується при нажиманні на кнопку Watched
 function onBtnWatchedInMyLibrary() {
-  if (markUpWatched) {
-    refs.gallery.innerHTML = markUpWatched;
+  
+  const getWatched = localStorage.getItem('Watched');
+  const parsedWatchedFilms = JSON.parse(getWatched);
+  //console.log(parsedWatchedFilms)
+  if (parsedWatchedFilms.length > 0) {
+    
+    refs.gallery.innerHTML = '';
+    markUpWatchedFilmGallery(parsedWatchedFilms)//Рендер карточок для кнопки Watched
     refs.btnWatched.classList.add('header-change__cont-btn--activ');
     refs.btnQueue.classList.remove('header-change__cont-btn--activ');
-
+    console.log("Yesss")
     return;
   }
-  refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
+  if (parsedWatchedFilms.length === 0 || localStorage.getItem('Watched') === null) {
+    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
         <img class="library-screen__image" src="${img}" alt="Bear" />`;
-  refs.btnWatched.classList.add('header-change__cont-btn--activ');
-  refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+    refs.btnWatched.classList.add('header-change__cont-btn--activ');
+    refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+    console.log("Nooooo")
+    
+  }
 }
+
+
 
 //Функція виконується при нажиманні на кнопку Queue
 function onBtnQueueInMyLibrary() {
-  if (markUpQueue) {
-    refs.gallery.innerHTML = markUpQueue;
+  const getQueue = localStorage.getItem('Queue');
+  const parsedQueueFilms = JSON.parse(getQueue);
+  if (parsedQueueFilms.length > 0) {
+    refs.gallery.innerHTML = '';
+    markUpWatchedFilmGallery(parsedQueueFilms)//Рендер карточок для кнопки Queue
     refs.btnWatched.classList.remove('header-change__cont-btn--activ');
     refs.btnQueue.classList.add('header-change__cont-btn--activ');
     return;
   }
-  refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
+  if (parsedQueueFilms.length === 0 || localStorage.getItem('Queue') === null) {
+    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
         <img class="library-screen__image" src="${img}" alt="Bear" />`;
-  refs.btnWatched.classList.remove('header-change__cont-btn--activ');
-  refs.btnQueue.classList.add('header-change__cont-btn--activ');
-}
-//Функція - рендер пустого екрана My Library
-function markUpLibraryScreen() {
-  if (markUpWatched) {
-    return (refs.gallery.innerHTML = markUpWatched);
+    refs.btnWatched.classList.remove('header-change__cont-btn--activ');
+    refs.btnQueue.classList.add('header-change__cont-btn--activ');
   }
-  //Потрібно поєднати ключ localStorage з Дмитром
-
-  refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
-        <img class="library-screen__image" src="${img}" alt="Bear" />`;
-
-  //додається функція Дмитра//
 }
+
 
 //Функція - рендер на кнопку Home
 function markUpHomeScreen() {
@@ -97,3 +105,5 @@ function markUpHomeScreen() {
     location.href = './index.html';
   }
 }
+
+

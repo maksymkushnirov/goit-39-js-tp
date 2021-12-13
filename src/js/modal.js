@@ -152,5 +152,5 @@ async function openModal(id) {
 function closeModal() {
   modalBackdrop.classList.add('is-hidden');
   modalWindow.innerHTML = ' ';
-  location.href = './index.html';
+  //location.href = './index.html';////На всякий випадок))))))
 }
