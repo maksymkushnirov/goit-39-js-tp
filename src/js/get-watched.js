@@ -41,6 +41,19 @@ export function markUpWatchedFilmGallery(films) {
       if (!release_date && !first_air_date) {
         filmYear = '';
       }
+genresArray(genres)
+
+      function genresArray(genres) {
+        console.log(genres);
+          let keysValues = ''
+        genres.forEach((el) => {
+          const keyName = el['name']
+              keysValues = keysValues  + keyName + ", "
+        });
+console.log(keysValues);
+return keysValues
+}
+
       return `<li class="card-item modalBtn" data-id="${film.id}" >
         <a class="link modalBtn" href="#" data-id="${film.id}" >
         <div class=""><img class="card-image modalBtn" data-id="${
@@ -52,7 +65,7 @@ export function markUpWatchedFilmGallery(films) {
           <div class="card-description-container modalBtn" data-id="${film.id}">
             <p class="card-description modalBtn" data-id="${
               film.id
-            }">${genres} | ${filmYear.slice(0, 4)}
+            }">${genresArray(genres)} | ${filmYear.slice(0, 4)}
             <span class="card-vote_average">${vote_average}</span></p>
           </div>
       </a>
