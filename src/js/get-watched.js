@@ -57,7 +57,7 @@ export function markUpWatchedFilmGallery(films) {
         });
 
         if (condition) {
-          keysValues = keysValues + 'other...';
+          keysValues = keysValues + ', other...';
         }
 
         return keysValues;
