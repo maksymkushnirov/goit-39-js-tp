@@ -16,7 +16,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  margin-bottom: 30px;
+
+  @media screen and (max-width: $mobile-max) {
+    margin-bottom: 30px;
+  }
 
   @media screen and (min-width: $tablet-min) {
     width: 263px;
