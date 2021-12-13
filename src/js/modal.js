@@ -17,6 +17,7 @@ const KEY = 'fe9ed89434aaae0a5431bf6fa09118e9';
 galery.addEventListener('click', (e) => {
   // const id = e.target.getAttribute('data-id');
   e.preventDefault();
+  document.body.style.overflow = 'hidden'; // забирає скролл сторінки за мадалкою
   getIdMovie(e);
 });
 // ==========================================================================
@@ -152,5 +153,6 @@ async function openModal(id) {
 function closeModal() {
   modalBackdrop.classList.add('is-hidden');
   modalWindow.innerHTML = ' ';
+  document.body.style.overflow = 'initial'; // для відновлення скролу головної сторінки
   //location.href = './index.html';////На всякий випадок))))))
 }
