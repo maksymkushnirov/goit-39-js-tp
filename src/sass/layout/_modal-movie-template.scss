@@ -86,7 +86,7 @@
 
 .movie-table-data {
   display: inline-block;
-  &:not(:last-child)::after {
+  &:not(:last-child):not(:first-child)::after {
     content: ',';
   }
 
