@@ -41,18 +41,28 @@ export function markUpWatchedFilmGallery(films) {
       if (!release_date && !first_air_date) {
         filmYear = '';
       }
-genresArray(genres)
+     
 
-      function genresArray(genres) {
-        console.log(genres);
-          let keysValues = ''
-        genres.forEach((el) => {
-          const keyName = el['name']
-              keysValues = keysValues  + keyName + ", "
-        });
-console.log(keysValues);
-return keysValues
-}
+
+    function genresArray(genres) {
+      let condition = false;
+      if ( genres.length > 2) { 
+        condition = true
+        genres = genres.splice(0, 2);
+      } 
+    
+      let keysValues = ''
+      genres.forEach((el, index) => {
+        const keyName = el['name']
+        keysValues = keysValues  + keyName + (index < genres.length-1 ? ", ": "")
+      });
+        
+      if (condition) {
+        keysValues = keysValues + "other..."
+      }
+     
+      return keysValues
+    }
 
       return `<li class="card-item modalBtn" data-id="${film.id}" >
         <a class="link modalBtn" href="#" data-id="${film.id}" >
