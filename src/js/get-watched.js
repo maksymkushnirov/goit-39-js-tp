@@ -10,7 +10,6 @@ function creatWatchedCard(parsedWatchedFilms) {
   }
 } */
 
-
 import imgOne from '../images/no-poster1.png';
 const gallery = document.querySelector('.card-list');
 
@@ -53,14 +52,14 @@ export function markUpWatchedFilmGallery(films) {
           <div class="card-description-container modalBtn" data-id="${film.id}">
             <p class="card-description modalBtn" data-id="${
               film.id
-        }">${genres} | ${filmYear.slice(0, 4)}
+            }">${genres} | ${filmYear.slice(0, 4)}
             <span class="card-vote_average">${vote_average}</span></p>
           </div>
       </a>
     </li>`;
     })
     .join('');
-    console.log('dfdfdff')
+  console.log('dfdfdff');
   gallery.innerHTML = markUp;
 }
 
