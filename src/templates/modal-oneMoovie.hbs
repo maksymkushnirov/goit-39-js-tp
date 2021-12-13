@@ -53,11 +53,14 @@
       <td class='movie-table-data key'>
         Genre
       </td>
-      {{#each genres}}
-        <td class='movie-table-data value'>
-          {{this.name}}
-        </td>
-      {{/each}}
+
+      <td class='movie-table-data value'>
+        {{#each genres}}
+          <span class='value__genres'>
+            {{this.name}}
+          </span>
+        {{/each}}
+      </td>
     </tr>
   </table>
 

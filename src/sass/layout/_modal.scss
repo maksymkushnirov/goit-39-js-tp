@@ -27,8 +27,8 @@
   opacity: 1;
   transform: translate(-50%, -50%);
 
-  // width: fit-content;
-  height: fit-content;
+  width: 90%;
+  height: 90%;
   max-width: 280px;
   max-height: 958px;
   overflow: scroll;
@@ -41,6 +41,8 @@
   @media screen and (min-width: $tablet-min) {
     max-width: 618px;
     max-height: 562px;
+    width: fit-content;
+    height: fit-content;
     overflow: visible;
 
     padding-top: 40px;
