@@ -81,7 +81,7 @@ export function markUpWatchedFilmGallery(films) {
     </li>`;
     })
     .join('');
-  console.log('dfdfdff');
+  //console.log('dfdfdff');
   gallery.innerHTML = markUp;
 }
 

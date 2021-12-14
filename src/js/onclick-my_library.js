@@ -69,7 +69,7 @@ function onBtnWatchedInMyLibrary() {
     markUpWatchedFilmGallery(parsedWatchedFilms); //Рендер карточок для кнопки Watched
     refs.btnWatched.classList.add('header-change__cont-btn--activ');
     refs.btnQueue.classList.remove('header-change__cont-btn--activ');
-    console.log('Yesss');
+    //console.log('Yesss');
     return;
   }
   if (parsedWatchedFilms.length === 0) {
@@ -77,7 +77,7 @@ function onBtnWatchedInMyLibrary() {
         <img class="library-screen__image" src="${img}" alt="Bear" />`;
     refs.btnWatched.classList.add('header-change__cont-btn--activ');
     refs.btnQueue.classList.remove('header-change__cont-btn--activ');
-    console.log('Nooooo');
+    //console.log('Nooooo');
   }
 }
 
@@ -85,7 +85,7 @@ function onBtnWatchedInMyLibrary() {
 function onBtnQueueInMyLibrary() {
   const getQueue = localStorage.getItem('Queue');
   const parsedQueueFilms = JSON.parse(getQueue);
-  console.log(parsedQueueFilms);
+  //console.log(parsedQueueFilms);
   if (parsedQueueFilms === null) {
     refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
         <img class="library-screen__image" src="${img}" alt="Bear" />`;
