@@ -16,7 +16,6 @@ const refs = {
   paginationConteiner: document.getElementById('tui-pagination-container')
 };
 
-
 export function onBtnWatchedInMyLibraryRender() {
   const getWatched = localStorage.getItem('Watched');
   const parsedWatchedFilms = JSON.parse(getWatched);
@@ -45,11 +44,10 @@ export function onBtnWatchedInMyLibraryRender() {
   }
 }
 
-
 export function onBtnQueueInMyLibraryRender() {
   const getQueue = localStorage.getItem('Queue');
   const parsedQueueFilms = JSON.parse(getQueue);
- // console.log(parsedQueueFilms);
+  // console.log(parsedQueueFilms);
   if (parsedQueueFilms === null) {
     refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
         <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
@@ -63,7 +61,7 @@ export function onBtnQueueInMyLibraryRender() {
     markUpWatchedFilmGallery(parsedQueueFilms); //Рендер карточок для кнопки Watched
     refs.btnWatched.classList.remove('header-change__cont-btn--activ');
     refs.btnQueue.classList.add('header-change__cont-btn--activ');
-   // console.log('Розметка');
+    // console.log('Розметка');
     return;
   }
 
@@ -72,11 +70,9 @@ export function onBtnQueueInMyLibraryRender() {
         <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
     refs.btnWatched.classList.remove('header-change__cont-btn--activ');
     refs.btnQueue.classList.add('header-change__cont-btn--activ');
-  //console.log('Пустой');
+    //console.log('Пустой');
   }
 }
-
-
 
 /* import liberyCardTpl from '../templates/libery-card.hbs';
 
@@ -115,8 +111,6 @@ function creatWatchedCard(parsedQueueFilms) {
 // console.log(markUpQueue);
 // console.log(parsedQueueFilms);
 
-
-
 /* refs.logo.addEventListener('click', onLogo);
 refs.btnHome.addEventListener('click', onBtnHome);
 refs.btnLibrary.addEventListener('click', onBtnLibrary); //Виклик слухача на кнопку LIBRARY
@@ -124,8 +118,6 @@ refs.btnWatched.addEventListener('click', onBtnWatchedInMyLibrary); //Викли
 refs.btnQueue.addEventListener('click', onBtnQueueInMyLibrary); //Виклик слухача на кнопку Queve
  */
 //refs.btnLibrary.classList.remove('nav-item__list--activ');
-
-
 
 //Функція виконується при нажиманні на кнопку My Library
 /* export function onBtnLibraryMy() {
@@ -203,4 +195,3 @@ function markUpLibraryScreenTwo() {
 
 
  */
-
