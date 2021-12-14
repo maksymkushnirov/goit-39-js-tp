@@ -1,7 +1,7 @@
 import img from '../images/screen-library.jpg';
 
 import { markUpWatchedFilmGallery } from './get-watched';
-//import { markUpQueue } from '../js/get-queue';///////Непотрібний файл
+
 
 const refs = {
   logo: document.querySelector('.logo-link'),
