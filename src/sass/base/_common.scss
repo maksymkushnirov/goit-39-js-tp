@@ -1,8 +1,10 @@
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
+  // justify-content: space-between;
   font-family: 'Roboto', sans-serif;
   position: relative;
   height: 100%;
@@ -56,4 +58,13 @@ img {
 
 ::-webkit-scrollbar {
   display: none;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
 }

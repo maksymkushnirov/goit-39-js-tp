@@ -31,7 +31,7 @@ const KEY = 'fe9ed89434aaae0a5431bf6fa09118e9';
 
 galery.addEventListener('click', (e) => {
   e.preventDefault();
-  
+
   getIdMovie(e);
 });
 // ==========================================================================
@@ -122,10 +122,15 @@ async function openModal(id) {
 
   if (verifyFilmInLocalStorage(id, 'Watched') === true) {
     addToWatchedBtn.textContent = 'remove from watched';
+    addToWatchedBtn.classList.replace(
+      'add-to-library',
+      'add-to-library--active'
+    );
   }
 
   if (verifyFilmInLocalStorage(id, 'Queue') === true) {
     addToQueueBtn.textContent = 'remove from queue';
+    addToQueueBtn.classList.replace('add-to-library', 'add-to-library--active');
   }
 
   /* if (refs.searchForm.classList.contains('visually-hidden') === true) {
