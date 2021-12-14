@@ -118,4 +118,4 @@ var t,o=arguments[3];!function(o,i){"function"==typeof t&&t.amd?t([],function(){
 },{"./services/fetch-backend":"R53a","./services/replace_genres_by_id":"PRWc","./mark-up-main-film-gallery":"oMZr","./get-popular-film":"CD5M","notiflix/build/notiflix-notify-aio":"MeeU","./pagination.js":"o8lo","./scrollToTop":"bdoy"}],"QvaY":[function(require,module,exports) {
 "use strict";require("../sass/main.scss"),require("./onclick-my_library"),require("./modal.js"),require("./get-genres-function.js"),require("./get-popular-film.js"),require("./team-members.js"),require("./onFormSubmit.js"),require("./scrollToTop.js"),require("./addFilmsToLocalStorage.js"),require("./get-watched.js"),require("./get-queue.js");
 },{"../sass/main.scss":"clu1","./onclick-my_library":"sfvK","./modal.js":"RSqK","./get-genres-function.js":"nXYF","./get-popular-film.js":"CD5M","./team-members.js":"hiYi","./onFormSubmit.js":"w8Cf","./scrollToTop.js":"bdoy","./addFilmsToLocalStorage.js":"N4u6","./get-watched.js":"IAiE","./get-queue.js":"zbcX"}]},{},["QvaY"], null)
-//# sourceMappingURL=/goit-39-js-tp/js.9861b534.js.map
+//# sourceMappingURL=/goit-39-js-tp/js.40c9db35.js.map
