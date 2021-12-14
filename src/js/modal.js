@@ -9,15 +9,15 @@ import {
   onBtnQueueInMyLibrary,
   markUpLibraryScreen,
   } from './onclick-my_library' */
-   import {
+import {
   onBtnWatchedInMyLibraryRender,
-  onBtnQueueInMyLibraryRender,
-  } from './get-queue' //Імпорт функцій для роботи з кнопками в модалці
+  onBtnQueueInMyLibraryRender
+} from './get-queue'; //Імпорт функцій для роботи з кнопками в модалці
 
- const refs = {
-    searchForm: document.querySelector('.search-form'), //Пошук форми з інпутом в Header
-  };
-  
+const refs = {
+  searchForm: document.querySelector('.search-form') //Пошук форми з інпутом в Header
+};
+
 const close = document.querySelector('.modal-close-icon');
 const modalWindow = document.querySelector('.modal-movie-template');
 const galery = document.querySelector('.gallery');
@@ -124,9 +124,7 @@ async function openModal(id) {
   /////////////////////////////////////
   // console.log("=====", infoMovie);
   // console.log("=====", id);
- 
- 
-   
+
   const addToWatchedBtn = document.querySelector('.watched');
   const addToQueueBtn = document.querySelector('.queue');
 
@@ -150,31 +148,26 @@ async function openModal(id) {
     if (verifyFilmInLocalStorage(id, 'Watched') === true) {
       removeFilmFromLocalStorage(id, 'Watched');
       addToWatchedBtn.textContent = 'add to watched';
-     
     } else {
       addFilmInLocalStorage(infoMovie, 'Watched');
       addToWatchedBtn.textContent = 'remove from watched';
-      
     }
     if (refs.searchForm.classList.contains('visually-hidden') === true) {
       onBtnWatchedInMyLibraryRender();
-      
-  }
+    }
   }
 
   function onAddToQueueBtnClick(e) {
     if (verifyFilmInLocalStorage(id, 'Queue') === true) {
       removeFilmFromLocalStorage(id, 'Queue');
       addToQueueBtn.textContent = 'add to queue';
-      
     } else {
       addFilmInLocalStorage(infoMovie, 'Queue');
       addToQueueBtn.textContent = 'remove from queue';
-         
     }
     if (refs.searchForm.classList.contains('visually-hidden') === true) {
-       onBtnQueueInMyLibraryRender();
-  }
+      onBtnQueueInMyLibraryRender();
+    }
   }
 
   /////////////////////////////////////////
