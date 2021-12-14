@@ -16,15 +16,22 @@
     margin-right: 15px;
   }
 
-  &.watched {
+  &.add-to-library {
+    background-color: $white-color;
+    border: 1px solid black;
+    transition: all $timing-function $duration;
+
+    &:hover {
+      color: $white-color;
+      background-color: $accent-color;
+      border: transparent;
+    }
+  }
+
+  &.add-to-library--active {
     color: $white-color;
     background-color: $accent-color;
     border: transparent;
-  }
-
-  &.queue {
-    background-color: $white-color;
-    border: 1px solid black;
   }
 
   @media screen and (min-width: $tablet-min) {
