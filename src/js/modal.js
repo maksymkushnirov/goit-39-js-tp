@@ -1,4 +1,5 @@
-import modalMovieCard from '../templates/modal-oneMoovie.hbs';
+import modalMovieCard from '../templates/modal-oneMoovie.hbs'; // шаблон модального окна
+
 import {
   addFilmInLocalStorage,
   removeFilmFromLocalStorage,
@@ -28,7 +29,7 @@ const KEY = 'fe9ed89434aaae0a5431bf6fa09118e9';
 // ============================================================================
 
 galery.addEventListener('click', (e) => {
-  // const id = e.target.getAttribute('data-id');
+
   e.preventDefault();
   document.body.style.overflow = 'hidden'; // забирає скролл сторінки за мадалкою
   getIdMovie(e);
@@ -59,7 +60,7 @@ function closeModalEsc() {
 }
 // ===========================================================================
 //доббавление слушателя по открытию модалки,
-// удаление по закрытию -close по бекдропу
+
 function closeBackdropClick() {
   modalBackdrop.addEventListener(
     'click',
@@ -68,37 +69,26 @@ function closeBackdropClick() {
       if (condition) {
         closeModal();
       }
-    },
-    options
+    }
   );
 }
 // ============================================================================
 function getIdMovie(e) {
   //console.log(e.target.className);
-  const condition = e.target.className.includes('modalBtn');
-  //console.log(condition);
+  const condition = e.target.className.includes('modalBtn');// условие клика на элемент с классом modalBtn
+  //console.log(condition); 
   if (condition) {
-    const id = e.target.getAttribute('data-id');
+    const id = e.target.getAttribute('data-id'); // при выполнении условия берется значение id элемента на котором произошел клик
     openModal(id);
+    
   }
 }
-// =====================================================================================================================================
-fetchMovieModal();
 
-async function fetchMovieModal() {
-  const data = await fetch(
-    `${BASE_URL}trending/movie/day?api_key=${KEY}&language=en-US`
-  ).then((response) => {
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
-    return response.json();
-  });
-}
 // открытие модалки===отрисовка контента в модалку===апи запрос 1-го элемента по id
 async function openModal(id) {
-  modalBackdrop.classList.remove('is-hidden');
-
+  modalBackdrop.classList.remove('is-hidden'); // открытие модалки
+  
+// фетч запрос, обработка, запись результата в переменную
   const infoMovie = await fetch(
     `${BASE_URL}movie/${id}?api_key=${KEY}&language=en-US`
   ).then((response) => {
@@ -107,7 +97,8 @@ async function openModal(id) {
     }
     return response.json();
   });
-
+// ф-ции вешающие и удаляющие слушатели на закрытие
+  // ===============================================================
   closeBtn();
   closeModalEsc();
   closeBackdropClick();
@@ -115,9 +106,10 @@ async function openModal(id) {
   galery.removeEventListener('click', (e) => {
     e.preventDefault();
     getIdMovie(e);
-  });
+  });// удаление слушателя с галереи по открытию модалки
+  
   // ============================================
-  modalWindow.innerHTML = modalMovieCard(infoMovie);
+  modalWindow.innerHTML = modalMovieCard(infoMovie);// отрисовка шаблона карточки в модалке
 
   /////////////////////////////////////
   //////Робота з кнопками
@@ -177,7 +169,7 @@ async function openModal(id) {
 //  закрытие модалки=== зачистка src
 function closeModal() {
   modalBackdrop.classList.add('is-hidden');
-  modalWindow.innerHTML = ' ';
+  modalWindow.innerHTML = ' '; // зачистка src
   document.body.style.overflow = 'initial'; // для відновлення скролу головної сторінки
   //location.href = './index.html';////На всякий випадок))))))
 }
