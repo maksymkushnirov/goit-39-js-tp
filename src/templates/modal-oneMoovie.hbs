@@ -53,11 +53,14 @@
       <td class='movie-table-data key'>
         Genre
       </td>
-      {{#each genres}}
-        <td class='movie-table-data value'>
-          {{this.name}}
-        </td>
-      {{/each}}
+
+      <td class='movie-table-data value'>
+        {{#each genres}}
+          <span class='value__genres'>
+            {{this.name}}
+          </span>
+        {{/each}}
+      </td>
     </tr>
   </table>
 
@@ -70,13 +73,20 @@
   <div class='modal-buttons'>
     <button
       type='button'
-      class='modal-button watched'
+      class='animate__slideInUp animate__animated modal-button add-to-library'
       data-action='add-to-watched'
     >
       Add to watched
     </button>
-    <button type='button' class='modal-button queue' data-action='add-to-queue'>
+    <button
+      type='button'
+      class='animate__slideInUp animate__animated modal-button add-to-library'
+      data-action='add-to-queue'
+    >
       Add to queue
     </button>
   </div>
+  <div class="trailer"><svg href="../../images/svg/youtube.svg#icon-youtube" width=20 height=18>
+    <use ></use>
+  </svg><a target="_blank" href="https://www.youtube.com/results?search_query={{title}}+trailer">YOUTUBE TRAILER: {{title}}</a></div>
 </div>

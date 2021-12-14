@@ -117,8 +117,13 @@
   font-weight: 500;
   font-size: 30px;
   line-height: 35px;
+  background-color: transparent;
 
   color: #ffffff;
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
   &:hover,
   &:focus {
     color: $accent-color;
@@ -150,6 +155,9 @@
 
   color: #ffffff;
   margin-bottom: 3px;
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
     color: $accent-color;
@@ -228,9 +236,22 @@
   text-transform: uppercase;
   color: #ffffff;
   cursor: pointer;
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    border 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:not(:last-child) {
     margin-right: 20px;
+  }
+  &:hover {
+    /*  color: $accent-color;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12); */
+    color: #fff;
+    border: 1px solid $accent-color;
+    background-color: $accent-color;
+    box-shadow: 0 8px 43px rgb(255 107 1 / 60%);
   }
 }
 .header-change__cont-btn--activ {
