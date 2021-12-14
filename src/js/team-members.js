@@ -1,5 +1,6 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
+import tarasroboteckyi from '../images/team/tarasroboteckyi.png';
 
 const refs = {
   developer: document.querySelector('.footer-link')
@@ -17,7 +18,10 @@ const instance = basicLightbox.create(
             <li class="modal-team-list__item"><a href="https://github.com/AleksandrYakovenko1984" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">- Alexandr Jakovenko</a></li>
             <li class="modal-team-list__item"><a href="https://github.com/Wed88" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">- Dmitriy Dudnik</a></li>
             <li class="modal-team-list__item"><a href="https://github.com/YaroslavOnofriichuk" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">- Yaroslav Onofriichuk</a></li>
-            <li class="modal-team-list__item"><a href="https://github.com/Taras-Roboteckyi" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">- Taras Roboteckyi</a></li>
+            <li class="modal-team-list__item"><a href="https://github.com/Taras-Roboteckyi" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">Taras-Roboteckyi
+                <p class="list-section-team-item-description" lang="en">
+                  Developer
+                </p><img class="team-member-photo" src="${tarasroboteckyi}" alt="Taras Roboteckyi"</a></li>
             <li class="modal-team-list__item"><a href="https://github.com/Broshnitskiy" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">- Roman Broshnitskiy</a></li>
             <li class="modal-team-list__item"><a href="https://github.com/oleg634996" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">- Oleg Kolodiy</a></li>
         </ul>
