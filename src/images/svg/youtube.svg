@@ -1,0 +1,8 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-youtube" viewBox="0 0 32 32">
+<path fill="#f00" style="fill: var(--color1, #f00)" d="M31.096 8.416c-0.362-1.356-1.43-2.423-2.786-2.786-2.457-0.659-12.31-0.659-12.31-0.659s-9.853 0-12.31 0.659c-1.356 0.362-2.423 1.43-2.786 2.786-0.659 2.457-0.659 7.584-0.659 7.584s0 5.127 0.659 7.584c0.362 1.356 1.43 2.423 2.786 2.786 2.457 0.659 12.31 0.659 12.31 0.659s9.853 0 12.31-0.659c1.356-0.362 2.423-1.43 2.786-2.786 0.659-2.457 0.659-7.584 0.659-7.584s0-5.127-0.659-7.584z"></path>
+<path fill="#fff" style="fill: var(--color2, #fff)" d="M12.849 20.726l8.185-4.726-8.185-4.726z"></path>
+</symbol>
+</defs>
+</svg>
