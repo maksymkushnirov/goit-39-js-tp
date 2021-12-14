@@ -1,7 +1,7 @@
 import imgTree from '../images/screen-library.jpg';
 
 import { markUpWatchedFilmGallery } from './get-watched';
-//import { markUpQueue } from '../js/get-queue';///////Непотрібний файл
+
 
 const refs = {
   logo: document.querySelector('.logo-link'),
@@ -16,64 +16,91 @@ const refs = {
   paginationConteiner: document.getElementById('tui-pagination-container')
 };
 
+
+//////////////Кнопка Watched/////////////
+
 export function onBtnWatchedInMyLibraryRender() {
   const getWatched = localStorage.getItem('Watched');
   const parsedWatchedFilms = JSON.parse(getWatched);
   if (parsedWatchedFilms === null) {
-    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
-        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
-    refs.btnWatched.classList.add('header-change__cont-btn--activ');
-    refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+    clearMarkupWatchedCards();
     return;
   }
   //console.log(parsedWatchedFilms)
   if (parsedWatchedFilms.length > 0) {
     refs.gallery.innerHTML = '';
-    markUpWatchedFilmGallery(parsedWatchedFilms); //Рендер карточок для кнопки Watched
-    refs.btnWatched.classList.add('header-change__cont-btn--activ');
-    refs.btnQueue.classList.remove('header-change__cont-btn--activ');
-    //console.log('Yesss');
+    if (refs.btnWatched.classList.contains('header-change__cont-btn--activ')) {
+      markUpWatchedFilmGallery(parsedWatchedFilms); 
+      //Рендер карточок для кнопки Watched
+    } else {
+      refs.gallery.innerHTML = '';
+      onBtnQueueInMyLibraryRender();
+    }
+    
+    /* refs.btnWatched.classList.add('header-change__cont-btn--activ');
+    refs.btnQueue.classList.remove('header-change__cont-btn--activ'); */
+    console.log('Yesss');
     return;
   }
   if (parsedWatchedFilms.length === 0) {
-    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
-        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
-    refs.btnWatched.classList.add('header-change__cont-btn--activ');
-    refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+    clearMarkupWatchedCards()
     //console.log('Nooooo');
   }
 }
+
+
+//////////////Кнопка Queue/////////////
 
 export function onBtnQueueInMyLibraryRender() {
   const getQueue = localStorage.getItem('Queue');
   const parsedQueueFilms = JSON.parse(getQueue);
   // console.log(parsedQueueFilms);
   if (parsedQueueFilms === null) {
-    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
-        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
-    refs.btnWatched.classList.remove('header-change__cont-btn--activ');
-    refs.btnQueue.classList.add('header-change__cont-btn--activ');
+    clearMarkupQueueCards();
     return;
   }
 
   if (parsedQueueFilms.length > 0) {
     refs.gallery.innerHTML = '';
-    markUpWatchedFilmGallery(parsedQueueFilms); //Рендер карточок для кнопки Watched
-    refs.btnWatched.classList.remove('header-change__cont-btn--activ');
-    refs.btnQueue.classList.add('header-change__cont-btn--activ');
-    // console.log('Розметка');
+    if (refs.btnQueue.classList.contains('header-change__cont-btn--activ')) {
+       markUpWatchedFilmGallery(parsedQueueFilms); //Рендер карточок для кнопки Watched
+      
+    } else {
+      refs.gallery.innerHTML = '';
+      onBtnWatchedInMyLibraryRender();
+    }
+   
+   /*  refs.btnWatched.classList.remove('header-change__cont-btn--activ');
+    refs.btnQueue.classList.add('header-change__cont-btn--activ'); */
+     console.log('Розметка');
     return;
   }
 
   if (parsedQueueFilms.length === 0) {
-    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
-        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
-    refs.btnWatched.classList.remove('header-change__cont-btn--activ');
-    refs.btnQueue.classList.add('header-change__cont-btn--activ');
+    clearMarkupQueueCards();
     //console.log('Пустой');
   }
 }
 
+
+
+/////Очитска розмітки на кнопці Watched//////////
+function clearMarkupWatchedCards() {
+  refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
+        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
+    refs.btnWatched.classList.add('header-change__cont-btn--activ');
+    refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+}
+
+
+/////Очитска розмітки на кнопці Queue//////////
+
+function clearMarkupQueueCards() {
+  refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
+        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
+    refs.btnWatched.classList.remove('header-change__cont-btn--activ');
+    refs.btnQueue.classList.add('header-change__cont-btn--activ');
+}
 /* import liberyCardTpl from '../templates/libery-card.hbs';
 
 const getQueue = localStorage.getItem('Queue');
