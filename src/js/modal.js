@@ -68,8 +68,7 @@ function closeBackdropClick() {
       if (condition) {
         closeModal();
       }
-    },
-    options
+    }
   );
 }
 // ============================================================================
@@ -82,19 +81,7 @@ function getIdMovie(e) {
     openModal(id);
   }
 }
-// =====================================================================================================================================
-fetchMovieModal();
 
-async function fetchMovieModal() {
-  const data = await fetch(
-    `${BASE_URL}trending/movie/day?api_key=${KEY}&language=en-US`
-  ).then((response) => {
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
-    return response.json();
-  });
-}
 // открытие модалки===отрисовка контента в модалку===апи запрос 1-го элемента по id
 async function openModal(id) {
   modalBackdrop.classList.remove('is-hidden');
