@@ -12,8 +12,11 @@ import {
    import {
   onBtnWatchedInMyLibraryRender,
   onBtnQueueInMyLibraryRender,
-  
-} from './get-queue'
+  } from './get-queue' //Імпорт функцій для роботи з кнопками в модалці
+
+ const refs = {
+    searchForm: document.querySelector('.search-form'), //Пошук форми з інпутом в Header
+  };
   
 const close = document.querySelector('.modal-close-icon');
 const modalWindow = document.querySelector('.modal-movie-template');
@@ -70,9 +73,9 @@ function closeBackdropClick() {
 }
 // ============================================================================
 function getIdMovie(e) {
-  console.log(e.target.className);
+  //console.log(e.target.className);
   const condition = e.target.className.includes('modalBtn');
-  console.log(condition);
+  //console.log(condition);
   if (condition) {
     const id = e.target.getAttribute('data-id');
     openModal(id);
@@ -121,11 +124,7 @@ async function openModal(id) {
   // console.log("=====", infoMovie);
   // console.log("=====", id);
  
-  const refs = {
-  
-  searchForm: document.querySelector('.search-form'), //Пошук форми з інпутом в Header
-  
-};
+ 
    
   const addToWatchedBtn = document.querySelector('.watched');
   const addToQueueBtn = document.querySelector('.queue');

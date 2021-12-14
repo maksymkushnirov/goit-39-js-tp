@@ -1,3 +1,83 @@
+import imgTree from '../images/screen-library.jpg';
+
+import { markUpWatchedFilmGallery } from './get-watched';
+//import { markUpQueue } from '../js/get-queue';///////Непотрібний файл
+
+const refs = {
+  logo: document.querySelector('.logo-link'),
+  btnHome: document.querySelector('[data-home]'), //Пошук кнопки HOME в Header
+  btnLibrary: document.querySelector('[data-library]'), //Пошук кнопки LIBRARY в Header
+  changeHeader: document.querySelector('.header'), //Пошук класу Header
+  searchForm: document.querySelector('.search-form'), //Пошук форми з інпутом в Header
+  openNextBtn: document.querySelector('.header-change__cont'), //Пошук контейнера з кнопками Watchd і Queve в Header
+  btnWatched: document.querySelector('[data-watched]'), //Пошук кнопки Watched в Header
+  btnQueue: document.querySelector('[data-queue]'), //Пошук кнопки Queve в Header
+  gallery: document.querySelector('.card-list'), //Пошук контейнера gallery в main
+  paginationConteiner: document.getElementById('tui-pagination-container')
+};
+
+
+export function onBtnWatchedInMyLibraryRender() {
+  const getWatched = localStorage.getItem('Watched');
+  const parsedWatchedFilms = JSON.parse(getWatched);
+  if (parsedWatchedFilms === null) {
+    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
+        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
+    refs.btnWatched.classList.add('header-change__cont-btn--activ');
+    refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+    return;
+  }
+  //console.log(parsedWatchedFilms)
+  if (parsedWatchedFilms.length > 0) {
+    refs.gallery.innerHTML = '';
+    markUpWatchedFilmGallery(parsedWatchedFilms); //Рендер карточок для кнопки Watched
+    refs.btnWatched.classList.add('header-change__cont-btn--activ');
+    refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+    //console.log('Yesss');
+    return;
+  }
+  if (parsedWatchedFilms.length === 0) {
+    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
+        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
+    refs.btnWatched.classList.add('header-change__cont-btn--activ');
+    refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+    //console.log('Nooooo');
+  }
+}
+
+
+export function onBtnQueueInMyLibraryRender() {
+  const getQueue = localStorage.getItem('Queue');
+  const parsedQueueFilms = JSON.parse(getQueue);
+ // console.log(parsedQueueFilms);
+  if (parsedQueueFilms === null) {
+    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
+        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
+    refs.btnWatched.classList.remove('header-change__cont-btn--activ');
+    refs.btnQueue.classList.add('header-change__cont-btn--activ');
+    return;
+  }
+
+  if (parsedQueueFilms.length > 0) {
+    refs.gallery.innerHTML = '';
+    markUpWatchedFilmGallery(parsedQueueFilms); //Рендер карточок для кнопки Watched
+    refs.btnWatched.classList.remove('header-change__cont-btn--activ');
+    refs.btnQueue.classList.add('header-change__cont-btn--activ');
+   // console.log('Розметка');
+    return;
+  }
+
+  if (parsedQueueFilms.length === 0) {
+    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
+        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
+    refs.btnWatched.classList.remove('header-change__cont-btn--activ');
+    refs.btnQueue.classList.add('header-change__cont-btn--activ');
+  //console.log('Пустой');
+  }
+}
+
+
+
 /* import liberyCardTpl from '../templates/libery-card.hbs';
 
 const getQueue = localStorage.getItem('Queue');
@@ -36,23 +116,6 @@ function creatWatchedCard(parsedQueueFilms) {
 // console.log(parsedQueueFilms);
 
 
-import imgTree from '../images/screen-library.jpg';
-
-import { markUpWatchedFilmGallery } from './get-watched';
-//import { markUpQueue } from '../js/get-queue';///////Непотрібний файл
-
-const refs = {
-  logo: document.querySelector('.logo-link'),
-  btnHome: document.querySelector('[data-home]'), //Пошук кнопки HOME в Header
-  btnLibrary: document.querySelector('[data-library]'), //Пошук кнопки LIBRARY в Header
-  changeHeader: document.querySelector('.header'), //Пошук класу Header
-  searchForm: document.querySelector('.search-form'), //Пошук форми з інпутом в Header
-  openNextBtn: document.querySelector('.header-change__cont'), //Пошук контейнера з кнопками Watchd і Queve в Header
-  btnWatched: document.querySelector('[data-watched]'), //Пошук кнопки Watched в Header
-  btnQueue: document.querySelector('[data-queue]'), //Пошук кнопки Queve в Header
-  gallery: document.querySelector('.card-list'), //Пошук контейнера gallery в main
-  paginationConteiner: document.getElementById('tui-pagination-container')
-};
 
 /* refs.logo.addEventListener('click', onLogo);
 refs.btnHome.addEventListener('click', onBtnHome);
@@ -141,59 +204,3 @@ function markUpLibraryScreenTwo() {
 
  */
 
-export function onBtnWatchedInMyLibraryRender() {
-  const getWatched = localStorage.getItem('Watched');
-  const parsedWatchedFilms = JSON.parse(getWatched);
-  if (parsedWatchedFilms === null) {
-    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
-        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
-    /* refs.btnWatched.classList.add('header-change__cont-btn--activ');
-    refs.btnQueue.classList.remove('header-change__cont-btn--activ'); */
-    return;
-  }
-  //console.log(parsedWatchedFilms)
-  if (parsedWatchedFilms.length > 0) {
-    refs.gallery.innerHTML = '';
-    markUpWatchedFilmGallery(parsedWatchedFilms); //Рендер карточок для кнопки Watched
-    /* refs.btnWatched.classList.add('header-change__cont-btn--activ');
-    refs.btnQueue.classList.remove('header-change__cont-btn--activ'); */
-    console.log('Yesss');
-    return;
-  }
-  if (parsedWatchedFilms.length === 0) {
-    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
-        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
-    /* refs.btnWatched.classList.add('header-change__cont-btn--activ');
-    refs.btnQueue.classList.remove('header-change__cont-btn--activ'); */
-    console.log('Nooooo');
-  }
-}
-
-
-export function onBtnQueueInMyLibraryRender() {
-  const getQueue = localStorage.getItem('Queue');
-  const parsedQueueFilms = JSON.parse(getQueue);
-  console.log(parsedQueueFilms);
-  if (parsedQueueFilms === null) {
-    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
-        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
-    /* refs.btnWatched.classList.remove('header-change__cont-btn--activ');
-    refs.btnQueue.classList.add('header-change__cont-btn--activ'); */
-    return;
-  }
-
-  if (parsedQueueFilms.length > 0) {
-    refs.gallery.innerHTML = '';
-    markUpWatchedFilmGallery(parsedQueueFilms); //Рендер карточок для кнопки Watched
-    /* refs.btnWatched.classList.remove('header-change__cont-btn--activ');
-    refs.btnQueue.classList.add('header-change__cont-btn--activ'); */
-    return;
-  }
-
-  if (parsedQueueFilms.length === 0) {
-    refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
-        <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
-    /* refs.btnWatched.classList.remove('header-change__cont-btn--activ');
-    refs.btnQueue.classList.add('header-change__cont-btn--activ'); */
-  }
-}
