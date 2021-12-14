@@ -1,5 +1,5 @@
 import imgTree from '../images/screen-library.jpg';
-
+import { pagination_2 } from './pagination.js';
 import { markUpWatchedFilmGallery } from './get-watched';
 
 
@@ -13,7 +13,8 @@ const refs = {
   btnWatched: document.querySelector('[data-watched]'), //Пошук кнопки Watched в Header
   btnQueue: document.querySelector('[data-queue]'), //Пошук кнопки Queve в Header
   gallery: document.querySelector('.card-list'), //Пошук контейнера gallery в main
-  paginationConteiner: document.getElementById('tui-pagination-container')
+  paginationConteiner: document.getElementById('tui-pagination-container'),
+  paginationContainer_2: document.getElementById('tui-pagination-container-2'),
 };
 
 
@@ -30,6 +31,9 @@ export function onBtnWatchedInMyLibraryRender() {
   if (parsedWatchedFilms.length > 0) {
     refs.gallery.innerHTML = '';
     if (refs.btnWatched.classList.contains('header-change__cont-btn--activ')) {
+      
+      pagination_2.reset(parsedWatchedFilms.length);
+      parsedWatchedFilms.splice(6);
       markUpWatchedFilmGallery(parsedWatchedFilms); 
       //Рендер карточок для кнопки Watched
     } else {
@@ -63,6 +67,9 @@ export function onBtnQueueInMyLibraryRender() {
   if (parsedQueueFilms.length > 0) {
     refs.gallery.innerHTML = '';
     if (refs.btnQueue.classList.contains('header-change__cont-btn--activ')) {
+      pagination_2.reset(parsedQueueFilms.length);
+    
+      parsedQueueFilms.splice(6);
        markUpWatchedFilmGallery(parsedQueueFilms); //Рендер карточок для кнопки Watched
       
     } else {

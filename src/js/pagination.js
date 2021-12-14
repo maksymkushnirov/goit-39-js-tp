@@ -30,5 +30,33 @@ const optionPagination = {
   }
 };
 
+
+const optionPagination_2 = {
+  totalItems: 100,
+  itemsPerPage: 6,
+  visiblePages: 5,
+  page: 1,
+  centerAlign: true,
+  firstItemClassName: 'tui-first-child',
+  lastItemClassName: 'tui-last-child',
+  template: {
+    page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+    currentPage:
+      '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+    moveButton:
+      '<a href="#" class="tui-page-btn tui-{{type}}">' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</a>',
+    disabledMoveButton:
+      '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</span>',
+    moreButton:
+      '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+      '<span class="tui-ico-ellip">...</span>' +
+      '</a>'
+  }
+};
+
 export const pagination = new Pagination(paginationContainer, optionPagination);
-export const pagination_2 = new Pagination(paginationContainer_2, optionPagination);
+export const pagination_2 = new Pagination(paginationContainer_2, optionPagination_2);

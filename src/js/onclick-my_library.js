@@ -3,6 +3,7 @@ import { pagination_2 } from './pagination.js';
 import { markUpWatchedFilmGallery } from './get-watched';
 
 
+
 const refs = {
   logo: document.querySelector('.logo-link'),
   btnHome: document.querySelector('[data-home]'), //Пошук кнопки HOME в Header
@@ -48,7 +49,7 @@ export function onBtnLibrary() {
   refs.openNextBtn.classList.remove('visually-hidden');
   refs.changeHeader.classList.add('header-change');
   refs.paginationContainer.classList.add('visually-hidden');
-  refs.paginationContainer_2.classList.remove('visually-hidden');
+  
   markUpLibraryScreen();
   onBtnQueueInMyLibrary();
   onBtnWatchedInMyLibrary();
@@ -68,9 +69,13 @@ function onBtnWatchedInMyLibrary() {
   //console.log(parsedWatchedFilms)
   if (parsedWatchedFilms.length > 0) {
     refs.gallery.innerHTML = '';
+    refs.paginationContainer_2.classList.remove('visually-hidden');
+    pagination_2.reset(parsedWatchedFilms.length);
+    parsedWatchedFilms.splice(6);
     markUpWatchedFilmGallery(parsedWatchedFilms); //Рендер карточок для кнопки Watched
     refs.btnWatched.classList.add('header-change__cont-btn--activ');
     refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+    
     //console.log('Yesss');
     return;
   }
@@ -79,6 +84,7 @@ function onBtnWatchedInMyLibrary() {
         <img class="library-screen__image" src="${img}" alt="Bear" />`;
     refs.btnWatched.classList.add('header-change__cont-btn--activ');
     refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+    refs.paginationContainer_2.classList.add('visually-hidden');
     //console.log('Nooooo');
   }
 }
@@ -98,9 +104,13 @@ function onBtnQueueInMyLibrary() {
 
   if (parsedQueueFilms.length > 0) {
     refs.gallery.innerHTML = '';
+    refs.paginationContainer_2.classList.remove('visually-hidden');
+    pagination_2.reset(parsedQueueFilms.length);
+    parsedQueueFilms.splice(6);
     markUpWatchedFilmGallery(parsedQueueFilms); //Рендер карточок для кнопки Watched
     refs.btnWatched.classList.remove('header-change__cont-btn--activ');
     refs.btnQueue.classList.add('header-change__cont-btn--activ');
+   
     return;
   }
 
@@ -109,6 +119,7 @@ function onBtnQueueInMyLibrary() {
         <img class="library-screen__image" src="${img}" alt="Bear" />`;
     refs.btnWatched.classList.remove('header-change__cont-btn--activ');
     refs.btnQueue.classList.add('header-change__cont-btn--activ');
+    refs.paginationContainer_2.classList.add('visually-hidden');
   }
 }
 
@@ -130,6 +141,29 @@ function markUpHomeScreen() {
 
 pagination_2.on('afterMove', handlerLibraryLilmsPag);
 
-function handlerLibraryLilmsPag() {
-  console.log("header-change__cont-btn--activ")
+function handlerLibraryLilmsPag(event) {
+  const page = event.page;
+  let movies;
+
+  if (refs.btnWatched.classList.contains("header-change__cont-btn--activ")) {
+    console.log("hhh")
+    const getWatched = localStorage.getItem('Watched');
+    movies = JSON.parse(getWatched);
+  
+  } else if (refs.btnQueue.classList.contains("header-change__cont-btn--activ")) {
+    console.log("bbb")
+    const getQueue = localStorage.getItem('Queue');
+    movies = JSON.parse(getQueue);
+  }
+
+    if (page === 1) {
+    movies.splice(6);
+    markUpWatchedFilmGallery(movies);
+  } else {
+    const startPageItem = page * 6 - 6;
+    const endPageItem = startPageItem + 6;
+    const pageToShow = movies.slice(startPageItem, endPageItem);
+    markUpWatchedFilmGallery(pageToShow);
+  }
+
 }
