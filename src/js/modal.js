@@ -30,7 +30,7 @@ const KEY = 'fe9ed89434aaae0a5431bf6fa09118e9';
 
 galery.addEventListener('click', (e) => {
   e.preventDefault();
-  
+  document.body.style.overflow = 'hidden'; // забирає скролл сторінки за мадалкою
   getIdMovie(e);
 });
 // ==========================================================================
@@ -82,10 +82,8 @@ function getIdMovie(e) {
 // открытие модалки===отрисовка контента в модалку===апи запрос 1-го элемента по id
 async function openModal(id) {
   modalBackdrop.classList.remove('is-hidden'); // открытие модалки
-  document.body.style.overflow = 'hidden'; // забирає скролл сторінки за мадалкою
-  
-  // фетч запрос, обработка, запись результата в переменную
 
+  // фетч запрос, обработка, запись результата в переменную
   const infoMovie = await fetch(
     `${BASE_URL}movie/${id}?api_key=${KEY}&language=en-US`
   ).then((response) => {
