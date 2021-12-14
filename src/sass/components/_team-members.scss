@@ -1,7 +1,9 @@
 .modal--design {
   background-color: rgba(247, 241, 241, 0.89);
   padding: 5px 0 5px 0;
-  width: 320px;
+  width: 50vw;
+  height: 50vh;
+  overflow-y: auto;
 }
 
 .modal__close {
@@ -31,20 +33,41 @@
 }
 
 .modal-team-list {
-  margin: 20px 0 35px 0;
-  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 30px 30px 30px 30px;
 }
 
 .modal-team-list__item {
-  &:not(:last-child) {
-    margin-bottom: 10px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 30px 30px 30px 30px;
 }
 
 .modal-team-list__link {
   font-size: 22px;
   font-weight: 400;
   font-family: $main-font;
+  text-align: center;
+  &:hover {
+    color: green;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.team-member-photo {
+  height: 300px;
+  margin: auto;
+}
+.list-section-team-item-description {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: $main-font;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
   &:hover {
     color: green;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
