@@ -29,7 +29,6 @@ const KEY = 'fe9ed89434aaae0a5431bf6fa09118e9';
 // ============================================================================
 
 galery.addEventListener('click', (e) => {
-
   e.preventDefault();
   
   getIdMovie(e);
@@ -62,25 +61,21 @@ function closeModalEsc() {
 //доббавление слушателя по открытию модалки,
 
 function closeBackdropClick() {
-  modalBackdrop.addEventListener(
-    'click',
-    (e) => {
-      const condition = e.target.classList.contains('backdrop');
-      if (condition) {
-        closeModal();
-      }
+  modalBackdrop.addEventListener('click', (e) => {
+    const condition = e.target.classList.contains('backdrop');
+    if (condition) {
+      closeModal();
     }
-  );
+  });
 }
 // ============================================================================
 function getIdMovie(e) {
   //console.log(e.target.className);
-  const condition = e.target.className.includes('modalBtn');// условие клика на элемент с классом modalBtn
-  //console.log(condition); 
+  const condition = e.target.className.includes('modalBtn'); // условие клика на элемент с классом modalBtn
+  //console.log(condition);
   if (condition) {
     const id = e.target.getAttribute('data-id'); // при выполнении условия берется значение id элемента на котором произошел клик
     openModal(id);
-    
   }
 }
 
@@ -88,7 +83,9 @@ function getIdMovie(e) {
 async function openModal(id) {
   modalBackdrop.classList.remove('is-hidden'); // открытие модалки
   document.body.style.overflow = 'hidden'; // забирає скролл сторінки за мадалкою
-// фетч запрос, обработка, запись результата в переменную
+  
+  // фетч запрос, обработка, запись результата в переменную
+
   const infoMovie = await fetch(
     `${BASE_URL}movie/${id}?api_key=${KEY}&language=en-US`
   ).then((response) => {
@@ -97,7 +94,7 @@ async function openModal(id) {
     }
     return response.json();
   });
-// ф-ции вешающие и удаляющие слушатели на закрытие
+  // ф-ции вешающие и удаляющие слушатели на закрытие
   // ===============================================================
   closeBtn();
   closeModalEsc();
@@ -106,10 +103,10 @@ async function openModal(id) {
   galery.removeEventListener('click', (e) => {
     e.preventDefault();
     getIdMovie(e);
-  });// удаление слушателя с галереи по открытию модалки
-  
+  }); // удаление слушателя с галереи по открытию модалки
+
   // ============================================
-  modalWindow.innerHTML = modalMovieCard(infoMovie);// отрисовка шаблона карточки в модалке
+  modalWindow.innerHTML = modalMovieCard(infoMovie); // отрисовка шаблона карточки в модалке
 
   /////////////////////////////////////
   //////Робота з кнопками
@@ -117,8 +114,12 @@ async function openModal(id) {
   // console.log("=====", infoMovie);
   // console.log("=====", id);
 
-  const addToWatchedBtn = document.querySelector('.watched');
-  const addToQueueBtn = document.querySelector('.queue');
+  const addToWatchedBtn = document.querySelector(
+    'button[data-action="add-to-watched"]'
+  );
+  const addToQueueBtn = document.querySelector(
+    'button[data-action="add-to-queue"]'
+  );
 
   if (verifyFilmInLocalStorage(id, 'Watched') === true) {
     addToWatchedBtn.textContent = 'remove from watched';
@@ -140,9 +141,17 @@ async function openModal(id) {
     if (verifyFilmInLocalStorage(id, 'Watched') === true) {
       removeFilmFromLocalStorage(id, 'Watched');
       addToWatchedBtn.textContent = 'add to watched';
+      addToWatchedBtn.classList.replace(
+        'add-to-library--active',
+        'add-to-library'
+      );
     } else {
       addFilmInLocalStorage(infoMovie, 'Watched');
       addToWatchedBtn.textContent = 'remove from watched';
+      addToWatchedBtn.classList.replace(
+        'add-to-library',
+        'add-to-library--active'
+      );
     }
     if (refs.searchForm.classList.contains('visually-hidden') === true) {
       onBtnWatchedInMyLibraryRender();
@@ -153,9 +162,17 @@ async function openModal(id) {
     if (verifyFilmInLocalStorage(id, 'Queue') === true) {
       removeFilmFromLocalStorage(id, 'Queue');
       addToQueueBtn.textContent = 'add to queue';
+      addToQueueBtn.classList.replace(
+        'add-to-library--active',
+        'add-to-library'
+      );
     } else {
       addFilmInLocalStorage(infoMovie, 'Queue');
       addToQueueBtn.textContent = 'remove from queue';
+      addToQueueBtn.classList.replace(
+        'add-to-library',
+        'add-to-library--active'
+      );
     }
     if (refs.searchForm.classList.contains('visually-hidden') === true) {
       onBtnQueueInMyLibraryRender();
