@@ -72,7 +72,7 @@
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(10px);
-}
+  }
 
 .modal-team-list__link {
   text-decoration: none;
@@ -84,7 +84,6 @@
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  margin: auto;
   overflow: hidden;
   border: 5px solid hsla(0, 0%, 100%, 0.05);
   margin-bottom: 10px;
@@ -107,7 +106,7 @@ img {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 18px;
-  letter-spacing: 0.03em;
+  letter-spacing: .03em;
   text-align: center;
   margin: 20px 0 10px;
   line-height: 1.1em;
