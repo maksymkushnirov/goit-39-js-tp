@@ -1,15 +1,15 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
-import maksymkushnirov from '../images/team/maksymkushnirov.jpg';
-import valentynadymova from '../images/team/valentynadymova.jpg';
-import marharytabosak from '../images/team/marharytabosak.jpg';
-import alonabulatkina from '../images/team/alonabulatkina.jpg';
+import tarasroboteckyi from '../images/team/tarasroboteckyi.jpg';
+import maksymKushnirov from '../images/team/maksymkushnirov.jpg';
+import alonabulatkina from '../images/team/alonaBulatkina.jpg';
 import aleksandryakovenko from '../images/team/aleksandryakovenko.jpg';
 import dmitriydudnik from '../images/team/dmitriydudnik.jpg';
-import yaroslavonofriichuk from '../images/team/yaroslavonofriichuk.jpg';
-import tarasroboteckyi from '../images/team/tarasroboteckyi.jpg';
-import romanbroshnitskiy from '../images/team/romanbroshnitskiy.jpg';
-import olegkolodiy from '../images/team/olegkolodiy.jpg';
+import yaroslavonofriichuk from '../images/team/YaroslavOnofriichuk.jpg';
+import romanbroshnitskiy from '../images/team/roman_broshnitskiy.jpg';
+import olegkolodiy from '../images/team/oleg_kolodiy.jpg';
+import ritabosak from '../images/team/ritabosak.jpg';
+
 const refs = {
   developer: document.querySelector('.footer-link')
 };
@@ -24,74 +24,66 @@ const instance = basicLightbox.create(
               <li class="modal-team-list__item">
                 <a href="https://github.com/maksymkushnirov" class="modal-team-list__link link" target="blank" rel="noopener noreferrer"> 
                   <div class="modal-team_img">
-                    <img class="team-member-photo" src="${maksymkushnirov}" alt="Maksym Kushnirov">
+                    <img class="team-member-photo" src="${maksymKushnirov}" alt="Maksym Kushnirov">
                   </div>
 
                   <h3 class="contentBx__title">Maksym Kushnirov</h3>
-                  <h4 class="contentBx__subtitle">team leader</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
                 <a href="https://github.com/valentynadymova" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">
                   <div class="modal-team_img">
-                    <img class="team-member-photo" src="${valentynadymova}" alt="Valentyna Dymova">
+                    <img class="team-member-photo" src="${tarasroboteckyi}" alt="valentynadymova">
                   </div>
                     <h3 class="contentBx__title">Valentyna Dymova</h3>
-                    <h4 class="contentBx__subtitle">scrum master</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
                 <a href="https://github.com/rita-bosak" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">
                   <div class="modal-team_img">
-                    <img class="team-member-photo" src="${marharytabosak}" alt="Marharyta Bosak">
+                    <img class="team-member-photo" src="${ritabosak}" alt="marharytabosak">
                   </div>
                     <h3 class="contentBx__title">Marharyta Bosak</h3>
-                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
                 <a href="https://github.com/Alona-Bulatkina" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">
                   <div class="modal-team_img">
-                    <img class="team-member-photo" src="${alonabulatkina}" alt="Alona Bulatkina">
+                    <img class="team-member-photo" src="${alonabulatkina}" alt="alonabulatkina">
                   </div>
                     <h3 class="contentBx__title">Alona Bulatkina</h3>
-                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
                 <a href="https://github.com/AleksandrYakovenko1984" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">
                   <div class="modal-team_img">
-                    <img class="team-member-photo" src="${aleksandryakovenko}" alt="Aleksandr Yakovenko">
+                    <img class="team-member-photo" src="${aleksandryakovenko}" alt="aleksandryakovenko">
                   </div>
                     <h3 class="contentBx__title">Aleksandr Yakovenko</h3>
-                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
                 <a href="https://github.com/Wed88" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">
                   <div class="modal-team_img">
-                    <img class="team-member-photo" src="${dmitriydudnik}" alt="Dmitriy Dudnik">
+                    <img class="team-member-photo" src="${dmitriydudnik}" alt="dmitriydudnik">
                   </div>
                     <h3 class="contentBx__title">Dmitriy Dudnik</h3>
-                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
                 <a href="https://github.com/YaroslavOnofriichuk" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">
                 <div class="modal-team_img">
-                    <img class="team-member-photo" src="${yaroslavonofriichuk}" alt="Yaroslav Onofriichuk">
+                    <img class="team-member-photo" src="${yaroslavonofriichuk}" alt="yaroslavyonofriichuk">
                   </div>
                     <h3 class="contentBx__title">Yaroslav Onofriichuk</h3>
-                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
                 <a href="https://github.com/Taras-Roboteckyi" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">
                   <div class="modal-team_img">
-                    <img class="team-member-photo" src="${tarasroboteckyi}" alt="Taras Roboteckyi">
+                    <img class="team-member-photo" src="${tarasroboteckyi}" alt="tarasroboteckyi">
                   </div>
                     <h3 class="contentBx__title">Taras Roboteckyi</h3>
-                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
@@ -100,16 +92,14 @@ const instance = basicLightbox.create(
                     <img class="team-member-photo" src="${romanbroshnitskiy}" alt="romanbroshnitskiy">
                   </div>
                     <h3 class="contentBx__title">Roman Broshnitskiy</h3>
-                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
                 <a href="https://github.com/oleg634996" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">
                   <div class="modal-team_img">
-                    <img class="team-member-photo" src="${olegkolodiy}" alt="Oleg Kolodiy">
+                    <img class="team-member-photo" src="${olegkolodiy}" alt="olegkolodiy">
                   </div>
                     <h3 class="contentBx__title">Oleg Kolodiy</h3>
-                    <h4 class="contentBx__subtitle">team leader</h4>
                 </a>
               </li>
             <button class="modal__close" type="button">Close</button>
