@@ -1,6 +1,7 @@
 import img from '../images/screen-library.jpg';
-
+import { pagination_2 } from './pagination.js';
 import { markUpWatchedFilmGallery } from './get-watched';
+import { scrollToTop } from './scrollToTop';
 
 const refs = {
   logo: document.querySelector('.logo-link'),
@@ -12,7 +13,8 @@ const refs = {
   btnWatched: document.querySelector('[data-watched]'), //Пошук кнопки Watched в Header
   btnQueue: document.querySelector('[data-queue]'), //Пошук кнопки Queve в Header
   gallery: document.querySelector('.card-list'), //Пошук контейнера gallery в main
-  paginationConteiner: document.getElementById('tui-pagination-container')
+  paginationContainer: document.getElementById('tui-pagination-container'),
+  paginationContainer_2: document.getElementById('tui-pagination-container-2'),
 };
 
 refs.logo.addEventListener('click', onLogo);
@@ -24,7 +26,7 @@ refs.btnQueue.addEventListener('click', onBtnQueueInMyLibrary); //Виклик �
 refs.btnLibrary.classList.remove('nav-item__list--activ');
 
 function onLogo(event) {
-  console.log(event);
+  // console.log(event);
   // event.preventDefault()
   refs.btnLibrary.classList.remove('nav-item__list--activ');
   onBtnHome();
@@ -45,7 +47,8 @@ export function onBtnLibrary() {
   refs.searchForm.classList.add('visually-hidden');
   refs.openNextBtn.classList.remove('visually-hidden');
   refs.changeHeader.classList.add('header-change');
-  refs.paginationConteiner.classList.add('visually-hidden');
+  refs.paginationContainer.classList.add('visually-hidden');
+  
   markUpLibraryScreen();
   onBtnQueueInMyLibrary();
   onBtnWatchedInMyLibrary();
@@ -65,9 +68,13 @@ function onBtnWatchedInMyLibrary() {
   //console.log(parsedWatchedFilms)
   if (parsedWatchedFilms.length > 0) {
     refs.gallery.innerHTML = '';
+    refs.paginationContainer_2.classList.remove('visually-hidden');
+    pagination_2.reset(parsedWatchedFilms.length);
+    parsedWatchedFilms.splice(12);
     markUpWatchedFilmGallery(parsedWatchedFilms); //Рендер карточок для кнопки Watched
     refs.btnWatched.classList.add('header-change__cont-btn--activ');
     refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+    
     //console.log('Yesss');
     return;
   }
@@ -76,6 +83,7 @@ function onBtnWatchedInMyLibrary() {
         <img class="library-screen__image" src="${img}" alt="Bear" />`;
     refs.btnWatched.classList.add('header-change__cont-btn--activ');
     refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+    refs.paginationContainer_2.classList.add('visually-hidden');
     //console.log('Nooooo');
   }
 }
@@ -95,9 +103,13 @@ function onBtnQueueInMyLibrary() {
 
   if (parsedQueueFilms.length > 0) {
     refs.gallery.innerHTML = '';
+    refs.paginationContainer_2.classList.remove('visually-hidden');
+    pagination_2.reset(parsedQueueFilms.length);
+    parsedQueueFilms.splice(12);
     markUpWatchedFilmGallery(parsedQueueFilms); //Рендер карточок для кнопки Watched
     refs.btnWatched.classList.remove('header-change__cont-btn--activ');
     refs.btnQueue.classList.add('header-change__cont-btn--activ');
+   
     return;
   }
 
@@ -106,6 +118,7 @@ function onBtnQueueInMyLibrary() {
         <img class="library-screen__image" src="${img}" alt="Bear" />`;
     refs.btnWatched.classList.remove('header-change__cont-btn--activ');
     refs.btnQueue.classList.add('header-change__cont-btn--activ');
+    refs.paginationContainer_2.classList.add('visually-hidden');
   }
 }
 
@@ -122,4 +135,33 @@ function markUpHomeScreen() {
   if (localStorage.getItem('films_from_beckend')) {
     location.href = './index.html';
   }
+}
+
+
+pagination_2.on('afterMove', handlerLibraryLilmsPag);
+
+function handlerLibraryLilmsPag(event) {
+  scrollToTop();
+  const page = event.page;
+  let movies;
+
+  if (refs.btnWatched.classList.contains("header-change__cont-btn--activ")) {
+    const getWatched = localStorage.getItem('Watched');
+    movies = JSON.parse(getWatched);
+  
+  } else if (refs.btnQueue.classList.contains("header-change__cont-btn--activ")) {
+    const getQueue = localStorage.getItem('Queue');
+    movies = JSON.parse(getQueue);
+  }
+
+    if (page === 1) {
+    movies.splice(12);
+    markUpWatchedFilmGallery(movies);
+  } else {
+    const startPageItem = page * 12 - 12;
+    const endPageItem = startPageItem + 12;
+    const pageToShow = movies.slice(startPageItem, endPageItem);
+    markUpWatchedFilmGallery(pageToShow);
+  }
+
 }

@@ -4,7 +4,11 @@ import { markUpPopularFilmGallery } from './mark-up-main-film-gallery';
 import { pagination } from './pagination.js';
 import { scrollToTop } from './scrollToTop';
 
+const paginationContainer_2 = document.getElementById('tui-pagination-container-2');
+
 const page = pagination.getCurrentPage();
+
+paginationContainer_2.classList.add('visually-hidden');
 
 export function GetPopularFilms() {
   getPopularFilms(page) //Функція приймає популярні фільми з бекенду(перші 20), рендерить їх в html і записує в локальне сховище

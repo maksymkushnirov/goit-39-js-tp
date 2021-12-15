@@ -16,7 +16,8 @@ import {
 } from './get-queue'; //Імпорт функцій для роботи з кнопками в модалці
 
 const refs = {
-  searchForm: document.querySelector('.search-form') //Пошук форми з інпутом в Header
+  searchForm: document.querySelector('.search-form'), //Пошук форми з інпутом в Header
+  paginationContainer_2: document.getElementById('tui-pagination-container-2'),
 };
 
 const spinner = document.getElementById('loading');
@@ -163,6 +164,7 @@ async function openModal(id) {
     if (refs.searchForm.classList.contains('visually-hidden') === true) {
       onBtnWatchedInMyLibraryRender();
     }
+
   }
 
   function onAddToQueueBtnClick(e) {
@@ -184,6 +186,7 @@ async function openModal(id) {
     if (refs.searchForm.classList.contains('visually-hidden') === true) {
       onBtnQueueInMyLibraryRender();
     }
+
   }
 
   /////////////////////////////////////////
