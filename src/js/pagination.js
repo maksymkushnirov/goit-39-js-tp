@@ -1,7 +1,9 @@
 import Pagination from 'tui-pagination';
 
 const paginationContainer = document.getElementById('tui-pagination-container');
-const paginationContainer_2 = document.getElementById('tui-pagination-container-2');
+const paginationContainer_2 = document.getElementById(
+  'tui-pagination-container-2'
+);
 
 const optionPagination = {
   totalItems: 100,
@@ -29,7 +31,6 @@ const optionPagination = {
       '</a>'
   }
 };
-
 
 const optionPagination_2 = {
   totalItems: 100,
@@ -59,4 +60,7 @@ const optionPagination_2 = {
 };
 
 export const pagination = new Pagination(paginationContainer, optionPagination);
-export const pagination_2 = new Pagination(paginationContainer_2, optionPagination_2);
+export const pagination_2 = new Pagination(
+  paginationContainer_2,
+  optionPagination_2
+);
