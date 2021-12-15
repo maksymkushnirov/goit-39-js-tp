@@ -28,6 +28,7 @@ const instance = basicLightbox.create(
                   </div>
 
                   <h3 class="contentBx__title">Maksym Kushnirov</h3>
+                  <h4 class="contentBx__subtitle">team leader</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
@@ -36,6 +37,7 @@ const instance = basicLightbox.create(
                     <img class="team-member-photo" src="${valentynadymova}" alt="Valentyna Dymova">
                   </div>
                     <h3 class="contentBx__title">Valentyna Dymova</h3>
+                    <h4 class="contentBx__subtitle">scrum master</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
@@ -44,6 +46,7 @@ const instance = basicLightbox.create(
                     <img class="team-member-photo" src="${marharytabosak}" alt="Marharyta Bosak">
                   </div>
                     <h3 class="contentBx__title">Marharyta Bosak</h3>
+                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
@@ -52,6 +55,7 @@ const instance = basicLightbox.create(
                     <img class="team-member-photo" src="${alonabulatkina}" alt="Alona Bulatkina">
                   </div>
                     <h3 class="contentBx__title">Alona Bulatkina</h3>
+                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
@@ -60,6 +64,7 @@ const instance = basicLightbox.create(
                     <img class="team-member-photo" src="${aleksandryakovenko}" alt="Aleksandr Yakovenko">
                   </div>
                     <h3 class="contentBx__title">Aleksandr Yakovenko</h3>
+                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
@@ -68,6 +73,7 @@ const instance = basicLightbox.create(
                     <img class="team-member-photo" src="${dmitriydudnik}" alt="Dmitriy Dudnik">
                   </div>
                     <h3 class="contentBx__title">Dmitriy Dudnik</h3>
+                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
@@ -76,6 +82,7 @@ const instance = basicLightbox.create(
                     <img class="team-member-photo" src="${yaroslavonofriichuk}" alt="Yaroslav Onofriichuk">
                   </div>
                     <h3 class="contentBx__title">Yaroslav Onofriichuk</h3>
+                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
@@ -84,6 +91,7 @@ const instance = basicLightbox.create(
                     <img class="team-member-photo" src="${tarasroboteckyi}" alt="Taras Roboteckyi">
                   </div>
                     <h3 class="contentBx__title">Taras Roboteckyi</h3>
+                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
@@ -92,6 +100,7 @@ const instance = basicLightbox.create(
                     <img class="team-member-photo" src="${romanbroshnitskiy}" alt="romanbroshnitskiy">
                   </div>
                     <h3 class="contentBx__title">Roman Broshnitskiy</h3>
+                    <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
               <li class="modal-team-list__item">
@@ -100,6 +109,7 @@ const instance = basicLightbox.create(
                     <img class="team-member-photo" src="${olegkolodiy}" alt="Oleg Kolodiy">
                   </div>
                     <h3 class="contentBx__title">Oleg Kolodiy</h3>
+                    <h4 class="contentBx__subtitle">team leader</h4>
                 </a>
               </li>
             <button class="modal__close" type="button">Close</button>
