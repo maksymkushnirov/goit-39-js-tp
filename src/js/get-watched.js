@@ -1,14 +1,3 @@
-//import liberyCardTpl from '../templates/libery-card.hbs';
-
-/* const getWatched = localStorage.getItem('Watched');
-const parsedWatchedFilms = JSON.parse(getWatched);
-export const markUpWatched = creatWatchedCard(parsedWatchedFilms);
-
-function creatWatchedCard(parsedWatchedFilms) {
-  if (parsedWatchedFilms) {
-    return parsedWatchedFilms.map(liberyCardTpl).join('');
-  }
-} */
 
 import imgOne from '../images/no-poster1.png';
 const gallery = document.querySelector('.card-list');
