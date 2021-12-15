@@ -2,7 +2,6 @@ import img from '../images/screen-library.jpg';
 
 import { markUpWatchedFilmGallery } from './get-watched';
 
-
 const refs = {
   logo: document.querySelector('.logo-link'),
   btnHome: document.querySelector('[data-home]'), //Пошук кнопки HOME в Header
