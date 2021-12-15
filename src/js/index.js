@@ -9,3 +9,4 @@ import './scrollToTop.js';
 import './addFilmsToLocalStorage.js';
 import './get-watched.js';
 import './get-queue.js';
+import './toolbar.js'
