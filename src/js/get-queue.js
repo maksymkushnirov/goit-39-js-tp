@@ -13,7 +13,7 @@ const refs = {
   btnQueue: document.querySelector('[data-queue]'), //Пошук кнопки Queve в Header
   gallery: document.querySelector('.card-list'), //Пошук контейнера gallery в main
   paginationConteiner: document.getElementById('tui-pagination-container'),
-  paginationContainer_2: document.getElementById('tui-pagination-container-2'),
+  paginationContainer_2: document.getElementById('tui-pagination-container-2')
 };
 
 //////////////Кнопка Watched/////////////
@@ -29,10 +29,9 @@ export function onBtnWatchedInMyLibraryRender() {
   if (parsedWatchedFilms.length > 0) {
     refs.gallery.innerHTML = '';
     if (refs.btnWatched.classList.contains('header-change__cont-btn--activ')) {
-      
       pagination_2.reset(parsedWatchedFilms.length);
       parsedWatchedFilms.splice(12);
-      markUpWatchedFilmGallery(parsedWatchedFilms); 
+      markUpWatchedFilmGallery(parsedWatchedFilms);
 
       //Рендер карточок для кнопки Watched
     } else {
@@ -63,12 +62,10 @@ export function onBtnQueueInMyLibraryRender() {
   if (parsedQueueFilms.length > 0) {
     refs.gallery.innerHTML = '';
     if (refs.btnQueue.classList.contains('header-change__cont-btn--activ')) {
-
       pagination_2.reset(parsedQueueFilms.length);
-    
+
       parsedQueueFilms.splice(12);
-       markUpWatchedFilmGallery(parsedQueueFilms); //Рендер карточок для кнопки Watched
-      
+      markUpWatchedFilmGallery(parsedQueueFilms); //Рендер карточок для кнопки Watched
     } else {
       refs.gallery.innerHTML = '';
       onBtnWatchedInMyLibraryRender();
