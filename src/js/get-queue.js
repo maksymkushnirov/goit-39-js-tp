@@ -2,7 +2,6 @@ import imgTree from '../images/screen-library.jpg';
 import { pagination_2 } from './pagination.js';
 import { markUpWatchedFilmGallery } from './get-watched';
 
-
 const refs = {
   logo: document.querySelector('.logo-link'),
   btnHome: document.querySelector('[data-home]'), //Пошук кнопки HOME в Header
@@ -16,7 +15,6 @@ const refs = {
   paginationConteiner: document.getElementById('tui-pagination-container'),
   paginationContainer_2: document.getElementById('tui-pagination-container-2'),
 };
-
 
 //////////////Кнопка Watched/////////////
 
@@ -35,23 +33,23 @@ export function onBtnWatchedInMyLibraryRender() {
       pagination_2.reset(parsedWatchedFilms.length);
       parsedWatchedFilms.splice(12);
       markUpWatchedFilmGallery(parsedWatchedFilms); 
+
       //Рендер карточок для кнопки Watched
     } else {
       refs.gallery.innerHTML = '';
       onBtnQueueInMyLibraryRender();
     }
-    
+
     /* refs.btnWatched.classList.add('header-change__cont-btn--activ');
     refs.btnQueue.classList.remove('header-change__cont-btn--activ'); */
     console.log('Yesss');
     return;
   }
   if (parsedWatchedFilms.length === 0) {
-    clearMarkupWatchedCards()
+    clearMarkupWatchedCards();
     //console.log('Nooooo');
   }
 }
-
 
 //////////////Кнопка Queue/////////////
 
@@ -67,6 +65,7 @@ export function onBtnQueueInMyLibraryRender() {
   if (parsedQueueFilms.length > 0) {
     refs.gallery.innerHTML = '';
     if (refs.btnQueue.classList.contains('header-change__cont-btn--activ')) {
+
       pagination_2.reset(parsedQueueFilms.length);
     
       parsedQueueFilms.splice(12);
@@ -76,10 +75,10 @@ export function onBtnQueueInMyLibraryRender() {
       refs.gallery.innerHTML = '';
       onBtnWatchedInMyLibraryRender();
     }
-   
-   /*  refs.btnWatched.classList.remove('header-change__cont-btn--activ');
+
+    /*  refs.btnWatched.classList.remove('header-change__cont-btn--activ');
     refs.btnQueue.classList.add('header-change__cont-btn--activ'); */
-     console.log('Розметка');
+    console.log('Розметка');
     return;
   }
 
@@ -89,24 +88,21 @@ export function onBtnQueueInMyLibraryRender() {
   }
 }
 
-
-
 /////Очитска розмітки на кнопці Watched//////////
 function clearMarkupWatchedCards() {
   refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
         <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
-    refs.btnWatched.classList.add('header-change__cont-btn--activ');
-    refs.btnQueue.classList.remove('header-change__cont-btn--activ');
+  refs.btnWatched.classList.add('header-change__cont-btn--activ');
+  refs.btnQueue.classList.remove('header-change__cont-btn--activ');
 }
-
 
 /////Очитска розмітки на кнопці Queue//////////
 
 function clearMarkupQueueCards() {
   refs.gallery.innerHTML = `<p class="library-screen__text">The library is currently empty!</p>
         <img class="library-screen__image" src="${imgTree}" alt="Bear" />`;
-    refs.btnWatched.classList.remove('header-change__cont-btn--activ');
-    refs.btnQueue.classList.add('header-change__cont-btn--activ');
+  refs.btnWatched.classList.remove('header-change__cont-btn--activ');
+  refs.btnQueue.classList.add('header-change__cont-btn--activ');
 }
 /* import liberyCardTpl from '../templates/libery-card.hbs';
 

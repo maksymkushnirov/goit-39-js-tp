@@ -20,6 +20,7 @@ const refs = {
   paginationContainer_2: document.getElementById('tui-pagination-container-2'),
 };
 
+const spinner = document.getElementById('loading');
 const close = document.querySelector('.modal-close-icon');
 const modalWindow = document.querySelector('.modal-movie-template');
 const galery = document.querySelector('.gallery');
@@ -85,12 +86,15 @@ async function openModal(id) {
   modalBackdrop.classList.remove('is-hidden'); // открытие модалки
   document.body.style.overflow = 'hidden'; // забирає скролл сторінки за мадалкою
   // фетч запрос, обработка, запись результата в переменную
+  spinner.classList.remove('visually-hidden');
   const infoMovie = await fetch(
     `${BASE_URL}movie/${id}?api_key=${KEY}&language=en-US`
   ).then((response) => {
     if (!response.ok) {
+      spinner.classList.add('visually-hidden');
       throw Error(response.statusText);
     }
+    spinner.classList.add('visually-hidden');
     return response.json();
   });
   // ф-ции вешающие и удаляющие слушатели на закрытие

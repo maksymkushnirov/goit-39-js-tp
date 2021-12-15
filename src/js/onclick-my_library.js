@@ -3,7 +3,6 @@ import { pagination_2 } from './pagination.js';
 import { markUpWatchedFilmGallery } from './get-watched';
 import { scrollToTop } from './scrollToTop';
 
-
 const refs = {
   logo: document.querySelector('.logo-link'),
   btnHome: document.querySelector('[data-home]'), //Пошук кнопки HOME в Header
