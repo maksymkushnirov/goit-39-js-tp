@@ -3,7 +3,7 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import maksymkushnirov from '../images/team/maksymkushnirov.jpg';
 import valentynadymova from '../images/team/valentynadymova.jpg';
 import marharytabosak from '../images/team/marharytabosak.jpg';
-// import alonabulatkina from '../images/team/alonabulatkina.jpg';
+import alonabulatkina from '../images/team/alonabulatkina.jpg';
 import aleksandryakovenko from '../images/team/aleksandryakovenko.jpg';
 import dmitriydudnik from '../images/team/dmitriydudnik.jpg';
 import yaroslavonofriichuk from '../images/team/yaroslavonofriichuk.jpg';
@@ -49,15 +49,15 @@ const instance = basicLightbox.create(
                     <h4 class="contentBx__subtitle">developer</h4>
                 </a>
               </li>
-              // <li class="modal-team-list__item">
-              //   <a href="https://github.com/Alona-Bulatkina" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">
-              //     <div class="modal-team_img">
-              //       <img class="team-member-photo" src="${alonabulatkina}" alt="Alona Bulatkina">
-              //     </div>
-              //       <h3 class="contentBx__title">Alona Bulatkina</h3>
-              //       <h4 class="contentBx__subtitle">developer</h4>
-              //   </a>
-              // </li>
+              <li class="modal-team-list__item">
+                <a href="https://github.com/Alona-Bulatkina" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">
+                  <div class="modal-team_img">
+                    <img class="team-member-photo" src="${alonabulatkina}" alt="Alona Bulatkina">
+                  </div>
+                    <h3 class="contentBx__title">Alona Bulatkina</h3>
+                    <h4 class="contentBx__subtitle">developer</h4>
+                </a>
+              </li>
               <li class="modal-team-list__item">
                 <a href="https://github.com/AleksandrYakovenko1984" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">
                   <div class="modal-team_img">
