@@ -33,7 +33,7 @@ export function onBtnWatchedInMyLibraryRender() {
     if (refs.btnWatched.classList.contains('header-change__cont-btn--activ')) {
       
       pagination_2.reset(parsedWatchedFilms.length);
-      parsedWatchedFilms.splice(6);
+      parsedWatchedFilms.splice(12);
       markUpWatchedFilmGallery(parsedWatchedFilms); 
       //Рендер карточок для кнопки Watched
     } else {
@@ -69,7 +69,7 @@ export function onBtnQueueInMyLibraryRender() {
     if (refs.btnQueue.classList.contains('header-change__cont-btn--activ')) {
       pagination_2.reset(parsedQueueFilms.length);
     
-      parsedQueueFilms.splice(6);
+      parsedQueueFilms.splice(12);
        markUpWatchedFilmGallery(parsedQueueFilms); //Рендер карточок для кнопки Watched
       
     } else {

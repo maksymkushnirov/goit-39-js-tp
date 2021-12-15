@@ -1,7 +1,7 @@
 import img from '../images/screen-library.jpg';
 import { pagination_2 } from './pagination.js';
 import { markUpWatchedFilmGallery } from './get-watched';
-
+import { scrollToTop } from './scrollToTop';
 
 
 const refs = {
@@ -27,7 +27,7 @@ refs.btnQueue.addEventListener('click', onBtnQueueInMyLibrary); //Виклик �
 refs.btnLibrary.classList.remove('nav-item__list--activ');
 
 function onLogo(event) {
-  console.log(event);
+  // console.log(event);
   // event.preventDefault()
   refs.btnLibrary.classList.remove('nav-item__list--activ');
   onBtnHome();
@@ -71,7 +71,7 @@ function onBtnWatchedInMyLibrary() {
     refs.gallery.innerHTML = '';
     refs.paginationContainer_2.classList.remove('visually-hidden');
     pagination_2.reset(parsedWatchedFilms.length);
-    parsedWatchedFilms.splice(6);
+    parsedWatchedFilms.splice(12);
     markUpWatchedFilmGallery(parsedWatchedFilms); //Рендер карточок для кнопки Watched
     refs.btnWatched.classList.add('header-change__cont-btn--activ');
     refs.btnQueue.classList.remove('header-change__cont-btn--activ');
@@ -106,7 +106,7 @@ function onBtnQueueInMyLibrary() {
     refs.gallery.innerHTML = '';
     refs.paginationContainer_2.classList.remove('visually-hidden');
     pagination_2.reset(parsedQueueFilms.length);
-    parsedQueueFilms.splice(6);
+    parsedQueueFilms.splice(12);
     markUpWatchedFilmGallery(parsedQueueFilms); //Рендер карточок для кнопки Watched
     refs.btnWatched.classList.remove('header-change__cont-btn--activ');
     refs.btnQueue.classList.add('header-change__cont-btn--activ');
@@ -142,26 +142,25 @@ function markUpHomeScreen() {
 pagination_2.on('afterMove', handlerLibraryLilmsPag);
 
 function handlerLibraryLilmsPag(event) {
+  scrollToTop();
   const page = event.page;
   let movies;
 
   if (refs.btnWatched.classList.contains("header-change__cont-btn--activ")) {
-    console.log("hhh")
     const getWatched = localStorage.getItem('Watched');
     movies = JSON.parse(getWatched);
   
   } else if (refs.btnQueue.classList.contains("header-change__cont-btn--activ")) {
-    console.log("bbb")
     const getQueue = localStorage.getItem('Queue');
     movies = JSON.parse(getQueue);
   }
 
     if (page === 1) {
-    movies.splice(6);
+    movies.splice(12);
     markUpWatchedFilmGallery(movies);
   } else {
-    const startPageItem = page * 6 - 6;
-    const endPageItem = startPageItem + 6;
+    const startPageItem = page * 12 - 12;
+    const endPageItem = startPageItem + 12;
     const pageToShow = movies.slice(startPageItem, endPageItem);
     markUpWatchedFilmGallery(pageToShow);
   }

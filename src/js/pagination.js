@@ -33,7 +33,7 @@ const optionPagination = {
 
 const optionPagination_2 = {
   totalItems: 100,
-  itemsPerPage: 6,
+  itemsPerPage: 12,
   visiblePages: 5,
   page: 1,
   centerAlign: true,
