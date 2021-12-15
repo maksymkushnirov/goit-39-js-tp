@@ -1,4 +1,4 @@
-import imgTree from '../images/screen-library.jpg';
+import imgTree from '../images/screen-library.png';
 import { pagination_2 } from './pagination.js';
 import { markUpWatchedFilmGallery } from './get-watched';
 

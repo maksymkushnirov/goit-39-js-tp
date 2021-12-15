@@ -1,4 +1,4 @@
-import img from '../images/screen-library.jpg';
+import img from '../images/screen-library.png';
 import { pagination_2 } from './pagination.js';
 import { markUpWatchedFilmGallery } from './get-watched';
 import { scrollToTop } from './scrollToTop';
