@@ -31,7 +31,7 @@ export function markUpPopularFilmGallery(films) {
       }
       return `<li class="card-item modalBtn" data-id="${film.id}" >
         <a class="link modalBtn" href="#" data-id="${film.id}" >
-        <div class=""><img class="card-image modalBtn" data-id="${
+        <div class=""><img class="card-image modalBtn" loading="lazy" data-id="${
           film.id
         }" src="${isPosterPath(poster_path)}" alt="poster-film"></div>
         <h2 class="card-title modalBtn" data-id="${
