@@ -14,7 +14,7 @@ const refs = {
   btnQueue: document.querySelector('[data-queue]'), //Пошук кнопки Queve в Header
   gallery: document.querySelector('.card-list'), //Пошук контейнера gallery в main
   paginationContainer: document.getElementById('tui-pagination-container'),
-  paginationContainer_2: document.getElementById('tui-pagination-container-2'),
+  paginationContainer_2: document.getElementById('tui-pagination-container-2')
 };
 
 refs.logo.addEventListener('click', onLogo);
@@ -48,7 +48,7 @@ export function onBtnLibrary() {
   refs.openNextBtn.classList.remove('visually-hidden');
   refs.changeHeader.classList.add('header-change');
   refs.paginationContainer.classList.add('visually-hidden');
-  
+
   markUpLibraryScreen();
   onBtnQueueInMyLibrary();
   onBtnWatchedInMyLibrary();
@@ -74,7 +74,7 @@ function onBtnWatchedInMyLibrary() {
     markUpWatchedFilmGallery(parsedWatchedFilms); //Рендер карточок для кнопки Watched
     refs.btnWatched.classList.add('header-change__cont-btn--activ');
     refs.btnQueue.classList.remove('header-change__cont-btn--activ');
-    
+
     //console.log('Yesss');
     return;
   }
@@ -109,7 +109,7 @@ function onBtnQueueInMyLibrary() {
     markUpWatchedFilmGallery(parsedQueueFilms); //Рендер карточок для кнопки Watched
     refs.btnWatched.classList.remove('header-change__cont-btn--activ');
     refs.btnQueue.classList.add('header-change__cont-btn--activ');
-   
+
     return;
   }
 
@@ -137,7 +137,6 @@ function markUpHomeScreen() {
   }
 }
 
-
 pagination_2.on('afterMove', handlerLibraryLilmsPag);
 
 function handlerLibraryLilmsPag(event) {
@@ -145,16 +144,17 @@ function handlerLibraryLilmsPag(event) {
   const page = event.page;
   let movies;
 
-  if (refs.btnWatched.classList.contains("header-change__cont-btn--activ")) {
+  if (refs.btnWatched.classList.contains('header-change__cont-btn--activ')) {
     const getWatched = localStorage.getItem('Watched');
     movies = JSON.parse(getWatched);
-  
-  } else if (refs.btnQueue.classList.contains("header-change__cont-btn--activ")) {
+  } else if (
+    refs.btnQueue.classList.contains('header-change__cont-btn--activ')
+  ) {
     const getQueue = localStorage.getItem('Queue');
     movies = JSON.parse(getQueue);
   }
 
-    if (page === 1) {
+  if (page === 1) {
     movies.splice(12);
     markUpWatchedFilmGallery(movies);
   } else {
@@ -163,5 +163,4 @@ function handlerLibraryLilmsPag(event) {
     const pageToShow = movies.slice(startPageItem, endPageItem);
     markUpWatchedFilmGallery(pageToShow);
   }
-
 }

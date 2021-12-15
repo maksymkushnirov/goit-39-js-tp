@@ -4,7 +4,9 @@ import { markUpPopularFilmGallery } from './mark-up-main-film-gallery';
 import { pagination } from './pagination.js';
 import { scrollToTop } from './scrollToTop';
 
-const paginationContainer_2 = document.getElementById('tui-pagination-container-2');
+const paginationContainer_2 = document.getElementById(
+  'tui-pagination-container-2'
+);
 
 const page = pagination.getCurrentPage();
 
