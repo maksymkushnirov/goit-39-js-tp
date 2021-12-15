@@ -149,8 +149,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    justify-content: left;
+  }
+  @media screen and (min-width: 768px) {
+    justify-content: left;
+  }
+  @media screen and (min-width: 1024px) {
+    justify-content: center;
+  }
   .trailer-btn {
-    margin-top: 20px;
+    margin-top: 16px;
     margin-right: 110px;
     position: relative;
     width: 136px;
@@ -158,10 +167,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 8px;
 
     text-decoration: none;
     overflow: hidden;
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      width: 113px;
+    }
+    @media screen and (min-width: 768px) {
+      width: 126px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 136px;
+    }
     &:hover .trailer-btn_wave {
       top: -50px;
     }
