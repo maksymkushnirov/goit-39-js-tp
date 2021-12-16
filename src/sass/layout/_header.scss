@@ -199,6 +199,10 @@
   padding-bottom: 4px;
   color: #ffffff;
   outline: none;
+  transition: border-bottom 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.search:hover {
+  border-bottom: 1px solid $accent-color;
 }
 .search::placeholder {
   font-weight: normal;
