@@ -2,6 +2,7 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import tarasroboteckyi from '../images/team/tarasroboteckyi.jpg';
 import maksymKushnirov from '../images/team/maksymkushnirov.jpg';
+import valentynadymova from '../images/team/valentynadymova.jpg';
 import alonabulatkina from '../images/team/alonaBulatkina.jpg';
 import aleksandryakovenko from '../images/team/aleksandryakovenko.jpg';
 import dmitriydudnik from '../images/team/dmitriydudnik.jpg';
@@ -33,7 +34,7 @@ const instance = basicLightbox.create(
               <li class="modal-team-list__item">
                 <a href="https://github.com/valentynadymova" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">
                   <div class="modal-team_img">
-                    <img class="team-member-photo" src="${tarasroboteckyi}" alt="valentynadymova">
+                    <img class="team-member-photo" src="${valentynadymova}" alt="valentynadymova">
                   </div>
                     <h3 class="contentBx__title">Valentyna Dymova</h3>
                 </a>
