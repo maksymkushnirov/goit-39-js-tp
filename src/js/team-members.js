@@ -3,11 +3,11 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import maksymkshnirov from '../images/team/maksymkushnirov.jpg';
 import valentynadymova from '../images/team/valentynadymova.jpg';
 import marharytabosak from '../images/team/marharytabosak.jpg';
-import tarasroboteckyi from '../images/team/tarasroboteckyi.jpg';
 import alonabulatkina from '../images/team/alonaBulatkina.jpg';
 import aleksandryakovenko from '../images/team/aleksandryakovenko.jpg';
 import dmitriydudnik from '../images/team/dmitriydudnik.jpg';
 import yaroslavonofriichuk from '../images/team/YaroslavOnofriichuk.jpg';
+import tarasroboteckyi from '../images/team/tarasroboteckyi.jpg';
 import romanbroshnitskiy from '../images/team/roman_broshnitskiy.jpg';
 import olegkolodiy from '../images/team/oleg_kolodiy.jpg';
 
