@@ -71,10 +71,15 @@ body.dark-theme {
 
 .theme-switch__icon {
   color: currentColor;
-  height: 24px;
-  width: 24px;
-  margin-right: 8px;
-  margin-left: 8px;
+  height: 30px;
+  width: 30px;
+}
+
+.theme-switch__icon_sun {
+  color: currentColor;
+  height: 35px;
+  width: 35px;
+  margin-right: 5px;
 }
 
 .theme-switch__control {
