@@ -27,6 +27,7 @@ const galery = document.querySelector('.gallery');
 const modalBackdrop = document.querySelector('.backdrop');
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const KEY = 'fe9ed89434aaae0a5431bf6fa09118e9';
+const scrollToTopBtn = document.querySelector('.scrollToTopBtn');
 
 // ============================================================================
 
@@ -87,6 +88,7 @@ async function openModal(id) {
   document.body.style.overflow = 'hidden'; // забирає скролл сторінки за мадалкою
   // фетч запрос, обработка, запись результата в переменную
   spinner.classList.remove('visually-hidden');
+  scrollToTopBtn.classList.add('visually-hidden');
   const infoMovie = await fetch(
     `${BASE_URL}movie/${id}?api_key=${KEY}&language=en-US`
   ).then((response) => {
@@ -102,7 +104,7 @@ async function openModal(id) {
   closeBtn();
   closeModalEsc();
   closeBackdropClick();
-  toolBar.classList.add('hidden-checkbox')
+  toolBar.classList.add('hidden-checkbox');
   // ========================================
   galery.removeEventListener('click', (e) => {
     e.preventDefault();
@@ -198,5 +200,6 @@ function closeModal() {
   modalWindow.innerHTML = ' '; // зачистка src
   document.body.style.overflow = 'initial'; // для відновлення скролу головної сторінки
   //location.href = './index.html';////На всякий випадок))))))
-  toolBar.classList.remove('hidden-checkbox')
+  scrollToTopBtn.classList.remove('visually-hidden');
+  toolBar.classList.remove('hidden-checkbox');
 }
