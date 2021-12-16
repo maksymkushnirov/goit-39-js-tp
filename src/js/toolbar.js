@@ -1,4 +1,8 @@
 const toolBar = document.querySelector('.toolbar');
+
+
+
+
 //  Разметка переключателя темы
 
 toolBar.innerHTML = `<div class="theme-switch">
@@ -20,28 +24,30 @@ toolBar.innerHTML = `<div class="theme-switch">
 
 const btn = document.querySelector('#theme-switch-toggle');
 const body = document.querySelector('body');
-console.log(localStorage);
+// console.log(localStorage);
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme'
 };
 const { LIGHT, DARK } = Theme;
-console.log(btn.checked);
+// console.log(btn.checked);
 
 let theme = localStorage.getItem('theme');
-console.log(theme);
+// console.log(theme);
 
 btn.addEventListener('change', (e) => {
-  console.log(e.target.checked);
+  // console.log(e.target.checked);
   if (!e.target.checked) {
     document.querySelector('body').classList.add(LIGHT);
     document.querySelector('body').classList.remove(DARK);
     localStorage.setItem('theme', LIGHT);
+  
   } else {
     document.querySelector('body').classList.remove(LIGHT);
     localStorage.removeItem('theme', LIGHT);
     document.querySelector('body').classList.add(DARK);
     localStorage.setItem('theme', DARK);
+    
   }
 });
 
@@ -49,7 +55,9 @@ if (theme === DARK) {
   btn.checked = true;
   document.querySelector('body').classList.remove(LIGHT);
   document.querySelector('body').classList.add(DARK);
+  
 } else {
   btn.checked = false;
   document.querySelector('body').classList.add(LIGHT);
+  
 }

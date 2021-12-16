@@ -18,12 +18,38 @@ body {
 
 body.light-theme {
   background-color: #fff;
+  .tui-page-btn {
+    color: $black-color;
+  }
+  .modal-movie-info {
+    color: $black-color;
+  }
 }
 
 body.dark-theme {
   background-color: #333333;
+  .tui-page-btn {
+    color: #ffffff;
+  }
+  .modal-movie {
+    color: #ffffff;
+    background-color: #333333;
+  }
+  .value__grey {
+    background-color: #333333;
+  }
+  .card-title {
+    color: #ffffff;
+  }
 }
 
+.hidden-checkbox {
+  visibility: hidden;
+}
+
+.white {
+  color: #ffffff;
+}
 .toolbar {
   display: flex;
   justify-content: flex-end;

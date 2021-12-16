@@ -58,7 +58,7 @@ export function markUpWatchedFilmGallery(films) {
         }" src="${isPosterPath(poster_path)}" alt="poster-film"></div>
         <h2 class="card-title modalBtn" data-id="${
           film.id
-        }">${filmName.toUpperCase()}</h2>
+        }">${filmName.toUpperCase()} </h2>
           <div class="card-description-container modalBtn" data-id="${film.id}">
             <p class="card-description modalBtn" data-id="${
               film.id

@@ -19,7 +19,7 @@ const refs = {
   searchForm: document.querySelector('.search-form'), //Пошук форми з інпутом в Header
   paginationContainer_2: document.getElementById('tui-pagination-container-2')
 };
-
+const toolBar = document.querySelector('.toolbar');
 const spinner = document.getElementById('loading');
 const close = document.querySelector('.modal-close-icon');
 const modalWindow = document.querySelector('.modal-movie-template');
@@ -102,6 +102,7 @@ async function openModal(id) {
   closeBtn();
   closeModalEsc();
   closeBackdropClick();
+  toolBar.classList.add('hidden-checkbox')
   // ========================================
   galery.removeEventListener('click', (e) => {
     e.preventDefault();
@@ -197,4 +198,5 @@ function closeModal() {
   modalWindow.innerHTML = ' '; // зачистка src
   document.body.style.overflow = 'initial'; // для відновлення скролу головної сторінки
   //location.href = './index.html';////На всякий випадок))))))
+  toolBar.classList.remove('hidden-checkbox')
 }
