@@ -19,7 +19,8 @@ const instance = basicLightbox.create(
     <div class="team-section">
       <div class="modal modal--design">
         <div class="team-section__container">
-          <h1 class="modal__team-head">Developed by:</h1>
+          <h1 class="modal__team-head">Team "frenBool IT"</h1>
+          <h2 class="modal__team-text">Developed by:</h2>
           <ul class="modal-team-list">
               <li class="modal-team-list__item">
                 <a href="https://github.com/maksymkushnirov" class="modal-team-list__link link" target="blank" rel="noopener noreferrer"> 
