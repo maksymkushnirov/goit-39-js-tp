@@ -1,3 +1,5 @@
+import imgSun from '../images/svg/sun.svg';
+import imgMoon from '../images/svg/moon.svg';
 const toolBar = document.querySelector('.toolbar');
 
 
@@ -6,20 +8,15 @@ const toolBar = document.querySelector('.toolbar');
 //  Разметка переключателя темы
 
 toolBar.innerHTML = `<div class="theme-switch">
-    <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
-        <use href="/./images/svg/sun-moon.svg#sun"></use>
-    </svg>
-
+    <img class="theme-switch__icon theme-switch__icon_sun" src="${imgSun}" alt="Иконка солнца" />
     <div class="theme-switch__control">
         <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
             aria-label="Переключить между тёмной и светлой темой" />
         <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle"> </label>
         <div aria-hidden="true" class="theme-switch__marker"></div>
     </div>
-
-    <svg class="theme-switch__icon" aria-label="Иконка луны">
-        <use href="/src/images/svg/sun-moon.svg#moon"></use>
-    </svg>
+    <img class="theme-switch__icon" src="${imgMoon}" alt="Иконка луны" />
+    
 </div>`;
 
 const btn = document.querySelector('#theme-switch-toggle');
