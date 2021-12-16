@@ -15,7 +15,7 @@ body {
   transition: color 150ms var(--timing-function),
     background-color 150ms var(--timing-function);
 }
-
+// светая тема==========================================
 body.light-theme {
   background-color: #fff;
   .tui-page-btn {
@@ -25,11 +25,14 @@ body.light-theme {
     color: $black-color;
   }
 }
-
+// темная тема, инверсия и др.
 body.dark-theme {
   background-color: #333333;
   .tui-page-btn {
     color: #ffffff;
+    &:hover {
+      color: #000;
+    }
   }
   .modal-movie {
     color: #ffffff;
@@ -41,8 +44,31 @@ body.dark-theme {
   .card-title {
     color: #ffffff;
   }
-}
+  .modal-close-icon {
+    color: #ffffff;
+  }
+  .tui-first {
+    background-color: #a09b9b;
+  }
+  .tui-ico-first:hover {
+    color: rgb(41, 36, 36);
+  }
+  .tui-prev {
+    background-color: #a09b9b;
+  }
 
+  .tui-next-is-ellip {
+    background-color: #a09b9b;
+  }
+
+  .tui-next {
+    background-color: #a09b9b;
+  }
+  .tui-last {
+    background-color: #a09b9b;
+  }
+}
+// ==========================================
 .hidden-checkbox {
   visibility: hidden;
 }
