@@ -3,7 +3,7 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import maksymkshnirov from '../images/team/maksymkushnirov.jpg';
 import valentynadymova from '../images/team/valentynadymova.jpg';
 import marharytabosak from '../images/team/marharytabosak.jpg';
-import alonabulatkina from '../images/team/alonaBulatkina.jpg';
+import alonabulatkina from '../images/team/alonabulatkina.jpg';
 import aleksandryakovenko from '../images/team/aleksandryakovenko.jpg';
 import dmitriydudnik from '../images/team/dmitriydudnik.jpg';
 import yaroslavonofriichuk from '../images/team/YaroslavOnofriichuk.jpg';
@@ -50,7 +50,7 @@ const instance = basicLightbox.create(
               <li class="modal-team-list__item">
                 <a href="https://github.com/Alona-Bulatkina" class="modal-team-list__link link" target="blank" rel="noopener noreferrer">
                   <div class="modal-team_img">
-                    <img class="team-member-photo" src="${alonabulatkina}" alt="alonabulatkina">
+                    <img class="team-member-photo" src="${alonabulatkina}" alt="Alona Bulatkina">
                   </div>
                     <h3 class="contentBx__title">Alona Bulatkina</h3>
                 </a>
