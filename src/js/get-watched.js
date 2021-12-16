@@ -1,4 +1,3 @@
-
 import imgOne from '../images/no-poster1.png';
 const gallery = document.querySelector('.card-list');
 
